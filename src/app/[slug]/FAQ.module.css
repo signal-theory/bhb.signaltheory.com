@@ -1,0 +1,82 @@
+.container {
+    background-color: var(--yellow-hex);
+    color: var(--blue-hex);
+    padding: 9vw;
+    text-align: center;
+}
+.faqs {
+    padding: 3rem 0;
+    max-width: 900px;
+    margin: 0 auto;
+}
+.faqItem {
+    display: flex;
+    justify-content: stretch;
+    flex-direction: column;
+    position: relative;
+    margin: 0;
+    padding: 1rem 0;
+    cursor: pointer;
+    user-select: none;
+    border-bottom: 2px solid var(--blex-hex);
+}
+   
+button.question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    border: none;
+    appearance: none;
+    cursor: pointer;
+    background-color: transparent;
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--blue-hex);
+    text-align: left;
+}
+button.question::after {
+    position: relative;
+    content:'';
+    background: transparent url(/plus.svg) center no-repeat;
+    background-size: 12px;
+    width: 12px;
+    height:12px;
+    transition: all 0.2s ease-out;
+    transform: rotate(0);
+}
+button.question.active::after {
+    transform: rotate(135deg);
+}
+  
+.answer {
+    transition: all .3s ease-in-out;
+    padding: 0.5rem 1rem 1.5rem;
+    box-sizing: border-box;
+    font-size: 0.9rem;
+}
+.answer.closed {
+    opacity: 0;
+    position: absolute;
+}
+  
+.answer.open {
+    position: relative;
+    opacity: 1;
+    padding: 1rem;
+}
+  
+  
+.answer a {
+    font-weight: bold;
+    color: inherit;
+}
+.answer a:active,
+.answer a:visited,
+.answer a:focus {
+    color: inherit;
+}
+  
+.answer a:hover {
+    color: inherit;
+}

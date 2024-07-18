@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@import url("https://use.typekit.net/wnt7tob.css");
+
+:root {
+  --max-width: 1100px;
+  --border-radius: 12px;
+  --font-sans: "Montserrat", sans-serif;
+  --font-black: "roc-grotesk-wide", sans-serif;
+
+  --yellow-rgb: 243, 195, 0;
+  --yellow-hex: #F3C300;
+  --blue-rgb: 40, 37, 96;
+  --blue-hex: #282560;
+  
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: var(--font-sans);
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  overflow-y:scroll;
+}
+
+body {
+  color: var(--blue-hex);
+  background: var(--yellow-hex);
+  cursor: url('/cursor-default.png'), auto;
+  font-size: 18px;
+}
+body.mouse-down {
+  cursor: url('/cursor-active.png'), auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+p {
+  margin: 0 0 0.5rem;
+  line-height: 1.4;
+}
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-black);
+  font-weight: 800;
+  font-style: normal;
+  font-size: clamp(6.6rem, 7.2vw, 7.8rem);
+  margin: 0 auto;
+  max-width:900px;
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 1;
+}
+h1 {
+  font-size: clamp(4.8rem, 7.2vw, 7.8rem);
+}
+h2, 
+h3,
+h4,
+h5 {
+  font-size: clamp(2.6rem, 3.5vw, 4.3rem);
+  margin: 0 auto 1rem;
+}
+.container {
+  position: relative;
+}
+.screen-reader-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+.font-weight-bold {
+  font-weight: 700;
+}

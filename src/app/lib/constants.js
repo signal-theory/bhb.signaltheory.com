@@ -1,0 +1,5 @@
+export const METADATABASE_API_URL = "https://bhb-signaltheory.com"
+export const CPT_API_URL = "https://bhb-signaltheory.mysites.io/wp-json/wp/v2"
+export const POSTS_API_URL = "https://bhb-signaltheory.mysites.io/wp-json/wp/v2/posts"
+export const PAGES_API_URL = "https://bhb-signaltheory.mysites.io/wp-json/wp/v2/pages"
+export const MEDIA_API_URL = "https://bhb-signaltheory.mysites.io/wp-json/wp/v2/media"

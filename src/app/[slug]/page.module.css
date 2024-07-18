@@ -1,0 +1,34 @@
+.innerMain {
+    min-height: calc(100vh);
+}
+.innerMain::before {
+    content: '';
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: transparent url(/burst.svg) center no-repeat;
+    background-size: contain;
+    transform: scale(0) rotate(5deg);
+    animation: burstIn 0.75s forwards ease-out;
+}
+@keyframes burstIn {
+    from {
+        transform: scale(0) rotate(-90deg);
+    }
+    to {
+        transform: scale(2) rotate(0);
+    }
+}
+.innerHero {
+    position: relative;
+    width:100%;
+    height:100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    z-index: 1;
+}

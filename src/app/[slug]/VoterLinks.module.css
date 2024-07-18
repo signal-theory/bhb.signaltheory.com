@@ -1,0 +1,33 @@
+.container {
+    padding: 9vw 2vw;
+}
+.linkContainer {
+    position: relative;
+    padding: 2rem 0;
+    /* Grid Fallback */
+    display: flex;
+    flex-wrap: wrap;
+    
+    /* Supports Grid */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 1em;
+}
+@media screen and (max-width: 555px) {
+    .linkContainer {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+.link {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-weight: bold;
+}
+.icon {
+    margin-bottom: 10px;
+    width: 100%;
+    object-fit: contain;
+}

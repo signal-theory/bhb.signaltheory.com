@@ -1,0 +1,35 @@
+.container {
+    background-color: var(--blue-hex);
+    color: white;
+    padding: 9vw;
+    text-align: center;
+}
+.dates {
+    padding: 3rem 0;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.datesContainer {
+    display: flex;
+    justify-content: stretch;
+}
+.datesContainer div {
+    padding: 1rem;
+    margin: 2rem 0;
+    text-align: left;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+.datesContainer .number {
+    width: 8vw;
+    text-align: center;
+    background: url(/starburst-red.svg) center no-repeat;
+    background-size: contain;
+}
+.datesContainer .date {
+    width: 25vw;
+}
+.datesContainer .title {
+    flex-grow: 1;
+}
