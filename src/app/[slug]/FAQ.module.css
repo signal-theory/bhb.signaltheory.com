@@ -1,8 +1,20 @@
 .container {
-    background-color: var(--yellow-hex);
+    position: relative;
     color: var(--blue-hex);
-    padding: 9vw;
+    padding: 10vw 9vw 5vw;
     text-align: center;
+}
+.firecracker {
+    position: absolute;
+    top: -6vw;
+    right: calc(50px + 15vw);
+    background: transparent url(/stickers/02.svg) no-repeat;
+    background-position: top right;
+    background-size: contain;
+    width: 22vw;
+    height: 20vw;
+    z-index:4;
+    pointer-events: none;
 }
 .faqs {
     padding: 3rem 0;
@@ -15,25 +27,32 @@
     flex-direction: column;
     position: relative;
     margin: 0;
-    padding: 1rem 0;
+    padding: 0;
     cursor: pointer;
-    user-select: none;
-    border-bottom: 2px solid var(--blex-hex);
+    border-bottom: 2px solid var(--blue-hex);
+    border-width: 2px
+}
+
+.faqItem:last-of-type {
+    border: none;
 }
    
 button.question {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    padding: 1rem 0;
     border: none;
     appearance: none;
     cursor: pointer;
-    background-color: transparent;
+    background-color: var(--yellow-hex);
     font-weight: 700;
     font-size: 1rem;
     color: var(--blue-hex);
     text-align: left;
+    z-index: 3;
 }
 button.question::after {
     position: relative;
@@ -44,26 +63,30 @@ button.question::after {
     height:12px;
     transition: all 0.2s ease-out;
     transform: rotate(0);
+    z-index: 2;
 }
 button.question.active::after {
     transform: rotate(135deg);
 }
-  
 .answer {
+    position: relative;
+    top:-50px;
     transition: all .3s ease-in-out;
-    padding: 0.5rem 1rem 1.5rem;
+    padding: 0 3rem 0 0;
     box-sizing: border-box;
     font-size: 0.9rem;
+    text-align: left;
+    line-height: 1.5;;
+    overflow: hidden; 
+    max-height: 0;
+    opacity: 0; 
 }
-.answer.closed {
-    opacity: 0;
-    position: absolute;
-}
-  
+
 .answer.open {
-    position: relative;
+    top:0;
+    max-height: none; 
     opacity: 1;
-    padding: 1rem;
+    padding: 0 3rem 3rem 0;
 }
   
   

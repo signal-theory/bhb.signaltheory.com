@@ -1,0 +1,11 @@
+.container {
+    background-color: var(--red-hex);
+    padding: 9vw 2vw;
+    text-align: center;
+    color: var(--blue-hex)
+}
+.headline {
+    font-weight: 900;
+    font-family: var(--font-black);
+    color: white;
+}

@@ -21,6 +21,15 @@ function Navbar() {
                     <li>
                         <Link href="/voting-in-texas">VOTING IN TEXAS</Link>
                     </li>
+                    <li>
+                        <Link href="/">FAQs</Link>
+                    </li>
+                    <li>
+                        <Link href="/">MAKE A PLAN</Link>
+                    </li>
+                    <li>
+                        <Link href="/">BHB OUTREACH</Link>
+                    </li>
                 </ul>
             </nav>
         </>

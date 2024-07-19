@@ -23,8 +23,16 @@ export async function fetchMetadata(slug) {
     };
 }
 
-export async function fetchPageData(slug) {
-    const url = `${PAGES_API_URL}?slug=${slug}`;
+export async function fetchPageData({ slug, pageID }) {
+    let url;
+    if (slug) {
+        url = `${PAGES_API_URL}?slug=${slug}`;
+    } else if (pageID) {
+        url = `${PAGES_API_URL}/${pageID}?_embed`;
+    } else {
+        throw new Error('Either slug or pageID must be provided');
+    }
+
     const res = await fetch(url);
     if (!res.ok) {
         console.error(`Failed to fetch page data. Status: ${res.status}, URL: ${url}`);
