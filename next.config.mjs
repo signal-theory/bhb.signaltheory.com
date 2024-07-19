@@ -2,11 +2,10 @@
 const nextConfig = {
     images: {
       formats: ['image/avif', 'image/webp'],
-      domains: ['bhb-signaltheory.mysites.io'],
       remotePatterns: [
         {
           protocol: 'https',
-          hostname: 'gosarpinos.flywheelsites.com',
+          hostname: 'bhb-signaltheory.mysites.io',
         },
       ],
     }};
