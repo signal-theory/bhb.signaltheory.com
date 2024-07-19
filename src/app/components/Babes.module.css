@@ -11,7 +11,12 @@
     grid-gap: calc(1rem + 1vw);
 
 }
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 800px) {
+    .babesList {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media screen and (max-width: 400px) {
     .babesList {
         grid-template-columns: repeat(1, 1fr);
     }
@@ -21,7 +26,7 @@
     position: relative;
     background-color: transparent;
     padding: 10px 0 0 10px;
-    transition: padding 0.25s ease-out;
+    transition: padding 0.15s ease-out;
     text-align: left;
 }
 .portrait:hover {
@@ -35,7 +40,7 @@
     width: 94%;
     height: 94%;
     border: 3px solid transparent;
-    transition: all 0.2s ease-out;
+    transition: all 0.15s ease-out;
 }
 .portrait:hover::before {
     top: 5%;
@@ -51,18 +56,18 @@
     border: 3px solid var(--blue-hex);
 }
 .name {
-    font-weight: 900;
-    font-family: var(--font-black);
+    font-weight: 800;
+    font-family: var(--font-blackComp);
     margin-top: 1.5vw;
-    font-size: clamp(1.2rem, 1.8vw, 2.2rem);
-    letter-spacing: -0.04rem;
+    font-size: clamp(1.8rem, 2.2vw, 2.5rem);
     line-height: 1;
     text-transform: uppercase;
     text-align: left;
     margin-left: 10px;
 }
 .title {
-    font-weight: 700;
+    font-weight: 900;
+    font-family: var(--font-black);
     text-align: left;
     margin: 10px 0 20px 10px;
     text-transform: uppercase;

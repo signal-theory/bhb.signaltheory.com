@@ -10,7 +10,7 @@ import Countdown from '../components/Countdown';
 import Checklist from './Checklist'
 import Congratulations from './Congratulations';
 import Outreach from './Outreach';
-import Babes from './Babes';
+import Babes from '../components/Babes';
 
 export async function generateMetadata({ params }) {
     const { slug } = params;
@@ -50,6 +50,7 @@ export default async function Page({ params }) {
     let listEvents = [];
     let babesList = [];
     let babesListWithImages = [];
+    let checklistLink;
     try {
         const response = await fetchPageData({slug});
         data = response[0];
@@ -75,6 +76,9 @@ export default async function Page({ params }) {
             }
             if (data.acf && data.acf.outreach_events) {
                 listEvents = data.acf.outreach_events;
+            }
+            if (data.acf && data.acf.checklist_download_pdf) {
+                checklistLink = data.acf.checklist_download_pdf;
             }
           } catch (error) {
             console.error("Error fetching title image:", data.acf.title_image);
@@ -147,7 +151,8 @@ export default async function Page({ params }) {
                     headline="Vote Like You Mean It"
                     paragraph="Use this checklist to make sure you're ready to successfully b*tch with your ballot."
                     beforeChecklist={beforeChecklist}
-                    dayofChecklist={dayofChecklist} />
+                    dayofChecklist={dayofChecklist}
+                    checklistLink={checklistLink} />
    
                 <Congratulations />
                 <Outreach

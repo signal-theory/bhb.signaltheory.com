@@ -19,15 +19,14 @@ function FAQ({ headline, faqs }) {
         gsap.to(".shake", {
             scrollTrigger: {
                 trigger: ".shake",
-                toggleActions: "restart pause pause pause"
+                scrub: "true"
             },
             x: 100,
             y: 100,
             rotation: 60,
-            duration: 1,
+            duration: 2,
             scale: 1.3,
-            ease: "bounce.out",
-            delay: 0.2
+            ease: "none",
         });
     }, []); 
 

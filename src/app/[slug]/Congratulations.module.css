@@ -1,8 +1,11 @@
 .container {
     background-color: var(--red-hex);
-    padding: 9vw 2vw;
+    padding: 9vw 4vw;
     text-align: center;
     color: var(--blue-hex)
+}
+.h2 {
+    max-width: 1080px;
 }
 .headline {
     font-weight: 900;

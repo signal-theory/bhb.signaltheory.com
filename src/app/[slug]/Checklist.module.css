@@ -3,6 +3,7 @@
     color: var(--blue-hex);
     padding: 9vw;
     text-align: center;
+    position: relative;
 }
 .checklist {
     padding: 6vw 0;
@@ -12,6 +13,11 @@
     grid-template-columns: 1fr 1fr;
     grid-gap: 4vw;
 }
+@media screen and (max-width: 768px) {
+    .checklist {
+        grid-template-columns: 1fr;
+    }
+}
 .title {
     font-weight: 700;
     text-align: left;
@@ -19,10 +25,50 @@
 .checklistContainer {
     display: flex;
     align-items: center;
-    padding: 2rem 0;
+    justify-content: flex-start;
+    margin: 2rem 0;
 }
+.checklistContainer::before {
+    content: '';
+    display: block;
+    background: url(/checklist.svg) center left no-repeat;
+    background-size: contain;
+    width: calc(30px + 1vw);
+    height: 5vw;
+    flex-shrink: 0; /* Prevent shrinking */
+}
+/* @media screen and (max-width: 768px) {
+    .checklistContainer::before {
+        width: 25px;
+        height: 25px;
+    }
+} */
 .item {
     text-align: left;
     padding-left: 20px;
     font-size: 0.9rem;;
+}
+.voteBurst {
+    position: absolute;
+    top: 1vw;
+    left: calc(50px + 25vw);
+    background: transparent url(/stickers/voteBurst.svg) no-repeat;
+    background-position: top right;
+    background-size: contain;
+    width: 20vw;
+    height: 20vw;
+    z-index:4;
+    pointer-events: none;
+}
+.voteCircle{
+    position: absolute;
+    bottom: 1vw;
+    right: calc(50px + 25vw);
+    background: transparent url(/stickers/voteCircle.svg) no-repeat;
+    background-position: top right;
+    background-size: contain;
+    width: 17vw;
+    height: 17vw;
+    z-index:4;
+    pointer-events: none;
 }

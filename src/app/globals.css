@@ -6,6 +6,7 @@
   --border-radius: 12px;
   --font-sans: "Montserrat", sans-serif;
   --font-black: "roc-grotesk-wide", sans-serif;
+  --font-blackComp: "roc-grotesk-compressed", sans-serif;
 
   --yellow-hex: #F3C300;
   --blue-hex: #282560;
@@ -43,6 +44,11 @@ body.mouse-down {
 a {
   color: inherit;
   text-decoration: none;
+}
+button {
+  background-color: transparent;
+  border: none;
+  appearance: none;
 }
 p {
   margin: 0 0 0.5rem;
@@ -84,4 +90,86 @@ h5 {
 }
 .font-weight-bold {
   font-weight: 700;
+}
+
+/* BUTTONS*/
+.button {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  padding: 0 1.3vw;
+  height:60px;
+  background-color: var(--yellow-hex);
+  border: 3px solid var(--blue-hex);
+  color: var(--blue-hex);
+  font-weight: 700;
+  font-size: 1rem;
+}
+.btn {
+  position: relative;
+  display: inline-block;
+  height: 70px;
+  
+}
+.btn span {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 0 1.3vw;
+  height:60px;
+  margin-top:10px;
+  border-width: 3px;
+  border-style: solid;
+  font-weight: 700;
+  font-size: 1rem;;
+  transition: all 0.15s ease-out;
+  z-index: 2;
+}
+.btn:hover span {
+  transform: translateY(-10px);
+}
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(100% - 6px);
+  height: 50px;
+  border: 3px solid transparent;
+  transition: all 0.15s ease-out;
+  z-index: 1;
+}
+.btn:hover::before {
+  transform: translateY(13px);
+}
+/* blue button colors */
+.btn-blue span {
+  background-color: var(--blue-hex);
+  border-color: var(--blue-hex);
+  color: var(--yellow-hex);
+
+}
+.btn-blue:hover::before {
+  border-color: var(--blue-hex);
+}
+
+/* blue button colors */
+.btn-yellow-outline span {
+  background-color: var(--blue-hex);
+  border-color: var(--yellow-hex);
+  color: var(--yellow-hex);
+
+}
+.btn-yellow-outline:hover::before {
+  border-color: var(--yellow-hex);
+}
+/* yellowbutton colors */
+.btn-yellow span {
+  background-color: var(--yellow-hex);
+  border-color: var(--blue-hex);
+  color: var(--blue-hex);
+
+}
+.btn-yellow:hover::before {
+  border-color: var(--blue-hex);
 }

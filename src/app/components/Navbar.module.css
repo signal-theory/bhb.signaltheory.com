@@ -6,6 +6,11 @@
     height: 90px;
     width: 100%;
     z-index: 998;
+    transition: all 0.2s ease-in-out;
+    background-color: transparent;
+}
+.navbar.scrolled {
+    background-color: var(--yellow-hex); /* Replace with your desired color */
 }
 .navbar ul {
     width: 100%;
