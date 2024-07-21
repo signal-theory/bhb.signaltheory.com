@@ -26,9 +26,14 @@
     text-align: center;
     background: url(/starburst-red.svg) center no-repeat;
     background-size: contain;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
 }
 .datesContainer .date {
-    width: 25vw;
+    width: 22vw;
+    flex-shrink: 0;
 }
 .datesContainer .title {
     flex-grow: 1;

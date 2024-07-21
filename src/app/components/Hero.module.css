@@ -9,3 +9,7 @@
 .hero svg {
     width: 100%;
 }
+.headline {
+   height: 200px;
+   margin-bottom: 2rem;
+}

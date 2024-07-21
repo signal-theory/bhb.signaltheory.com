@@ -91,30 +91,30 @@ function Stickers() {
     });
 
     const svgData = [
-      { x: 0.1, y: -0.4, width: 0.15, height: 0.15, texture: '/stickers/04.svg', angle: Math.PI / 2 },
-      { x: 0.4, y: -0.1, width: 0.15, height: 0.2, texture: '/stickers/09.svg', angle: 0 },
-      { x: 0.1, y: -0.26, width: 0.15, height: 0.15, texture: '/stickers/11.svg', angle: 0 },
-      { x: 0.5, y: -0.1, width: 0.15, height: 0.35, texture: '/stickers/12.svg', angle: 0 },
-      { x: 0.65, y: -0.4, width: 0.15, height: 0.3, texture: '/stickers/19.svg', angle: 0 },
-      { x: 0.6, y: -0.2, width: 0.15, height: 0.15, texture: '/stickers/14.svg', angle: 0 },
-      { x: -0.01, y: -0.3, width: 0.12, height: 0.12, texture: '/stickers/15.svg', angle: 0 },
-      { x: 0.95, y: -0.3, width: 0.2, height: 0.2, texture: '/stickers/15.svg', angle: 0 },
-      { x: 0.3, y: -0.35, width: 0.1, height: 0.15, texture: '/stickers/17.svg', angle: 0 },
-      { x: 0.85, y: -0.4, width: 0.15, height: 0.2, texture: '/stickers/18.svg', angle: 0 },
-      { x: 0.91, y: -0.6, width: 0.15, height: 0.35, texture: '/stickers/19.svg', angle: 0 },
-      { x: 0.14, y: -0.4, width: 0.15, height: 0.25, texture: '/stickers/20.svg', angle: 0 },
-      { x: 0.25, y: -0.4, width: 0.15, height: 0.2, texture: '/stickers/19.svg', angle: 0 },
-      { x: 0.35, y: -0.5, width: 0.15, height: 0.35, texture: '/stickers/06.svg', angle: 0 },
-      { x: 0.4, y: -0.4, width: 0.15, height: 0.15, texture: '/stickers/05.svg', angle: 0 },
-      { x: 0.05, y: -0.4, width: 0.25, height: 0.25, texture: '/stickers/17.svg', angle: 0 },
-      { x: 0.1, y: -0.5, width: 0.15, height: 0.45, texture: '/stickers/09.svg', angle: 0 },
-      { x: 0.6, y: -0.4, width: 0.2, height: 0.2, texture: '/stickers/06.svg', angle: Math.PI / 2 },
-      { x: 0.75, y: -0.4, width: 0.1, height: 0.1, texture: '/stickers/05.svg', angle: 0 },
-      { x: 0.9, y: -0.1, width: 0.3, height: 0.15, texture: '/stickers/07.svg', angle: Math.PI / 3 },
-      { x: 0.5, y: -0.51, width: 0.1, height: 0.55, texture: '/stickers/01.svg', angle: 0 },
-      { x: 0.1, y: -0.6, width: 0.2, height: 0.6, texture: '/stickers/03.svg', angle: Math.PI / 6 },
-      { x: 0.7, y: -0.6, width: 0.2, height: 0.65, texture: '/stickers/02.svg', angle: Math.PI / 8 },
-      { x: 0.2, y: -0.3, width: 0.3, height: 0.4, texture: '/stickers/07.svg', angle: 0 },
+      { x: 0.1, y: -0.4, width: 0.15, height: 0.18, texture: '/stickers/04.svg', angle: Math.PI / 2 },
+      { x: 0.4, y: -0.1, width: 0.15, height: 0.24, texture: '/stickers/09.svg', angle: 0 },
+      { x: 0.1, y: -0.26, width: 0.15, height: 0.18, texture: '/stickers/11.svg', angle: 0 },
+      { x: 0.5, y: -0.1, width: 0.15, height: 0.38, texture: '/stickers/12.svg', angle: 0 },
+      { x: 0.65, y: -0.4, width: 0.15, height: 0.33, texture: '/stickers/19.svg', angle: 0 },
+      { x: 0.6, y: -0.2, width: 0.15, height: 0.18, texture: '/stickers/14.svg', angle: 0 },
+      { x: -0.01, y: -0.3, width: 0.12, height: 0.14, texture: '/stickers/15.svg', angle: 0 },
+      { x: 0.95, y: -0.3, width: 0.2, height: 0.24, texture: '/stickers/15.svg', angle: 0 },
+      { x: 0.3, y: -0.35, width: 0.1, height: 0.18, texture: '/stickers/17.svg', angle: 0 },
+      { x: 0.85, y: -0.4, width: 0.15, height: 0.24, texture: '/stickers/18.svg', angle: 0 },
+      { x: 0.91, y: -0.6, width: 0.15, height: 0.39, texture: '/stickers/19.svg', angle: 0 },
+      { x: 0.14, y: -0.4, width: 0.15, height: 0.28, texture: '/stickers/20.svg', angle: 0 },
+      { x: 0.25, y: -0.4, width: 0.15, height: 0.24, texture: '/stickers/19.svg', angle: 0 },
+      { x: 0.35, y: -0.5, width: 0.15, height: 0.38, texture: '/stickers/06.svg', angle: 0 },
+      { x: 0.4, y: -0.4, width: 0.15, height: 0.18, texture: '/stickers/05.svg', angle: 0 },
+      { x: 0.05, y: -0.4, width: 0.25, height: 0.28, texture: '/stickers/17.svg', angle: 0 },
+      { x: 0.1, y: -0.5, width: 0.15, height: 0.47, texture: '/stickers/09.svg', angle: 0 },
+      { x: 0.6, y: -0.4, width: 0.2, height: 0.24, texture: '/stickers/06.svg', angle: Math.PI / 2 },
+      { x: 0.75, y: -0.4, width: 0.1, height: 0.15, texture: '/stickers/05.svg', angle: 0 },
+      { x: 0.9, y: -0.1, width: 0.3, height: 0.18, texture: '/stickers/07.svg', angle: Math.PI / 3 },
+      { x: 0.5, y: -0.51, width: 0.1, height: 0.58, texture: '/stickers/01.svg', angle: 0 },
+      { x: 0.1, y: -0.6, width: 0.2, height: 0.64, texture: '/stickers/03.svg', angle: Math.PI / 6 },
+      { x: 0.7, y: -0.6, width: 0.2, height: 0.68, texture: '/stickers/02.svg', angle: Math.PI / 8 },
+      { x: 0.2, y: -0.3, width: 0.3, height: 0.43, texture: '/stickers/07.svg', angle: 0 },
     ];
 
     // Define the scale factor for the SVGs relative to the canvas size
@@ -148,6 +148,30 @@ function Stickers() {
     });
 
     Matter.World.add(engineInstance.world, mouseConstraint.current);
+
+    // Add mouseover event to apply force to bodies and change cursor
+    Matter.Events.on(mouseConstraint.current, 'mousemove', (event) => {
+      const { mouse } = event;
+      const forceMagnitude = 0.4 * engineInstance.world.gravity.scale; // Increased force magnitude
+      let isMouseOverBody = false;
+
+      svgBodies.forEach((body) => {
+        if (Matter.Bounds.contains(body.bounds, mouse.position)) {
+          isMouseOverBody = true;
+          Matter.Body.applyForce(body, body.position, {
+            x: (body.position.x - mouse.position.x) * forceMagnitude, // Inverted direction
+            y: (body.position.y - mouse.position.y) * forceMagnitude, // Inverted direction
+          });
+        }
+      });
+
+      // Change cursor style based on mouseover state
+      if (isMouseOverBody) {
+        render.canvas.classList.add(styles.pointerCursor);
+      } else {
+        render.canvas.classList.remove(styles.pointerCursor);
+      }
+    });
 
     // Run the renderer and engine
     Matter.Render.run(render);

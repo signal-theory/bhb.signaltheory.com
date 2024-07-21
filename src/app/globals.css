@@ -29,13 +29,13 @@ body {
   max-width: 100vw;
   overflow-x: hidden;
   overflow-y:scroll;
+  font-size: 18px;
 }
 
 body {
   color: var(--blue-hex);
   background: var(--yellow-hex);
   cursor: url('/cursor-default.png'), auto;
-  font-size: 18px;
 }
 body.mouse-down {
   cursor: url('/cursor-active.png'), auto;
@@ -97,7 +97,8 @@ h5 {
   display: inline-flex;
   align-items: center;
   position: relative;
-  padding: 0 1.3vw;
+  padding: 0 2vw;
+  margin: 2vw 0;
   height:60px;
   background-color: var(--yellow-hex);
   border: 3px solid var(--blue-hex);
@@ -107,15 +108,25 @@ h5 {
 }
 .btn {
   position: relative;
-  display: inline-block;
+  display: inline-flex;
   height: 70px;
-  
+  margin: 2vw 0;
+}
+@media screen and (max-width: 425px) {
+  .button, 
+  .btn,
+  .bth span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;;
+  }
 }
 .btn span {
   display: flex;
   align-items: center;
   position: relative;
-  padding: 0 1.3vw;
+  padding: 0 2vw;
   height:60px;
   margin-top:10px;
   border-width: 3px;
