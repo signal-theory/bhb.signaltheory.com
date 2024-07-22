@@ -91,7 +91,7 @@ function Stickers() {
     });
 
     const svgData = [
-      { x: 0.1, y: -0.4, width: 0.15, height: 0.18, texture: '/stickers/04.svg', angle: Math.PI / 2 },
+      { x: 0.2, y: -0.4, width: 0.15, height: 0.18, texture: '/stickers/04.svg', angle: Math.PI / 2 },
       { x: 0.4, y: -0.1, width: 0.15, height: 0.24, texture: '/stickers/09.svg', angle: 0 },
       { x: 0.1, y: -0.26, width: 0.15, height: 0.18, texture: '/stickers/11.svg', angle: 0 },
       { x: 0.5, y: -0.1, width: 0.15, height: 0.38, texture: '/stickers/12.svg', angle: 0 },
@@ -103,18 +103,18 @@ function Stickers() {
       { x: 0.85, y: -0.4, width: 0.15, height: 0.24, texture: '/stickers/18.svg', angle: 0 },
       { x: 0.91, y: -0.6, width: 0.15, height: 0.39, texture: '/stickers/19.svg', angle: 0 },
       { x: 0.14, y: -0.4, width: 0.15, height: 0.28, texture: '/stickers/20.svg', angle: 0 },
-      { x: 0.25, y: -0.4, width: 0.15, height: 0.24, texture: '/stickers/19.svg', angle: 0 },
+      { x: 0.25, y: -0.4, width: 0.15, height: 0.5, texture: '/stickers/19.svg', angle: 0 },
       { x: 0.35, y: -0.5, width: 0.15, height: 0.38, texture: '/stickers/06.svg', angle: 0 },
       { x: 0.4, y: -0.4, width: 0.15, height: 0.18, texture: '/stickers/05.svg', angle: 0 },
       { x: 0.05, y: -0.4, width: 0.25, height: 0.28, texture: '/stickers/17.svg', angle: 0 },
-      { x: 0.1, y: -0.5, width: 0.15, height: 0.47, texture: '/stickers/09.svg', angle: 0 },
+      { x: 0.1, y: -0.5, width: 0.15, height: 0.6, texture: '/stickers/09.svg', angle: 0 },
       { x: 0.6, y: -0.4, width: 0.2, height: 0.24, texture: '/stickers/06.svg', angle: Math.PI / 2 },
       { x: 0.75, y: -0.4, width: 0.1, height: 0.15, texture: '/stickers/05.svg', angle: 0 },
-      { x: 0.9, y: -0.1, width: 0.3, height: 0.18, texture: '/stickers/07.svg', angle: Math.PI / 3 },
-      { x: 0.5, y: -0.51, width: 0.1, height: 0.58, texture: '/stickers/01.svg', angle: 0 },
-      { x: 0.1, y: -0.6, width: 0.2, height: 0.64, texture: '/stickers/03.svg', angle: Math.PI / 6 },
-      { x: 0.7, y: -0.6, width: 0.2, height: 0.68, texture: '/stickers/02.svg', angle: Math.PI / 8 },
+      { x: 0.9, y: -0.1, width: 0.2, height: 0.4, texture: '/stickers/07.svg', angle: Math.PI / 3 },
+      { x: 0.43, y: -0.51, width: 0.1, height: 0.58, texture: '/stickers/01.svg', angle: 0 },
       { x: 0.2, y: -0.3, width: 0.3, height: 0.43, texture: '/stickers/07.svg', angle: 0 },
+      { x: 0.1, y: -0.6, width: 0.2, height: 0.8, texture: '/stickers/03.svg', angle: Math.PI / 6 },
+      { x: 0.7, y: -0.6, width: 0.2, height: 0.68, texture: '/stickers/02.svg', angle: Math.PI / 8 },
     ];
 
     // Define the scale factor for the SVGs relative to the canvas size

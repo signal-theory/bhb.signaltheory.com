@@ -31,7 +31,7 @@ function FAQ({ headline, faqs }) {
     }, []); 
 
     return (
-        <section className={styles.container}>
+        <section className={styles.container} id="faqs">
             <div className={`shake ${styles.firecracker}`}></div>
             <h2>{headline}</h2>
             <div className={styles.faqs}>

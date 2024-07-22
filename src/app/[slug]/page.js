@@ -11,6 +11,7 @@ import Checklist from './Checklist'
 import Congratulations from './Congratulations';
 import Outreach from './Outreach';
 import Babes from '../components/Babes';
+import Footer from './Footer';
 
 export async function generateMetadata({ params }) {
     const { slug } = params;
@@ -163,6 +164,8 @@ export default async function Page({ params }) {
                     headline="THESE BABES V*TE"
                     paragraph="We're ready to go off at the polls. Will we see you there?"
                     babesList={babesListWithImages} />
+                <Footer
+                />
 
             </div>
         </main>

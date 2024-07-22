@@ -50,25 +50,25 @@
 }
 .voteBurst {
     position: absolute;
-    top: 1vw;
-    left: calc(50px + 25vw);
+    top: 0;
+    left: calc(80px + 25vw);
     background: transparent url(/stickers/voteBurst.svg) no-repeat;
     background-position: top right;
     background-size: contain;
-    width: 20vw;
-    height: 20vw;
+    width: calc(20vw + 50px);
+    height: calc(20vw + 50px);
     z-index:4;
     pointer-events: none;
 }
 .voteCircle{
     position: absolute;
     bottom: 1vw;
-    right: calc(50px + 25vw);
+    right: calc(60px + 25vw);
     background: transparent url(/stickers/voteCircle.svg) no-repeat;
     background-position: top right;
     background-size: contain;
-    width: 17vw;
-    height: 17vw;
+    width: calc(20vw + 40px);
+    height: calc(20vw + 40px);
     z-index:4;
     pointer-events: none;
 }

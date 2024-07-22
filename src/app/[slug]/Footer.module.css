@@ -1,0 +1,41 @@
+.container {
+    background-color: var(--blue-hex);
+    color: white;
+    padding: 9vw 2vw 6vw;
+    text-align: center;
+}
+.menu {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.menu > div {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.title {
+    font-family: var(--font-sans);
+    font-size: clamp(0.6rem, 1.2vw, 1.8rem);
+    letter-spacing: 0.1rem;
+    margin: 0.2rem 0.75rem 0;
+}
+.link {
+    display: block;
+    color: white;
+    font-weight: 700;
+    font-family: var(--font-sans);
+    font-size: clamp(1.4rem, 2.6vw, 3.6rem);
+    line-height: 1;
+    margin: 0 0 1.2vw;
+}
+.copyright{
+    margin: 6vw 0 0;
+    padding: 0 2vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+}
+.copyright img {
+    max-width: 330px;
+}

@@ -32,7 +32,7 @@ function Checklist({ headline, paragraph, beforeChecklist, dayofChecklist, check
     }, []); 
 
     return (
-        <section className={styles.container}>
+        <section className={styles.container} id="make-a-plan">
             <h2>{headline}</h2>
             <p>{paragraph}</p>
             <div className={`rollTop ${styles.voteBurst}`}></div>

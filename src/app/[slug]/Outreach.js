@@ -3,7 +3,7 @@ import styles from './Outreach.module.css';
 
 function Outreach({ headline, paragraph, listEvents }) {
     return (
-        <section className={styles.container}>
+        <section className={styles.container} id="outreach">
             <h2>{headline}</h2>
             <p>{paragraph}</p>
             <div className={styles.outreach}>
