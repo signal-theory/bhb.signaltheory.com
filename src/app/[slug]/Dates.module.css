@@ -6,7 +6,7 @@
 }
 .dates {
     padding: 3rem 0;
-    max-width: 1200px;
+    max-width: 900px;
     margin: 0 auto;
 }
 .datesContainer {
@@ -22,7 +22,7 @@
     font-size: 1.2rem;
 }
 .datesContainer .number {
-    width: 8vw;
+    width: 62px;
     text-align: center;
     background: url(/starburst-red.svg) center no-repeat;
     background-size: contain;
@@ -33,6 +33,7 @@
 }
 .datesContainer .date {
     width: 22vw;
+    max-width: 225px;
     flex-shrink: 0;
 }
 .datesContainer .title {
@@ -46,9 +47,6 @@
     }
     .datesContainer div:nth-child(3) {
         grid-column: span 2;
-    }
-    .datesContainer .number {
-        width: 62px;
     }
     .datesContainer .date {
         width: auto;
