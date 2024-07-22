@@ -1,12 +1,19 @@
 
 'use client';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import styles from './Checklist.module.css';
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
+import { FacebookShare, TwitterShare, LinkedinShare, WhatsappShare, FacebookMessengerShare, EmailShare, RedditShare } from 'react-share-kit';
+
 function Checklist({ headline, paragraph, beforeChecklist, dayofChecklist, checklistLink, checklistShare }) {
+    
+    const shareUrl = 'https://bhb.signaltheory.com';
+    const title = 'Use this checklist to make sure you\'re ready to successfully b*tch with your ballot.';
+    const size = '40px'
+    const [ shareLinks, openShareLinks ] = useState(false)
 
     useEffect(() => {
         gsap.to(".rollTop", {
@@ -62,11 +69,45 @@ function Checklist({ headline, paragraph, beforeChecklist, dayofChecklist, check
                 </a>}
                 <button 
                     id="share" 
-                    className="button"
+                    className={`button ${styles.shareBtn}`}
+                    onClick={() => openShareLinks(!shareLinks)}
                     style={{marginLeft: '10px'}}>
-                        SHARE
+                        <span>SHARE</span>
+                        <div className={shareLinks ? styles.openShareLinks : styles.shareLinks}>
+                        <FacebookShare 
+                            url={shareUrl} 
+                            quote={title}
+                            round blankTarget size={size} />
+                        <TwitterShare
+                            url={shareUrl}
+                            title={title}
+                            hashtags={["#react-share-kit", "#front-end"]}
+                            round blankTarget size={size} />
+                        <LinkedinShare 
+                            url={shareUrl}
+                            round blankTarget size={size} />
+                        <WhatsappShare
+                            url={shareUrl}
+                            title={title}
+                            separator=":: "
+                            round blankTarget size={size} />
+                        {/* <FacebookMessengerShare
+                            url={shareUrl}
+                            redirectUri={shareUrl}
+                            appId={'dmm4kj9djk203k4liuf994p'}
+                            /> */}
+                            <EmailShare
+                                url={shareUrl}
+                                subject={'Vote Like You Mean It'}
+                                body={title}
+                                round blankTarget size={size} />
+                            <RedditShare 
+                                url={shareUrl}
+                                round blankTarget size={size}  />
+                    </div>
                 </button>
             </div>
+            
             <div className={`rollBottom ${styles.voteCircle}`}></div>
         </section>
         )}
