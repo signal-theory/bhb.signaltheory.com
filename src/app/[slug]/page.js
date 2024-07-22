@@ -93,6 +93,7 @@ export default async function Page({ params }) {
                     pageTitle={data.title.rendered} 
                     titleImage={titleImage?.sourceUrl || ''}
                     titleImageAlt={titleImage?.altText || 'alt'}
+                    slug={slug}
                 />
                 <VoterLinks
                     headline="Are you registered to raise your voice?" />

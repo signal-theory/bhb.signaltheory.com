@@ -1,12 +1,20 @@
 'use client';
-import { useEffect } from 'react';
+import { useEffect, useContext} from 'react';
+import { AppContext } from '../context/AppContext';
 import Image from 'next/image';
 import styles from './PageHero.module.css'
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
-function Hero({ titleImage, titleImageAlt, pageTitle}) {
+function Hero({ titleImage, titleImageAlt, pageTitle, slug}) {
+    
+    const { setMyState } = useContext(AppContext);
+
+    useEffect(() => {
+        setMyState(slug);
+    }, [slug, setMyState]);
+
     
     useEffect(() => {
         gsap.to(".spin", {

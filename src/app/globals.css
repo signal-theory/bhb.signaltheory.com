@@ -72,7 +72,7 @@ h2,
 h3,
 h4,
 h5 {
-  font-size: clamp(2.2rem, 3.5vw, 4.3rem);
+  font-size: clamp(2.1rem, 3.5vw, 4.3rem);
   margin: 0 auto 1rem;
 }
 .container {

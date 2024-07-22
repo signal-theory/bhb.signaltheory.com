@@ -60,7 +60,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: clamp(1.6rem, 3.3vw, 4.1rem);
+    font-size: clamp(1.4rem, 3.3vw, 4.1rem);
     font-weight: 800;
     font-family: var(--font-black);
   }
