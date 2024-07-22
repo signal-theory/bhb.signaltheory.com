@@ -1,6 +1,7 @@
 'use client';
 import { useContext } from 'react';
 import Link from 'next/link';
+import Image from 'next/image'
 import styles from './Footer.module.css';
 import FooterSVG from './FooterSVG';
 import { AppContext } from '../context/AppContext';
@@ -27,8 +28,8 @@ function Footer() {
                     <div>
                         <h4 className={styles.title}>SOCIAL</h4>
                         <div>
-                            <a className={styles.link} href="" target='_blank'>INSTAGRAM</a>
-                            <a className={styles.link} href="" target='_blank'>FACEBOOK</a>
+                            <a className={styles.link} href="https://www.instagram.com/babeshelpinbabes_st/" target='_blank'>INSTAGRAM</a>
+                            <a className={styles.link} href="https://www.facebook.com/BabesHelpinBabesST" target='_blank'>FACEBOOK</a>
                         </div>
                     </div>
                     <div>
@@ -40,9 +41,14 @@ function Footer() {
                 </div>
                 <div className={styles.copyright}>
                     <Link href="/">
-                        <img src="/logo-footer.svg" alt="Babes Helpin' Babes at Signal Theory" />
+                        <Image
+                            className={styles.logo}
+                            width={300}
+                            height={100}
+                            src="/logo-footer.svg" 
+                            alt="Babes Helpin' Babes at Signal Theory" />
                     </Link>
-                    <span>&copy; {new Date().getFullYear()} Babes Helpin' Babes</span>
+                    <span>&copy; {new Date().getFullYear()} Babes Helpin&apos; Babes</span>
                 </div>
             </div>
         </footer>
