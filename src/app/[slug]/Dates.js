@@ -3,7 +3,9 @@ import styles from './Dates.module.css';
 
 function Dates({ headline, paragraph, importantDates }) {
     return (
-        <section className={styles.container}>
+        <>
+        {importantDates.length > 0 && (
+            <section className={styles.container}>
             <h2>{headline}</h2>
             <p>{paragraph}</p>
             <div className={styles.dates}>
@@ -16,6 +18,8 @@ function Dates({ headline, paragraph, importantDates }) {
             ))}
             </div>
         </section>
+        )}
+        </>
     )
 }
 export default Dates;

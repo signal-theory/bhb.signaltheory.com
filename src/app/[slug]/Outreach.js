@@ -3,6 +3,8 @@ import styles from './Outreach.module.css';
 
 function Outreach({ headline, paragraph, listEvents }) {
     return (
+        <>
+        {listEvents.length > 0 && (
         <section className={styles.container} id="outreach">
             <h2>{headline}</h2>
             <p>{paragraph}</p>
@@ -27,6 +29,8 @@ function Outreach({ headline, paragraph, listEvents }) {
                 ))}
             </div>
         </section>
+        )}
+        </>
     )
 }
 export default Outreach;

@@ -91,7 +91,8 @@ button.question.active::after {
   
   
 .answer a {
-    font-weight: bold;
+    font-weight: normal;
+    text-decoration: underline;
     color: inherit;
 }
 .answer a:active,

@@ -17,6 +17,10 @@ export default async function Page({ params }) {
     const { slug } = params;
     let data;
     let titleImage;
+    let checkRegistration;
+    let paperRegistrationEN;
+    let paperRegistrationES;
+    let onlineRegistration;
     let importantDates = [];
     let faqs = [];
     let beforeChecklist = [];
@@ -38,6 +42,10 @@ export default async function Page({ params }) {
             if (data.acf.title_image) {
                 titleImage = await fetchACFImage(data.acf.title_image);
             }
+            checkRegistration = data.acf.check_registration || '';
+            paperRegistrationEN = data.acf.paper_registration_english || '';
+            paperRegistrationES = data.acf.paper_registration_spanish || '';
+            onlineRegistration = data.acf.online_registration || '';
             importantDates = data.acf.important_dates || [];
             faqs = data.acf.faqs || [];
             beforeChecklist = data.acf.before_election_day || [];
@@ -96,7 +104,11 @@ export default async function Page({ params }) {
                     slug={slug}
                 />
                 <VoterLinks
-                    headline="Are you registered to raise your voice?" />
+                    headline="Are you registered to raise your voice?"
+                    checkRegistration={checkRegistration}
+                    paperRegistrationEN={paperRegistrationEN}
+                    paperRegistrationES={paperRegistrationES}
+                    onlineRegistration={onlineRegistration} />
                 <Dates
                     headline="Dates that are a Big F*cking Deal"
                     paragraph="Jot these deadlines down so that you're ready to talk your sh*t at the polls when the time comes."

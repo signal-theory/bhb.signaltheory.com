@@ -31,6 +31,8 @@ function FAQ({ headline, faqs }) {
     }, []); 
 
     return (
+        <>
+        {faqs.length > 0 && (
         <section className={styles.container} id="faqs">
             <div className={`shake ${styles.firecracker}`}></div>
             <h2>{headline}</h2>
@@ -50,13 +52,14 @@ function FAQ({ headline, faqs }) {
                             role="region"
                             className={`${styles.answer} ${toggled === index ? styles.open : ''}`}  // Remove hidden attribute
                             aria-labelledby={`accordion${index + 1}id`}
-                        >
-                            {item.answer}
-                        </div>
+                            dangerouslySetInnerHTML={{ __html: item.answer }} 
+                        />
                     </div>
                 ))}
             </div>
         </section>
+        )}
+        </>
     );
 }
 export default FAQ;

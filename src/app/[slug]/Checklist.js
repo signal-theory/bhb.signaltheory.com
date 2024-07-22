@@ -32,6 +32,8 @@ function Checklist({ headline, paragraph, beforeChecklist, dayofChecklist, check
     }, []); 
 
     return (
+        <>
+        {(beforeChecklist.length > 0 || dayofChecklist.length > 0) && (
         <section className={styles.container} id="make-a-plan">
             <h2>{headline}</h2>
             <p>{paragraph}</p>
@@ -67,6 +69,8 @@ function Checklist({ headline, paragraph, beforeChecklist, dayofChecklist, check
             </div>
             <div className={`rollBottom ${styles.voteCircle}`}></div>
         </section>
+        )}
+        </>
     )
 }
 export default Checklist;

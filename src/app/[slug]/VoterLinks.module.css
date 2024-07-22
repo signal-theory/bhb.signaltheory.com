@@ -4,19 +4,16 @@
 }
 .linkContainer {
     position: relative;
-    padding: 2rem 0;
-    /* Grid Fallback */
+    padding: 2vw 0;
     display: flex;
-    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     
-    /* Supports Grid */
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-gap: 1em;
 }
 @media screen and (max-width: 555px) {
     .linkContainer {
-        grid-template-columns: 1fr 1fr;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 .link {
@@ -26,6 +23,7 @@
     align-items: center;
     text-align: center;
     font-weight: bold;
+    padding: 2vw;
 }
 .icon {
     margin-bottom: 10px;
