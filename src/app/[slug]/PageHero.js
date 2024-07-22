@@ -36,7 +36,7 @@ function Hero({ titleImage, titleImageAlt, pageTitle}) {
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw"
                 />
             </>
-            ) : <h1>{pageTitle}</h1>}
+            ) : <h1 className={styles.image}>{pageTitle}</h1>}
         </section>
     )
 }

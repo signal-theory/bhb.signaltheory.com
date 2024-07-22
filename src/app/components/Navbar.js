@@ -1,10 +1,32 @@
-
 'use client';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import Link from 'next/link';
 import styles from "./Navbar.module.css";
+import { AppContext } from '../context/AppContext';
+import { useMyState } from '../context/useMyState';
 
 function Navbar() {
+
+    // handle selectedState functions
+    const { setMyState } = useContext(AppContext); 
+    const { selectedMyState } = useMyState();
+    const [isMounted, setIsMounted] = useState(false);
+
+    const handleStateSelect = (state) => {
+        setMyState(state);
+    };
+
+    const handleLinkClick = (e, state) => {
+        if (!selectedMyState) {
+            console.log('pick a state first')
+            e.preventDefault();
+            // setShowPopup(true);
+        } else {
+            // handleStateSelect(state);
+        }
+    };
+
+    // handle navbar background color on scroll
     const [scrolled, setScrolled] = useState(false);
 
     useEffect(() => {
@@ -22,6 +44,10 @@ function Navbar() {
         };
     }, []);
 
+    useEffect(() => {
+        setIsMounted(true);
+    }, []);
+
     return (
         <>
             <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`}>
@@ -30,23 +56,27 @@ function Navbar() {
                         <Link href="/" className={styles.logo}><span className='screen-reader-only'>HOME</span></Link>
                     </li>
                     <li>
-                        <Link href="/voting-in-missouri">VOTING IN MISSOURI</Link>
+                        <Link href="/voting-in-missouri" onClick={() => handleStateSelect('voting-in-missouri')}>VOTING IN MISSOURI</Link>
                     </li>
                     <li>
-                        <Link href="/voting-in-kansas">VOTING IN KANSAS</Link>
+                        <Link href="/voting-in-kansas" onClick={() => handleStateSelect('voting-in-kansas')}>VOTING IN KANSAS</Link>
                     </li>
                     <li>
-                        <Link href="/voting-in-texas">VOTING IN TEXAS</Link>
+                        <Link href="/voting-in-texas" onClick={() => handleStateSelect('voting-in-texas')}>VOTING IN TEXAS</Link>
                     </li>
-                    <li>
-                        <Link href="/">FAQs</Link>
-                    </li>
-                    <li>
-                        <Link href="/">MAKE A PLAN</Link>
-                    </li>
-                    <li>
-                        <Link href="/">BHB OUTREACH</Link>
-                    </li>
+                    {isMounted && selectedMyState && (
+                        <>
+                            <li>
+                                <Link href={`/${selectedMyState.toLowerCase()}#faqs`} onClick={(e) => handleLinkClick(e, selectedMyState)}>FAQs</Link>
+                            </li>
+                            <li>
+                                <Link href={`/${selectedMyState.toLowerCase()}#make-a-plan`} onClick={(e) => handleLinkClick(e, selectedMyState)}>MAKE A PLAN</Link>
+                            </li>
+                            <li>
+                                <Link href={`/${selectedMyState.toLowerCase()}#outreach`} onClick={(e) => handleLinkClick(e, selectedMyState)}>BHB OUTREACH</Link>
+                            </li>
+                        </>
+                    )}
                 </ul>
             </nav>
         </>

@@ -1,7 +1,7 @@
 .container {
     background-color: var(--yellow-hex);
     color: var(--blue-hex);
-    padding: 9vw;
+    padding: calc(9vw + 90px) 8vw;
     text-align: center;
     position: relative;
 }
@@ -67,8 +67,8 @@
     background: transparent url(/stickers/voteCircle.svg) no-repeat;
     background-position: top right;
     background-size: contain;
-    width: calc(20vw + 40px);
-    height: calc(20vw + 40px);
+    width: calc(15vw + 40px);
+    height: calc(15vw + 40px);
     z-index:4;
     pointer-events: none;
 }

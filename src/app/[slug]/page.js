@@ -13,33 +13,6 @@ import Outreach from './Outreach';
 import Babes from '../components/Babes';
 import Footer from './Footer';
 
-export async function generateMetadata({ params }) {
-    const { slug } = params;
-    try {
-        const metadata = await fetchMetadata(slug);
-        const metadataBase = METADATABASE_API_URL;
-        if (!metadata) {
-            console.error("Metadata is undefined");
-            return {};
-        }
-        return {
-            metadataBase,
-            title: metadata.title,
-            description: metadata.description,
-            openGraph: {
-                images: metadata.ogImage ? [{ url: metadata.ogImage }] : []
-            },
-            jsonld: metadata.yoastMetadata?.schema?.["@graph"]
-        };
-    } catch (error) {
-        console.error("Error in generateMetadata:", error);
-        return {
-            title: 'Error',
-            description: 'Failed to fetch metadata',
-        };
-    }
-}
-
 export default async function Page({ params }) {
     const { slug } = params;
     let data;
@@ -52,38 +25,28 @@ export default async function Page({ params }) {
     let babesList = [];
     let babesListWithImages = [];
     let checklistLink;
+
     try {
-        const response = await fetchPageData({slug});
+        const response = await fetchPageData({ slug });
         data = response[0];
         if (!data || !data.acf) {
             console.error("Data or ACF is undefined", data);
             return <div>Error loading page</div>;
         }
+
         try {
-            if (data.acf && data.acf.title_image) {
-              titleImage = await fetchACFImage(data.acf.title_image);
+            if (data.acf.title_image) {
+                titleImage = await fetchACFImage(data.acf.title_image);
             }
-            if (data.acf && data.acf.important_dates) {
-                importantDates = data.acf.important_dates;
-            }
-            if (data.acf && data.acf.faqs) {
-                faqs = data.acf.faqs;
-            }
-            if (data.acf && data.acf.before_election_day) {
-                beforeChecklist = data.acf.before_election_day;
-            }
-            if (data.acf && data.acf.day_of_election) {
-                dayofChecklist = data.acf.day_of_election;
-            }
-            if (data.acf && data.acf.outreach_events) {
-                listEvents = data.acf.outreach_events;
-            }
-            if (data.acf && data.acf.checklist_download_pdf) {
-                checklistLink = data.acf.checklist_download_pdf;
-            }
-          } catch (error) {
-            console.error("Error fetching title image:", data.acf.title_image);
-          }
+            importantDates = data.acf.important_dates || [];
+            faqs = data.acf.faqs || [];
+            beforeChecklist = data.acf.before_election_day || [];
+            dayofChecklist = data.acf.day_of_election || [];
+            listEvents = data.acf.outreach_events || [];
+            checklistLink = data.acf.checklist_download_pdf || '';
+        } catch (error) {
+            console.error("Error fetching ACF data:", error);
+        }
 
         // Fetch Babes section data by pageID
         const babesResponse = await fetchPageData({ pageID: 49 });
@@ -123,13 +86,9 @@ export default async function Page({ params }) {
         );
     }
 
-    // Log the rendered output to help identify discrepancies
-    // console.log("Server-rendered data:", data);
-
     return (
         <main className={styles.innerMain}>
             <div className='container'>
-                
                 <PageHero 
                     pageTitle={data.title.rendered} 
                     titleImage={titleImage?.sourceUrl || ''}
@@ -137,7 +96,6 @@ export default async function Page({ params }) {
                 />
                 <VoterLinks
                     headline="Are you registered to raise your voice?" />
-               
                 <Dates
                     headline="Dates that are a Big F*cking Deal"
                     paragraph="Jot these deadlines down so that you're ready to talk your sh*t at the polls when the time comes."
@@ -154,7 +112,6 @@ export default async function Page({ params }) {
                     beforeChecklist={beforeChecklist}
                     dayofChecklist={dayofChecklist}
                     checklistLink={checklistLink} />
-   
                 <Congratulations />
                 <Outreach
                     headline="Come b*tch with us" 
@@ -164,9 +121,7 @@ export default async function Page({ params }) {
                     headline="THESE BABES V*TE"
                     paragraph="We're ready to go off at the polls. Will we see you there?"
                     babesList={babesListWithImages} />
-                <Footer
-                />
-
+                <Footer />
             </div>
         </main>
     );

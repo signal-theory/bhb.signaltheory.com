@@ -1,7 +1,7 @@
 .container {
     background-color: var(--blue-hex);
     color: white;
-    padding: 9vw;
+    padding:  calc(9vw + 90px) 8vw;
     text-align: center;
 }
 .dates {

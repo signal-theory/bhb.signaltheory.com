@@ -1,7 +1,7 @@
 .container {
     position: relative;
     color: var(--blue-hex);
-    padding: 10vw 9vw 5vw;
+    padding: calc(9vw + 90px) 9vw 6vw;
     text-align: center;
 }
 .firecracker {

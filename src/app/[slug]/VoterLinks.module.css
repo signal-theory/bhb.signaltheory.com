@@ -1,5 +1,5 @@
 .container {
-    padding: 15vw 2vw 9vw;
+    padding:  calc(13vw + 90px) 2vw 9vw;
     position: relative;
 }
 .linkContainer {

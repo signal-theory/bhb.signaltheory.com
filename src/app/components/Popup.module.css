@@ -1,0 +1,26 @@
+
+.popup {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 90%;
+    max-width: 1200px;
+    height: 19.9vh;
+    background-color: white;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    font-weight:700;
+    transform: translate(-50%, 0);
+    transition: all 0.2s ease-in-out;
+    z-index: 3;
+}
+.open {
+    transform: translate(-50%, -40px);
+}
+.title {
+    font-family: var(--font-sans);
+    font-size: 1.2rem;
+    margin: 0.5rem auto 0;
+}

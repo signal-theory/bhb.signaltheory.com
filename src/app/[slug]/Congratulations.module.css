@@ -1,6 +1,6 @@
 .container {
     background-color: var(--red-hex);
-    padding: 9vw 4vw;
+    padding:  calc(11vw + 90px) 4vw;
     text-align: center;
     color: var(--blue-hex)
 }

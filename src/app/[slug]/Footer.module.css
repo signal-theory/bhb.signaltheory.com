@@ -1,7 +1,7 @@
 .container {
     background-color: var(--blue-hex);
     color: white;
-    padding: 9vw 2vw 6vw;
+    padding:  calc(7vw + 90px) 2vw 6vw;
     text-align: center;
 }
 .menu {
@@ -19,6 +19,10 @@
     letter-spacing: 0.1rem;
     margin: 0.2rem 0.75rem 0;
 }
+.image svg {
+    width: 100%;
+    max-width: 1300px;
+}
 .link {
     display: block;
     color: white;
@@ -26,7 +30,8 @@
     font-family: var(--font-sans);
     font-size: clamp(1.4rem, 2.6vw, 3.6rem);
     line-height: 1;
-    margin: 0 0 1.2vw;
+    margin: 0 auto 1.2vw 0;
+    text-align: left;
 }
 .copyright{
     margin: 6vw 0 0;
@@ -38,4 +43,16 @@
 }
 .copyright img {
     max-width: 330px;
+}
+.contactBtn {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    padding: 0 2vw;
+    margin: 0 2rem 0 auto;
+    height:60px;
+    background-color: black;
+    color: white;
+    font-weight: 700;
+    font-size: 1rem;
 }
