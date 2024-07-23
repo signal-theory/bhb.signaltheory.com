@@ -1,4 +1,4 @@
-export const METADATABASE_API_URL = "https://bhb-signaltheory.com"
+export const METADATABASE_API_URL = "https://bhb-vote.vercel.app"
 export const CPT_API_URL = "https://bhb-signaltheory.mysites.io/wp-json/wp/v2"
 export const POSTS_API_URL = "https://bhb-signaltheory.mysites.io/wp-json/wp/v2/posts"
 export const PAGES_API_URL = "https://bhb-signaltheory.mysites.io/wp-json/wp/v2/pages"
