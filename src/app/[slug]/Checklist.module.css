@@ -74,11 +74,43 @@
 }
 .shareBtn span {
     font-weight: 700;
-    margin: 0 1rem
+    margin: 0 1rem;
+    height: 54px;
+    display: flex;
+    align-items: center;
 }
-
+/* @media screen and (max-width: 500px) { */
+    .links {
+        max-width: 400px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .link {
+        width: 100%;
+        display: flex;
+    }
+    .link span {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+    }
+    .shareBtn {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: auto;
+        margin: 0 auto;
+        padding: 0;
+    }
+/* } */
 .shareLinks {
     width: 0;
+    height: 0;
     opacity: 0;
     pointer-events: none;
 }
@@ -89,5 +121,5 @@
     pointer-events: all;
 }
 .openShareLinks button {
-    margin: 0 0.1rem
+    margin: 0 0.1rem 1rem;
 }

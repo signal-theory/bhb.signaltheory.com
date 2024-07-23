@@ -70,8 +70,7 @@ function Checklist({ headline, paragraph, beforeChecklist, dayofChecklist, check
                 <button 
                     id="share" 
                     className={`button ${styles.shareBtn}`}
-                    onClick={() => openShareLinks(!shareLinks)}
-                    style={{marginLeft: '10px'}}>
+                    onClick={() => openShareLinks(!shareLinks)}>
                         <span>SHARE</span>
                         <div className={shareLinks ? styles.openShareLinks : styles.shareLinks}>
                         <FacebookShare 

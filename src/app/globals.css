@@ -126,7 +126,7 @@ h5 {
   display: flex;
   align-items: center;
   position: relative;
-  padding: 0 2vw;
+  padding: 0 calc(2vw + 5px);
   height:60px;
   margin-top:10px;
   border-width: 3px;
