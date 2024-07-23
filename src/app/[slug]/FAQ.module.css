@@ -6,13 +6,13 @@
 }
 .firecracker {
     position: absolute;
-    top: -6vw;
-    right: calc(50px + 15vw);
+    top: calc(-10vw - 30px);
+    right: calc(80px + 15vw);
     background: transparent url(/stickers/02.svg) no-repeat;
     background-position: top right;
     background-size: contain;
-    width: 22vw;
-    height: 20vw;
+    width: calc(30vw + 45px);
+    height: calc(25vw + 40px);
     z-index:4;
     pointer-events: none;
 }
