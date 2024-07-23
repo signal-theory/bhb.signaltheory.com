@@ -1,7 +1,8 @@
 
 .customCursor {
     position: absolute;
-    top: -200px;
+    top: 0;
+    left: 0;
     transform: translate(-23px, -42px);
     width: 112px;
     height: 128px;
@@ -13,4 +14,11 @@
   .active {
     background: transparent url('/cursor-active.svg') center no-repeat;
     background-size: contain;
+  }
+  @media screen and (max-width: 768px) {
+    .customCursor {
+        width: 0;
+        height: 0;
+        display: none;
+    }
   }
