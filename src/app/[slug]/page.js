@@ -13,6 +13,32 @@ import Outreach from './Outreach';
 import Babes from '../components/Babes';
 import Footer from './Footer';
 
+export async function generateMetadata({ params }) {
+    const { slug } = params;
+    try {
+        const metadata = await fetchMetadata(slug);
+        const metadataBase = METADATABASE_API_URL;
+
+        console.log("Fetched metadata:", metadata); // Debugging log
+
+        return {
+            metadataBase,
+            title: metadata.title,
+            description: metadata.description,
+            openGraph: {
+                images: metadata.ogImage ? [{ url: metadata.ogImage }] : []
+            },
+            jsonld: metadata.yoastMetadata?.schema?.["@graph"]
+        };
+    } catch (error) {
+        console.error("Error in generateMetadata:", error);
+        return {
+            title: 'Error',
+            description: 'Failed to fetch metadata',
+        };
+    }
+}
+
 export default async function Page({ params }) {
     const { slug } = params;
     let data;
