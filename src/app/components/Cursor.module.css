@@ -1,0 +1,16 @@
+
+.customCursor {
+    position: absolute;
+    transform: translate(-23px, -42px);
+    width: 112px;
+    height: 128px;
+    background: transparent url('/cursor-default.svg') center no-repeat;
+    background-size: contain;
+    z-index: 9999999999;
+    pointer-events: none;
+  }
+  .active {
+
+    background: transparent url('/cursor-active.svg') center no-repeat;
+    background-size: contain;
+  }

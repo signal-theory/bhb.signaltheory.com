@@ -26,6 +26,7 @@
     letter-spacing: 0.1rem;
     margin: 0.2rem 0.75rem 0;
     width: 20vw;
+    max-width: 105px;
     flex-shrink: 0;
 }
 .image svg {

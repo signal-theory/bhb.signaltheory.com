@@ -19,7 +19,7 @@ export async function generateMetadata({ params }) {
         const metadata = await fetchMetadata(slug);
         const metadataBase = METADATABASE_API_URL;
 
-        console.log("Fetched metadata:", metadata); // Debugging log
+        // console.log("Fetched metadata:", metadata); // Debugging log
 
         return {
             metadataBase,

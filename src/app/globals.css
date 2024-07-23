@@ -30,25 +30,24 @@ body {
   overflow-x: hidden;
   overflow-y:scroll;
   font-size: 18px;
+  cursor: none !important;
 }
 
 body {
   color: var(--blue-hex);
   background: var(--yellow-hex);
-  cursor: url('/cursor-default.png'), auto;
-}
-body.mouse-down {
-  cursor: url('/cursor-active.png'), auto;
 }
 
 a {
   color: inherit;
   text-decoration: none;
+  cursor: none !important;
 }
 button {
   background-color: transparent;
   border: none;
   appearance: none;
+  cursor: none !important;
 }
 p {
   margin: 0 0 0.5rem;
