@@ -82,36 +82,38 @@
     z-index:4;
     pointer-events: none;
 }
-.shareBtn span {
-    font-weight: 700;
-    margin: 0 1rem;
-    height: 54px;
-    display: flex;
-    align-items: center;
-}
+
 /* @media screen and (max-width: 500px) { */
     .links {
         max-width: 400px;
         margin: 0 auto;
         display: flex;
-        flex-direction: column;
+        /* flex-direction: column;
         justify-content: center;
-        align-items: center;
+        align-items: center; */
     }
     .link {
         width: 100%;
-        display: flex;
+        margin: 0 0.5rem;
+        height: 76px;
+        /* display: flex; */
+    }
+    .link:hover::before {
+        transform: translateY(30px);
     }
     .link span {
         width: 100%;
         text-align: center;
         justify-content: center;
+        white-space: nowrap;
+        height: 66px;
+        margin-top: 7px
     }
     .shareBtn {
-        display: flex;
+        /* display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
+        justify-content: center; */
         width: 100%;
         height: auto;
         margin: 0 auto;
@@ -120,15 +122,18 @@
 /* } */
 .shareLinks {
     width: 0;
-    height: 0;
+    height: 65px;
     opacity: 0;
     pointer-events: none;
+    margin-top: 1rem;
 }
 
 .openShareLinks {
     width: auto;
+    height: 65px;
     opacity: 1;
     pointer-events: all;
+    margin-top: 1rem;
 }
 .openShareLinks button {
     margin: 0 0.1rem 1rem;

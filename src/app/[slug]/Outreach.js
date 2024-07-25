@@ -21,7 +21,7 @@ function Outreach({ headline, paragraph, listEvents }) {
                         <div>
                             <div className={styles.title}>{item.venue_time}</div>
                             <div className={styles.description} style={{marginBottom: '1rem'}}>{item.address}</div>
-                            {item.link && <a href={item.link.url} className={`btn btn-yellow-outline ${styles.link}`} target={item.link.target}>
+                            {item.link && <a href={item.link.url} className={`btn btn-blue-fill ${styles.link}`} target={item.link.target}>
                                 <span>{item.link.title}</span>
                             </a>}
                         </div>

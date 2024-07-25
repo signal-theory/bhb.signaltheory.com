@@ -30,7 +30,9 @@
 }
 .image {
     position: relative;
-    max-width: 90%;
+    max-width: 1000px;
+    max-height: 180px;
+    width: 90%;
 }
 @keyframes burstIn {
     from {

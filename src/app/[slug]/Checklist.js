@@ -86,15 +86,17 @@ function Checklist({ headline, paragraph, beforeChecklist, dayofChecklist, check
                 </div>
             </div>
             <div className={styles.links}>
-                {checklistLink && <a href={checklistLink.sourceUrl} className={`btn btn-blue ${styles.link}`} target="_blank">
+                {checklistLink && <a href={checklistLink.sourceUrl} className={`btn btn-blue-fill ${styles.link}`} target="_blank">
                     <span>DOWNLOAD CHECKLIST</span>
                 </a>}
                 <button 
                     id="share" 
-                    className={`button ${styles.shareBtn}`}
+                    className={`btn btn-yellow-fill ${styles.shareBtn}`}
                     onClick={() => openShareLinks(!shareLinks)}>
                         <span>SHARE</span>
-                        <div className={shareLinks ? styles.openShareLinks : styles.shareLinks}>
+                </button>
+            </div>
+            <div className={shareLinks ? styles.openShareLinks : styles.shareLinks}>
                         <FacebookShare 
                             url={shareUrl} 
                             quote={title}
@@ -126,8 +128,6 @@ function Checklist({ headline, paragraph, beforeChecklist, dayofChecklist, check
                                 url={shareUrl}
                                 round blankTarget size={size}  />
                     </div>
-                </button>
-            </div>
             
             <div className={`rollBottom ${styles.voteCircle}`}></div>
         </section>
