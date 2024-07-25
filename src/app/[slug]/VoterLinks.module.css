@@ -22,9 +22,11 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-weight: bold;
     margin: 0 2vw;
+}
+.link span {
     text-transform: uppercase;
+    font-weight: 700;
 }
 .icon {
     margin-bottom: 10px;

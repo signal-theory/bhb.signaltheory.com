@@ -20,7 +20,7 @@ const linkData = [
                                 width={100}
                                 height={100}
                                 src={link.icon} alt="icon" />
-                            {link.title}
+                           <span dangerouslySetInnerHTML={{ __html: link.title}} />
                         </a>
                     )
                 ))}

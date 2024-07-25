@@ -5,9 +5,9 @@ import styles from './Cards.module.css'
 import { AppContext } from '../context/AppContext';
 
 const cardData = [
-    { title: 'MO', linkTo: '/voting-in-missouri', name: 'voting-in-missouri' },
-    { title: 'KS', linkTo: '/voting-in-kansas', name: 'voting-in-kansas' },
-    { title: 'TX', linkTo: '/voting-in-texas', name: 'voting-in-texas' }
+    { title: 'MISSOURI', linkTo: '/voting-in-missouri', name: 'voting-in-missouri' },
+    { title: 'KANSAS', linkTo: '/voting-in-kansas', name: 'voting-in-kansas' },
+    { title: 'TEXAS', linkTo: '/voting-in-texas', name: 'voting-in-texas' }
 ];
 
 function Cards() {
