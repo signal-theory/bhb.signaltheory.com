@@ -26,9 +26,6 @@ function Hero() {
             <h1 className='screen-reader-only'>Bitch With Your Ballot</h1>
             <p>It&apos;s no secret that things are a bit of a sh*t show right now. If you&apos;ve got something to say about it, say it with your vote.</p>
             <p className='font-weight-bold'>SELECT YOUR STATE AND MAKE A VOTING PLAN</p>
-            <svg width="84" height="47" viewBox="0 0 84 47" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M68.0959 19.5561V0H15.903V19.5561H0L41.9995 47L84 19.5561H68.0959Z" fill="#ED4138"/>
-            </svg>
 
         </div>
     )
