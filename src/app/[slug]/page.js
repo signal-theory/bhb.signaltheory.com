@@ -2,6 +2,7 @@ import { METADATABASE_API_URL } from '@/app/lib/constants';
 import { fetchMetadata, fetchPageData, fetchACFImage } from '@/app/lib/utils';
 import styles from "./page.module.css";
 
+import NavbarState from '../components/NavbarState';
 import PageHero from './PageHero';
 import VoterLinks from './VoterLinks';
 import Dates from './Dates';
@@ -121,6 +122,8 @@ export default async function Page({ params }) {
     }
 
     return (
+        <>
+        <NavbarState />
         <main className={styles.innerMain}>
             <div className='container'>
                 <PageHero 
@@ -163,5 +166,6 @@ export default async function Page({ params }) {
                 <Footer />
             </div>
         </main>
+        </>
     );
 }

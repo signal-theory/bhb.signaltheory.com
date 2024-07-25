@@ -5,7 +5,7 @@ function Dates({ headline, paragraph, importantDates }) {
     return (
         <>
         {importantDates.length > 0 && (
-            <section className={styles.container}>
+            <section className={styles.container} id="deadlines">
             <h2>{headline}</h2>
             <p>{paragraph}</p>
             <div className={styles.dates}>

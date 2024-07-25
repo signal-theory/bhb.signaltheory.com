@@ -9,7 +9,7 @@ const linkData = [
     { title: 'Online Registration', icon:'/icon-onlineRegistration.svg', linkTo: onlineRegistration}
 ];
     return (
-        <div className={styles.container}>
+        <div className={styles.container} id="voter-links">
             <h2>{headline}</h2>
             <div className={styles.linkContainer}>
                 {linkData.map((link, index) => (

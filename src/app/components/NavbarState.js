@@ -6,12 +6,22 @@ import styles from "./Navbar.module.css";
 import { AppContext } from '../context/AppContext';
 import { useMyState } from '../context/useMyState';
 
-function Navbar() {
+function NavbarState() {
     const pathname = usePathname();
     const isHomePage = pathname === '/';
     // handle selectedState functions
     const { setMyState } = useContext(AppContext); 
     const { selectedMyState } = useMyState();
+    let navState;
+    if (selectedMyState === "voting-in-missouri") {
+        navState = 'MISSOURI'
+    }
+    if (selectedMyState === "voting-in-kansas") {
+        navState = 'KANSAS'
+    }
+    if (selectedMyState === "voting-in-texas") {
+        navState = 'TEXAS'
+    }
     const [isMounted, setIsMounted] = useState(false);
 
     const handleStateSelect = (state) => {
@@ -50,27 +60,20 @@ function Navbar() {
                     {isMounted && (
                         <>
                         <li>
-                            <Link href="/voting-in-missouri"onClick={() => handleStateSelect('voting-in-missouri')}>VOTING IN MISSOURI</Link>
+                            <Link href={`#voter-links`}>VOTING IN {navState}</Link>
                         </li>
                         <li>
-                            <Link href="/voting-in-kansas" onClick={() => handleStateSelect('voting-in-kansas')}>VOTING IN KANSAS</Link>
+                            <Link href={`#deadlines`}>DEADLINES</Link>
                         </li>
                         <li>
-                            <Link href="/voting-in-texas"  onClick={() => handleStateSelect('voting-in-texas')}>VOTING IN TEXAS</Link>
+                            <Link href={`#faqs`}>FAQs</Link>
                         </li>
-                        {selectedMyState && (
-                            <>
-                            <li>
-                                <Link href={`/${selectedMyState}#faqs`}>FAQs</Link>
-                            </li>
-                            <li>
-                                <Link href={`/${selectedMyState}#make-a-plan`}>MAKE A PLAN</Link>
-                            </li>
-                            <li>
-                                <Link href={`/${selectedMyState}#outreach`}>BHB OUTREACH</Link>
-                            </li>
-                            </>
-                         )}
+                        <li>
+                            <Link href={`#make-a-plan`}>MAKE A PLAN</Link>
+                        </li>
+                        <li>
+                            <Link href={`#outreach`}>BHB OUTREACH</Link>
+                        </li>
                         </>
                     )}
                 </ul>
@@ -79,4 +82,4 @@ function Navbar() {
     );
 }
 
-export default Navbar;
+export default NavbarState;

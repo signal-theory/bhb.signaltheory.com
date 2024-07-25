@@ -2,7 +2,6 @@
 import { METADATABASE_API_URL } from '@/app/lib/constants';
 import "./globals.css";
 import { AppProvider } from "./context/AppContext";
-import Navbar from "./components/Navbar";
 import Cursor from './components/Cursor';
 
 export const metadata = {
@@ -24,7 +23,6 @@ export default function RootLayout({ children }) {
     <html lang="en">
         <body>
           <AppProvider>
-            <Navbar />
             {children}
             <Cursor />
           </AppProvider>
