@@ -23,7 +23,8 @@
     align-items: center;
     text-align: center;
     font-weight: bold;
-    margin: 0 2vw
+    margin: 0 2vw;
+    text-transform: uppercase;
 }
 .icon {
     margin-bottom: 10px;
