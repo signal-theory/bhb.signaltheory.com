@@ -33,7 +33,7 @@ function Footer() {
                         </div>
                     </div>
                     <div>
-                        <a className={styles.contactBtn} href="mailto:babeshelpinbabes@signaltheory.com">CONTACT US</a>
+                        <a className={styles.contactBtn} href="mailto:babeshelpinbabes@signaltheory.com"><span>CONTACT US</span></a>
                     </div>
                 </div>
                 <div className={styles.image}>

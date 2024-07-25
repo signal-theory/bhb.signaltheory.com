@@ -2,7 +2,7 @@
     width:95%;
     position: absolute;
     z-index: 1;
-    top: calc(1vw + 45px);
+    top: calc(1vw + 25px);
     text-align: center;
     pointer-events: none;
 }
@@ -10,6 +10,6 @@
     width: 100%;
 }
 .headline {
-   height: calc(12vw + 80px);
+   height: calc(12vw + 60px);
    margin-bottom: 2rem;
 }
