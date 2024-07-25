@@ -2,7 +2,7 @@
     width:90%;
     position: absolute;
     z-index: 1;
-    top: calc(3vw + 90px);
+    top: calc(1vw + 90px);
     text-align: center;
     pointer-events: none;
 }
