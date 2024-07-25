@@ -39,16 +39,12 @@ function Checklist({ headline, paragraph, beforeChecklist, dayofChecklist, check
         });
     }, []); 
 
-
     const { checkedItems, setCheckedItems } = useContext(AppContext);
 
     const handleItemClick = (index) => {
         setCheckedItems((prev) => {
-            if (prev.includes(index)) {
-                return prev.filter((item) => item !== index);
-            } else {
-                return [...prev, index];
-            }
+            const newCheckedItems = prev.includes(index) ? prev.filter((item) => item !== index) : [...prev, index];
+            return newCheckedItems;
         });
     };
 

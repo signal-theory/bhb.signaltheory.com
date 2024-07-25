@@ -29,8 +29,12 @@ export const AppProvider = ({ children }) => {
 
     // Update localStorage whenever the myState changes
     useEffect(() => {
-        if (typeof window !== 'undefined' && myState) {
-            localStorage.setItem('selectedState', myState);
+        if (typeof window !== 'undefined') {
+            const currentState = localStorage.getItem('selectedState');
+            if (myState && myState !== currentState) {
+                localStorage.setItem('selectedState', myState);
+                setCheckedItems([]); // Clear checkedItems
+            }
         }
     }, [myState]);
 
