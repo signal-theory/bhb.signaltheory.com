@@ -49,6 +49,7 @@ export default async function Page({ params }) {
     let paperRegistrationES;
     let onlineRegistration;
     let importantDates = [];
+    let countdownTo;
     let faqs = [];
     let beforeChecklist = [];
     let dayofChecklist = [];
@@ -74,6 +75,7 @@ export default async function Page({ params }) {
             paperRegistrationES = data.acf.paper_registration_spanish || '';
             onlineRegistration = data.acf.online_registration || '';
             importantDates = data.acf.important_dates || [];
+            countdownTo = data.acf.countdown_date || 'primary';
             faqs = data.acf.faqs || [];
             beforeChecklist = data.acf.before_election_day || [];
             dayofChecklist = data.acf.day_of_election || [];
@@ -121,6 +123,10 @@ export default async function Page({ params }) {
         );
     }
 
+    const countdownHeadline = 'COUNTDOWN TO ' + countdownTo + ' ELECTION';
+    const primaryElection = "August, 6, 2024 7:00:00";
+    const generalElection = "November, 5, 2024 7:00:00";
+
     return (
         <>
         <NavbarState />
@@ -146,8 +152,8 @@ export default async function Page({ params }) {
                     headline="FAQs"
                     faqs={faqs} />
                 <Countdown
-                    headline="COUNTDOWN TO ELECTION"
-                    deadline="November, 5, 2024 7:00:00" /> 
+                    headline={countdownHeadline}
+                    deadline={countdownTo === 'Primary' ? primaryElection : generalElection} /> 
                 <Checklist
                     headline="Vote Like You Mean It"
                     paragraph="Use this checklist to make sure you're ready to successfully b*tch with your ballot."
