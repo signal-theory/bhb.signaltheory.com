@@ -1,6 +1,7 @@
 
 'use client';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
+import { AppContext } from '../context/AppContext';
 import styles from './Checklist.module.css';
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
@@ -38,6 +39,19 @@ function Checklist({ headline, paragraph, beforeChecklist, dayofChecklist, check
         });
     }, []); 
 
+
+    const { checkedItems, setCheckedItems } = useContext(AppContext);
+
+    const handleItemClick = (index) => {
+        setCheckedItems((prev) => {
+            if (prev.includes(index)) {
+                return prev.filter((item) => item !== index);
+            } else {
+                return [...prev, index];
+            }
+        });
+    };
+
     return (
         <>
         {(beforeChecklist.length > 0 || dayofChecklist.length > 0) && (
@@ -49,7 +63,11 @@ function Checklist({ headline, paragraph, beforeChecklist, dayofChecklist, check
                 <div>
                     <p className={styles.title}>Before Election Day</p>
                     {beforeChecklist.map((item, index) => (
-                        <div className={styles.checklistContainer} key={index}>
+                       <div 
+                            className={`${styles.checklistContainer} ${checkedItems.includes(index) ? styles.clicked : ''}`} 
+                            key={index}
+                            onClick={() => handleItemClick(index)}
+                        >
                             <div className={styles.item}>{item.checklist_item}</div>
                         </div>
                     ))}
@@ -57,7 +75,11 @@ function Checklist({ headline, paragraph, beforeChecklist, dayofChecklist, check
                 <div>
                     <p className={styles.title}>Day of Election</p>
                     {dayofChecklist.map((item, index) => (
-                        <div className={styles.checklistContainer} key={index}>
+                        <div 
+                            className={`${styles.checklistContainer} ${checkedItems.includes(index + beforeChecklist.length) ? styles.clicked : ''}`} 
+                            key={index}
+                            onClick={() => handleItemClick(index + beforeChecklist.length)}
+                        >
                             <div className={styles.item}>{item.checklist_item}</div>
                         </div>
                     ))}

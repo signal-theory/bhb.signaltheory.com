@@ -45,27 +45,33 @@ function Navbar() {
              <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`}>
                 <ul className={styles.navbarWrapper}>
                     <li>
-                        <Link href="/" className={`${styles.logo} ${isActive('/') ? styles.active : ''}`}><span className='screen-reader-only'>HOME</span></Link>
+                        <Link href="/" className={styles.logo}><span className='screen-reader-only'>HOME</span></Link>
                     </li>
+                    {isMounted && selectedMyState === "voting-in-missouri" && ( 
                     <li>
-                        <Link href="/voting-in-missouri" className={isActive('/voting-in-missouri') ? styles.active : ''} onClick={() => handleStateSelect('voting-in-missouri')}>VOTING IN MISSOURI</Link>
+                        <Link href="/voting-in-missouri"onClick={() => handleStateSelect('voting-in-missouri')}>VOTING IN MISSOURI</Link>
                     </li>
+                    )}
+                    {isMounted && selectedMyState === "voting-in-kansas" && ( 
                     <li>
-                        <Link href="/voting-in-kansas" className={isActive('/voting-in-kansas') ? styles.active : ''} onClick={() => handleStateSelect('voting-in-kansas')}>VOTING IN KANSAS</Link>
+                        <Link href="/voting-in-kansas" onClick={() => handleStateSelect('voting-in-kansas')}>VOTING IN KANSAS</Link>
                     </li>
+                    )}
+                    {isMounted && selectedMyState === "voting-in-texas" && ( 
                     <li>
-                        <Link href="/voting-in-texas" className={isActive('/voting-in-texas') ? styles.active : ''} onClick={() => handleStateSelect('voting-in-texas')}>VOTING IN TEXAS</Link>
+                        <Link href="/voting-in-texas"  onClick={() => handleStateSelect('voting-in-texas')}>VOTING IN TEXAS</Link>
                     </li>
+                    )}
                     {isMounted && selectedMyState && (
                         <>
                             <li>
-                                <Link href={`/${selectedMyState.toLowerCase()}#faqs`} className={isActive(`/${selectedMyState.toLowerCase()}#faqs`) ? styles.active : ''}>FAQs</Link>
+                                <Link href={`/${selectedMyState.toLowerCase()}#faqs`}>FAQs</Link>
                             </li>
                             <li>
-                                <Link href={`/${selectedMyState.toLowerCase()}#make-a-plan`} className={isActive(`/${selectedMyState.toLowerCase()}#make-a-plan`) ? styles.active : ''}>MAKE A PLAN</Link>
+                                <Link href={`/${selectedMyState.toLowerCase()}#make-a-plan`}>MAKE A PLAN</Link>
                             </li>
                             <li>
-                                <Link href={`/${selectedMyState.toLowerCase()}#outreach`} className={isActive(`/${selectedMyState.toLowerCase()}#outreach`) ? styles.active : ''}>BHB OUTREACH</Link>
+                                <Link href={`/${selectedMyState.toLowerCase()}#outreach`}>BHB OUTREACH</Link>
                             </li>
                         </>
                     )}
