@@ -11,8 +11,8 @@ export const metadata = {
   openGraph: {
     images: [
       {
-        url: '/og-image.jpg', // Replace with your image URL
-        alt: 'B*tch With Your Ballot', // Optional: Add an alt description for the image
+        url: '/og-image.jpg',
+        alt: 'B*tch With Your Ballot',
       },
     ],
   },

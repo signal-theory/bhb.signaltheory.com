@@ -1,4 +1,9 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app). Using Wordpress CMS.
+# BABES HELPIN' BABES
+### at Signal Theory
+
+[bhb-signaltheory.com](https://bhb-signaltheory.com)
+
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app). Using Wordpress CMS [bhb-signaltheory.mysites.io/wp-admin](https://bhb-signaltheory.mysites.io/wp-admin).
 
 ## Getting Started
 
