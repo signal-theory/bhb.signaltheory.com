@@ -57,7 +57,6 @@ h1, h2, h3, h4, h5 {
   font-family: var(--font-black);
   font-weight: 800;
   font-style: normal;
-  font-size: clamp(6.6rem, 7.2vw, 7.8rem);
   margin: 0 auto;
   max-width:900px;
   text-align: center;

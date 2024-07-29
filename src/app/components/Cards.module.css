@@ -1,9 +1,10 @@
 .cardsWrapper {
     display: block;
-    position: relative;
+    position: absolute;
     background-color: var(--blue-hex);
     width: 100%;
-    height: 25vh;
+    height: 25.1vh;
+    bottom: 0;
     z-index: 4;
 }
 .cardsContainer {
