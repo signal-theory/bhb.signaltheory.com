@@ -7,7 +7,7 @@ import Cursor from './components/Cursor';
 export const metadata = {
   metadataBase: new URL(METADATABASE_API_URL),
   title: "B*tch With Your Ballot - Babes Helpin' Babes at Signal Theory",
-  description: "It's no secret that things are a bit of a sh*t show right now. If you've got something to say about it, say it with your vote.",
+  description: "If you've got something to b*tch about, say it with your vote.",
   openGraph: {
     images: [
       {
