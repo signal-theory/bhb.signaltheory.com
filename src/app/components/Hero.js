@@ -1,4 +1,8 @@
+'use client';
 import styles from './Hero.module.css'
+import gsap from "gsap";
+
+
 function Hero() {
     return (
         <div className={styles.hero}>

@@ -1,4 +1,4 @@
-
+import Script from 'next/script';
 import { METADATABASE_API_URL } from '@/app/lib/constants';
 import "./globals.css";
 import { AppProvider } from "./context/AppContext";
@@ -21,12 +21,15 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-        <body>
-          <AppProvider>
-            {children}
-            <Cursor />
-          </AppProvider>
-        </body>
+      <head>
+        <Script strategy="beforeInteractive" src="https://www.bugherd.com/sidebarv2.js?apikey=c4l47bsfnx2fg7wkoxxodq" async={true} />
+      </head>
+      <body>
+        <AppProvider>
+          {children}
+          <Cursor />
+        </AppProvider>
+      </body>
     </html>
   );
 }
