@@ -1,5 +1,4 @@
 
-import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Stickers from './components/Stickers';
 import Cards from './components/Cards';

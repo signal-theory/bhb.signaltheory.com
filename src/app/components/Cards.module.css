@@ -9,19 +9,17 @@
 }
 .cardsContainer {
     position: relative;
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     height: 100%;
     width: 100%;
-    /* max-width: 1200px; */
     margin: 0 auto;
     background-color: var(--blue-hex);
 }
 
 .card {
     padding: 16px;
-    width: 33.3%;
-    display:flex;
+    display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -33,7 +31,7 @@
 }
 
 .cardTitle {
-    font-size: clamp(1.2rem, 1.5vw, 1.8rem);
+    font-size: clamp(1.3rem, 1.5vw, 1.8rem);
     font-weight: 900;
     font-family: var(--font-sans);
     color: white;
@@ -50,6 +48,9 @@
     height: 50px;
 }
 @media screen and (max-width: 999px) {
+    .cardTitle {
+        font-size:1.1rem;
+    }
     .card svg {
         width: 30px;
         height: 30px;

@@ -7,9 +7,9 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
-import { FacebookShare, TwitterShare, LinkedinShare, WhatsappShare, FacebookMessengerShare, EmailShare, RedditShare } from 'react-share-kit';
+import { FacebookShare, TwitterShare, LinkedinShare, WhatsappShare, EmailShare, RedditShare } from 'react-share-kit';
 
-function Checklist({ headline, paragraph, beforeChecklist, dayofChecklist, checklistLink, checklistShare }) {
+function Checklist({ headline, paragraph, beforeChecklist, dayofChecklist, checklistLink }) {
     
     const shareUrl = 'https://bhb.signaltheory.com';
     const title = 'Use this checklist to make sure you\'re ready to successfully b*tch with your ballot.';
@@ -110,11 +110,6 @@ function Checklist({ headline, paragraph, beforeChecklist, dayofChecklist, check
                             title={title}
                             separator=":: "
                             round blankTarget size={size} />
-                        {/* <FacebookMessengerShare
-                            url={shareUrl}
-                            redirectUri={shareUrl}
-                            appId={'dmm4kj9djk203k4liuf994p'}
-                            /> */}
                             <EmailShare
                                 url={shareUrl}
                                 subject={'Vote Like You Mean It'}

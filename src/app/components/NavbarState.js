@@ -50,33 +50,42 @@ function NavbarState() {
         setIsMounted(true);
     }, []);
 
+    const [toggled, setToggled] = useState(false);
+    const toggleNav = () => {
+        setToggled(prevState => !prevState);
+    };
+
     return (
         <>
-             <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`}>
-                <ul className={styles.navbarWrapper}>
-                    <li>
-                        <Link href="/" className={styles.logo}><span className='screen-reader-only'>HOME</span></Link>
-                    </li>
-                    {isMounted && (
-                        <>
+             <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`}> 
+                <Link href="/" className={`${styles.logo} ${toggled ? styles.logoActive  : ''}`} aria-label='Go to Homepage'>
+                    <span className='screen-reader-only'>HOME</span>
+                </Link>
+               {isMounted && ( 
+                    <ul className={`${styles.navbarWrapper} ${toggled ? styles.menuActive  : ''}`}>
                         <li>
-                            <Link href={`#voter-links`}>VOTING IN {navState}</Link>
+                            <Link href={`#voter-links`} onClick={toggleNav}>REGISTER TO VOTE</Link>
                         </li>
                         <li>
-                            <Link href={`#deadlines`}>DEADLINES</Link>
+                            <Link href={`#deadlines`} onClick={toggleNav}>DEADLINES</Link>
                         </li>
                         <li>
-                            <Link href={`#faqs`}>FAQs</Link>
+                            <Link href={`#faqs`} onClick={toggleNav}>FAQs</Link>
                         </li>
                         <li>
-                            <Link href={`#make-a-plan`}>MAKE A PLAN</Link>
+                            <Link href={`#make-a-plan`} onClick={toggleNav}>MAKE A PLAN</Link>
                         </li>
                         <li>
-                            <Link href={`#outreach`}>BHB OUTREACH</Link>
+                            <Link  href={`#outreach`} onClick={toggleNav}>BHB OUTREACH</Link>
                         </li>
-                        </>
-                    )}
-                </ul>
+                    </ul>
+                )}
+                <button 
+                    className={`${styles.toggleBtn} ${toggled ? styles.btnActive  : ''}`}
+                    aria-label="Open Navigation Menu"
+                    onClick={toggleNav}>
+                        <span className='screen-reader-only'>Toggle Menu</span>
+                </button>
             </nav>
         </>
     );

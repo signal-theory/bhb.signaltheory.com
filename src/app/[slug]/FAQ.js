@@ -44,7 +44,7 @@ function FAQ({ headline, faqs }) {
                             aria-controls={`sec${index + 1}`}
                             onClick={() => toggleAccordion(index)}
                             id={`accordion${index + 1}id`}
-                            className={`${styles.question}  ${toggled === index ? styles.active  : ''}`} >
+                            className={`${styles.question}  ${toggled === index ? styles.active  : ''}`}>
                             {item.question}
                         </button>
                         <div
