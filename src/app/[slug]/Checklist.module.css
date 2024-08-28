@@ -34,7 +34,7 @@
     background: url(/checklist.svg) center left no-repeat;
     background-size: contain;
     width: calc(30px + 1vw);
-    height: 5vw;
+    height: calc(30px + 1vw);
     flex-shrink: 0; /* Prevent shrinking */
 }
 
@@ -43,9 +43,6 @@
     display: block;
     background: url(/checklist-clicked.svg) center left no-repeat;
     background-size: contain;
-    width: calc(30px + 1vw);
-    height: 8vw;
-    flex-shrink: 0; /* Prevent shrinking */
 }
 /* @media screen and (max-width: 768px) {
     .checklistContainer::before {
