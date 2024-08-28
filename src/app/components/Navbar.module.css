@@ -46,7 +46,7 @@ ul.navbarWrapper {
     width: 55px;
     height: 50px;
     background: transparent url(/logo-b-blue.svg) center no-repeat;
-    transition: background 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
     background-size: 50px;
     z-index: 9999999;
 }
@@ -64,8 +64,6 @@ ul.navbarWrapper {
         background-size: 50px;
     }
     .logo.logoActive {
-        width: 55px;
-        height: 50px;
         background: transparent url(/logo-b-white.svg) center no-repeat;
         background-size: 50px;
     }
