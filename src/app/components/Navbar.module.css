@@ -46,7 +46,6 @@ ul.navbarWrapper {
     width: 55px;
     height: 50px;
     background: transparent url(/logo-b-blue.svg) center no-repeat;
-    transition: all 0.5s ease-in-out;
     background-size: 50px;
     z-index: 9999999;
 }
