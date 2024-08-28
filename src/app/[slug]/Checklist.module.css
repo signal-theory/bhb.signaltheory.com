@@ -44,7 +44,7 @@
     background: url(/checklist-clicked.svg) center left no-repeat;
     background-size: contain;
     width: calc(30px + 1vw);
-    height: 5vw;
+    height: 8vw;
     flex-shrink: 0; /* Prevent shrinking */
 }
 /* @media screen and (max-width: 768px) {
@@ -79,7 +79,7 @@
     background-size: contain;
     width: calc(15vw + 40px);
     height: calc(15vw + 40px);
-    z-index:4;
+    z-index: 4;
     pointer-events: none;
 }
 
