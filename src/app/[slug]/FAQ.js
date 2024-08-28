@@ -45,7 +45,7 @@ function FAQ({ headline, faqs }) {
                             onClick={() => toggleAccordion(index)}
                             id={`accordion${index + 1}id`}
                             className={`${styles.question}  ${toggled === index ? styles.active  : ''}`}>
-                            {item.question}
+                            <span>{item.question}</span>
                         </button>
                         <div
                             id={`sec${index + 1}`}
