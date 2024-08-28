@@ -42,7 +42,7 @@
 @media screen and (max-width: 768px) {
     .datesContainer {
         display: grid;
-        grid-template-columns: 30% 70%;
+        grid-template-columns: 22% 70%;
         grid-template-rows: auto auto;
     }
     .datesContainer div:nth-child(3) {
@@ -50,7 +50,7 @@
     }
     .datesContainer .date {
         width: auto;
-        font-size: 1.8rem;
+        font-size: 1.3rem;
     }
     .datesContainer div {
         margin: 0;
