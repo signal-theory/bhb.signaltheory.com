@@ -61,8 +61,9 @@ ul.navbarWrapper {
 
     .logo {
         margin: 30px;
+        background-size: 50px;
     }
-    .logoActive {
+    .logo.logoActive {
         background: transparent url(/logo-b-white.svg) center no-repeat;
         background-size: 50px;
     }
