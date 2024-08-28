@@ -83,7 +83,6 @@
     pointer-events: none;
 }
 
-/* @media screen and (max-width: 500px) { */
     .links {
         max-width: 400px;
         margin: 0 auto;
@@ -91,6 +90,13 @@
         /* flex-direction: column;
         justify-content: center;
         align-items: center; */
+    }
+    @media screen and (max-width: 500px) {
+        .links {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center; 
+        }
     }
     .link {
         width: 100%;
@@ -119,7 +125,6 @@
         margin: 0 auto;
         padding: 0;
     }
-/* } */
 .shareLinks {
     width: 0;
     height: 65px;
