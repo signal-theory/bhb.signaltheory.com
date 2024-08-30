@@ -6,7 +6,7 @@ import styles from "./Navbar.module.css";
 import { AppContext } from '../context/AppContext';
 import { useMyState } from '../context/useMyState';
 
-function NavbarState() {
+function NavbarState( {listEvents} ) {
     const pathname = usePathname();
     const isHomePage = pathname === '/';
     // handle selectedState functions
@@ -75,9 +75,10 @@ function NavbarState() {
                         <li>
                             <Link href={`#make-a-plan`} onClick={toggleNav}>MAKE A PLAN</Link>
                         </li>
+                        {listEvents.length > 0 ? 
                         <li>
                             <Link  href={`#outreach`} onClick={toggleNav}>BHB OUTREACH</Link>
-                        </li>
+                        </li> : null}
                     </ul>
                 )}
                 <button 

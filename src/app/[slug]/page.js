@@ -129,7 +129,7 @@ export default async function Page({ params }) {
 
     return (
         <>
-        <NavbarState />
+        <NavbarState listEvents={listEvents} />
         <main className={styles.innerMain}>
             <div className='container'>
                 <PageHero 
