@@ -2,7 +2,7 @@
     width:95%;
     position: absolute;
     z-index: 1;
-    top: calc(1vw + 25px);
+    top: calc(5vw + 50px);
     left: 50%;
     transform: translate(-50%, 0);
     text-align: center;
