@@ -5,16 +5,9 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
-function FAQ({ headline, faqs }) {
-
+function FAQ({ data }) {
     const [toggled, setToggled] = useState(null);
-    const toggleAccordion = (index) => {
-        if (toggled === index) {
-            return setToggled(null);
-        }
-        setToggled(index);
-    };
-
+    
     useEffect(() => {
         gsap.to(".shake", {
             scrollTrigger: {
@@ -29,6 +22,20 @@ function FAQ({ headline, faqs }) {
             ease: "none",
         });
     }, []); 
+
+    const toggleAccordion = (index) => {
+        if (toggled === index) {
+            return setToggled(null);
+        }
+        setToggled(index);
+    };
+
+    if (!data) {
+        console.error('FAQ: data prop is undefined');
+        return null;
+    }
+
+    const { headline, faqs } = data;
 
     return (
         <>

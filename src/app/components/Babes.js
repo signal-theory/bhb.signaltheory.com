@@ -2,7 +2,13 @@
 import Image from 'next/image';
 import styles from './Babes.module.css';
 
-function Babes({ headline, paragraph, babesList }) {
+function Babes({ data }) {
+    if (!data) {
+        console.error('Babes: data prop is undefined');
+        return null;
+    }
+
+    const { headline, paragraph, babesList } = data;
     return(
         <section className={styles.container}>
             <h2>{headline}</h2>

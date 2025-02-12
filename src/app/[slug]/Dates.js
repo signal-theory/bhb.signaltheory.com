@@ -1,7 +1,13 @@
 
 import styles from './Dates.module.css';
 
-function Dates({ headline, paragraph, importantDates }) {
+function Dates({ data }) {
+    if (!data) {
+        console.error('Dates: data prop is undefined');
+        return null;
+    }
+
+    const { headline, paragraph, importantDates } = data;
     return (
         <>
         {importantDates.length > 0 && (

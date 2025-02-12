@@ -1,13 +1,19 @@
 import Image from 'next/image'
 import styles from './VoterLinks.module.css';
 
-function VoterLinks({ headline, checkRegistration, paperRegistrationEN, paperRegistrationES, onlineRegistration }) {
-const linkData = [
-    { title: 'Check your Registration', icon:'/icon-checkRegistration.svg', linkTo: checkRegistration },
-    { title: 'Paper Registration (English)', icon:'/icon-paperRegistration.svg', linkTo: paperRegistrationEN },
-    { title: 'PAPER Registration (Español)', icon:'/icon-paperRegistration.svg', linkTo: paperRegistrationES },
-    { title: 'Online Registration', icon:'/icon-onlineRegistration.svg', linkTo: onlineRegistration}
-];
+function VoterLinks({ data }) {
+    if (!data) {
+        console.error('VoterLinks: data prop is undefined');
+        return null;
+    }
+    
+    const { headline, checkRegistration, paperRegistrationEN, paperRegistrationES, onlineRegistration } = data;
+    const linkData = [
+        { title: 'Check your Registration', icon:'/icon-checkRegistration.svg', linkTo: checkRegistration },
+        { title: 'Paper Registration (English)', icon:'/icon-paperRegistration.svg', linkTo: paperRegistrationEN },
+        { title: 'PAPER Registration (Español)', icon:'/icon-paperRegistration.svg', linkTo: paperRegistrationES },
+        { title: 'Online Registration', icon:'/icon-onlineRegistration.svg', linkTo: onlineRegistration}
+    ];
     return (
         <div className={styles.container} id="voter-links">
             <h2>{headline}</h2>

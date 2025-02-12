@@ -9,12 +9,12 @@ gsap.registerPlugin(ScrollTrigger);
 
 import { FacebookShare, TwitterShare, LinkedinShare, WhatsappShare, EmailShare, RedditShare } from 'react-share-kit';
 
-function Checklist({ headline, paragraph, beforeChecklist, dayofChecklist, checklistLink }) {
-    
+function Checklist({ data }) {
     const shareUrl = 'https://bhb.signaltheory.com';
     const title = 'Use this checklist to make sure you\'re ready to successfully b*tch with your ballot.';
-    const size = '40px'
-    const [ shareLinks, openShareLinks ] = useState(false)
+    const size = '40px';
+    const [ shareLinks, openShareLinks ] = useState(false);
+    const { checkedItems, setCheckedItems } = useContext(AppContext);
 
     useEffect(() => {
         gsap.to(".rollTop", {
@@ -39,8 +39,6 @@ function Checklist({ headline, paragraph, beforeChecklist, dayofChecklist, check
         });
     }, []); 
 
-    const { checkedItems, setCheckedItems } = useContext(AppContext);
-
     const handleItemClick = (index) => {
         setCheckedItems((prev) => {
             const newCheckedItems = prev.includes(index) ? prev.filter((item) => item !== index) : [...prev, index];
@@ -48,9 +46,16 @@ function Checklist({ headline, paragraph, beforeChecklist, dayofChecklist, check
         });
     };
 
+    if (!data) {
+        console.error('Checklist: data prop is undefined');
+        return null;
+    }
+
+    const { headline, paragraph, beforeChecklist, dayofChecklist, checklistLink } = data;
+
     return (
         <>
-        {(beforeChecklist.length > 0 || dayofChecklist.length > 0) && (
+        {beforeChecklist?.length > 0 && dayofChecklist?.length > 0 && (
         <section className={styles.container} id="make-a-plan">
             <h2>{headline}</h2>
             <p>{paragraph}</p>
@@ -82,7 +87,7 @@ function Checklist({ headline, paragraph, beforeChecklist, dayofChecklist, check
                 </div>
             </div>
             <div className={styles.links}>
-                {checklistLink && <a href={checklistLink.sourceUrl} className={`btn btn-blue-fill ${styles.link}`} target="_blank">
+                {checklistLink?.sourceUrl && <a href={checklistLink.sourceUrl} className={`btn btn-blue-fill ${styles.link}`} target="_blank">
                     <span>DOWNLOAD CHECKLIST</span>
                 </a>}
                 <button 
