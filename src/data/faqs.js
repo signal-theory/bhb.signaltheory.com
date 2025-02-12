@@ -2,6 +2,10 @@ export const faqsData = {
   "voting-in-kansas": {
     headline: "FAQs",
     faqs: [
+      {
+        "question": "When can I vote?",
+        "answer": "Glad you asked! Kansas' Election calendar is available <a href=\"https://sos.ks.gov/elections/important-election-dates.html\" target=\"_blank\">here</a>. In Kansas, polling locations are open from 7 AM to 7 PM. As long as you are in line by 7PM, you will be able to vote. </span>\r\n\r\n<span style=\"font-weight: 400;\">If that doesn’t work for you, you can cast an in-person absentee ballot with no excuse. For absentee voting hours and locations, find your local election authority </span><a href=\"https://sos.ks.gov/elections/county_election_officers.aspx\" target=\"_blank\" rel=\"noopener\"><span style=\"font-weight: 400;\">here</span></a><span style=\"font-weight: 400;\">. </span>."
+    },
     {
         "question": "What\'s the deal with early voting (AKA absentee voting)?",
         "answer": "<span style=\"font-weight: 400;\">If you\'re ready to pipe up at the polls, but you can\'t vote on Election Day, this is for you. </span>\r\n\r\n<span style=\"font-weight: 400;\">You can vote early in person with no excuse as long as you are registered and have a valid photo ID. Kansas voters are also allowed to vote by mail prior to Election Day. You\'ll just need to </span><a href=\"https://sos.ks.gov/forms/elections/AV1.pdf\" target=\"_blank\" rel=\"noopener\"><span style=\"font-weight: 400;\">request a mail-in ballot</span></a><span style=\"font-weight: 400;\">. Make sure to include your driver\'s license number or a copy of photo ID.</span>\r\n\r\n<span style=\"font-weight: 400;\">If that\'s the best voting plan for you, just mail your application to your local election authority. Then they\'ll send you a ballot, and you can fill it out and mail it back before Election Day. </span>"
@@ -35,6 +39,10 @@ export const faqsData = {
   "voting-in-missouri": {
     headline: "FAQs",
     faqs: [
+      {
+        "question": "When can I vote?",
+        "answer": "Glad you asked! Missouri's Election calendar is available <a href=\"https://www.sos.mo.gov/elections/calendar\" target=\"_blank\">here</a>. In Missouri, polling locations are open from 6 AM to 7 PM. As long as you are in line by 7 PM, you will be able to vote.\r\n\r\nIf that doesn’t work for you, you can cast an in-person absentee ballot with no excuse. For absentee voting hours and locations, find your local election authority <a href=\"https://www.sos.mo.gov/elections/govotemissouri/localelectionauthority\" target=\"_blank\" rel=\"noopener\">here</a>."
+    },
       {
         question: "What's the deal with early voting (AKA absentee voting)?",
         answer: `
@@ -84,6 +92,10 @@ export const faqsData = {
   "voting-in-texas": {
     headline: "FAQs",
     faqs: [
+      {
+          "question": "When can I vote? ",
+          "answer": "<span style=\"font-weight: 400;\">Glad you asked! Texas's Election calendar is available <a href=\"https://www.sos.state.tx.us/elections/voter/important-election-dates.shtml#2025\" target=\"_blank\">here</a>. In Texas, polling locations are open from 7 AM to 7 PM. As long as you are in line by 7PM, you will be able to vote. </span>\r\n\r\n<span style=\"font-weight: 400;\">If that doesn’t work for you, you can cast an in-person absentee ballot with no excuse. For absentee voting hours and locations, find information for your county election official </span><a href=\"https://www.sos.state.tx.us/elections/voter/county.shtml\"><span style=\"font-weight: 400;\">here</span></a><span style=\"font-weight: 400;\">. </span>"
+      },
     {
         "question": "What\'s the deal with early voting (AKA absentee voting)?",
         "answer": "<span style=\"font-weight: 400;\">If you\'re ready to pipe up at the polls, but you can\'t vote on Election Day, this is for you. </span>\r\n\r\n<span style=\"font-weight: 400;\">You can vote early in person with no excuse as long as you are registered and have a valid photo ID. Texas voters are also allowed to vote by mail prior to Election Day with an eligible excuse. You\'ll just need to </span><a href=\"https://www.votetexas.gov/voting-by-mail/application-for-ballot-by-mail.html\"><span style=\"font-weight: 400;\">request a mail-in ballot</span></a><span style=\"font-weight: 400;\">. See if you qualify, what documents are required </span><a href=\"https://www.votetexas.gov/voting-by-mail/index.html\"><span style=\"font-weight: 400;\">here</span></a><span style=\"font-weight: 400;\">.</span>\r\n\r\n<span style=\"font-weight: 400;\">If that\'s the best voting plan for you, just mail your application to your local election authority. Then they\'ll send you a ballot, and you can fill it out and mail it back before Election Day. </span>"
