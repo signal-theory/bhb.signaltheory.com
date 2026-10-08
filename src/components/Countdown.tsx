@@ -38,6 +38,23 @@ export function Countdown({ target, heading, electionDayLabel }: Props) {
         stagger: 0.15,
         scrollTrigger: { trigger: root.current, start: "top 70%", once: true },
       });
+      // The numbers run down from the full unit (365, 24, 60) to the time left as the rings enter.
+      gsap.utils.toArray<HTMLElement>("[data-num]", root.current).forEach((el, i) => {
+        const target = Number(el.dataset.value);
+        const full = Number(el.dataset.full);
+        if (!el.dataset.value || Number.isNaN(target)) return;
+        const counter = { v: full };
+        gsap.to(counter, {
+          v: target,
+          duration: 1.4,
+          ease: "power2.out",
+          delay: 0.3 + i * 0.15,
+          onUpdate: () => {
+            el.textContent = String(Math.round(counter.v));
+          },
+          scrollTrigger: { trigger: root.current, start: "top 70%", once: true },
+        });
+      });
       // Each gauge starts full and shrinks down to the time left, then React keeps it ticking.
       gsap.from("[data-arc]", {
         strokeDashoffset: 0,
@@ -61,9 +78,9 @@ export function Countdown({ target, heading, electionDayLabel }: Props) {
   );
 
   const units = [
-    { label: "Days", value: t?.days, frac: Math.min(1, (t?.days ?? 0) / 365) },
-    { label: "Hours", value: t?.hours, frac: (t?.hours ?? 0) / 24 },
-    { label: "Minutes", value: t?.minutes, frac: (t?.minutes ?? 0) / 60 },
+    { label: "Days", value: t?.days, full: 365, frac: Math.min(1, (t?.days ?? 0) / 365) },
+    { label: "Hours", value: t?.hours, full: 24, frac: (t?.hours ?? 0) / 24 },
+    { label: "Minutes", value: t?.minutes, full: 60, frac: (t?.minutes ?? 0) / 60 },
   ];
 
   return (
@@ -100,7 +117,13 @@ export function Countdown({ target, heading, electionDayLabel }: Props) {
                     style={{ opacity: u.frac > 0 ? 1 : 0 }}
                   />
                 </svg>
-                <span className="t-display absolute inset-0 flex items-center justify-center text-green-dark tabular-nums" style={{ fontSize: "clamp(44px, 11.7vw, 80px)" }}>
+                <span
+                  data-num
+                  data-value={u.value ?? ""}
+                  data-full={u.full}
+                  className="t-display absolute inset-0 flex items-center justify-center text-green-dark tabular-nums"
+                  style={{ fontSize: "clamp(44px, 11.7vw, 80px)" }}
+                >
                   {u.value ?? "–"}
                 </span>
               </div>
