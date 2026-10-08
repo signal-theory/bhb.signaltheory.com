@@ -16,11 +16,6 @@
         "label": "Register to vote or check your registration",
         "href": "https://www.votetexas.gov/register-to-vote/index.html",
         "icon": "check-registration"
-      },
-      {
-        "label": "Download paper registration form (English)",
-        "href": "#",
-        "icon": "paper-registration"
       }
     ]
   },

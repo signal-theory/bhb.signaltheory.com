@@ -44,9 +44,11 @@ export function RichText({ text, className = "" }: { text: string; className?: s
         const lines = block.split("\n");
         if (lines.every((l) => l.trim().startsWith("- "))) {
           return (
-            <ul key={bi} className="list-disc space-y-1 pl-6">
+            <ul key={bi} className="space-y-2">
               {lines.map((l, li) => (
-                <li key={li}>{inline(l.trim().slice(2), `${bi}-${li}`)}</li>
+                <li key={li} className="relative pl-6 before:absolute before:top-[0.55em] before:left-1 before:size-[9px] before:rounded-full before:bg-red-light">
+                  {inline(l.trim().slice(2), `${bi}-${li}`)}
+                </li>
               ))}
             </ul>
           );
