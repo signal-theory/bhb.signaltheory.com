@@ -67,6 +67,10 @@ All motion is GSAP + ScrollTrigger and respects `prefers-reduced-motion` (the pa
 
 Line geometry was derived from the Figma vectors (the arcs are concentric ellipses because the track pills were scaled non-uniformly). Stickers and icons are the exported SVGs in `public/graphics/`.
 
+## Social share images
+
+Links unfurl with 1200 x 630 cards from `public/og-images/` (`home.png` plus one per state). Each is a screenshot of the hidden page `/og/<variant>`, so it uses the real fonts and stickers. After changing the headline or a state, run the dev server and `npm run og:images` to regenerate them.
+
 ## Checklist
 
 Checks are saved in `localStorage` under `bhb-vote-checklist-v1`. "Download checklist" serves `public/checklist.pdf`, which is a print of the hidden page `/checklist/print` (same fonts and artwork as the site). After editing the checklist, run the dev server and `npm run checklist:pdf`, which prints that page with headless Chrome. "Share" uses the Web Share API with a copy-link fallback.

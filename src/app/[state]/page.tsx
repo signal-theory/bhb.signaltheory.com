@@ -26,9 +26,14 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const { state } = await params;
   const data = getState(state);
   if (!data) return {};
+  const title = `Voting in ${data.name}`;
+  const description = `How to register, key deadlines, FAQs and a plan-to-vote checklist for the ${data.electionDayLabel} election in ${data.name}.`;
+  const image = { url: `/og-images/${data.slug}.png`, width: 1200, height: 630, alt: `${data.name} runs this: voting in ${data.name}` };
   return {
-    title: `Voting in ${data.name}`,
-    description: `How to register, key deadlines, FAQs and a plan-to-vote checklist for the ${data.electionDayLabel} election in ${data.name}.`,
+    title,
+    description,
+    openGraph: { title, description, type: "website", url: `/${data.slug}`, images: [image] },
+    twitter: { card: "summary_large_image", title, description, images: [image.url] },
   };
 }
 
