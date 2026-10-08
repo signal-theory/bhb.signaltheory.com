@@ -3,9 +3,14 @@
 Get-out-the-vote site for Babes Helping Babes, built from the Figma file "BHB Concept" (Homepage Layout - Missouri).
 Next.js 16 (App Router), Tailwind CSS 4, GSAP 3 + ScrollTrigger, TypeScript.
 
+- Live site: https://babes-vote.com
+- Repo: https://github.com/signal-theory/babes-vote.com
+
 ## Run it
 
 ```bash
+git clone https://github.com/signal-theory/babes-vote.com.git
+cd babes-vote.com
 npm install
 npm run dev        # http://localhost:3000
 npm run build      # production build (also type-checks and lints)
@@ -21,7 +26,7 @@ npm run checklist:pdf   # prints /checklist/print to public/checklist.pdf (needs
 
 State pages are generated from `src/content/states/*.json` through `generateStaticParams`, so adding a state is a new JSON file plus a nav entry.
 
-## Content (and the links still to add)
+## Content
 
 Everything editable lives in `src/content/` as JSON:
 
@@ -29,11 +34,12 @@ Everything editable lives in `src/content/` as JSON:
 - `checklist.json` – the "Race like you mean it" checklist (ids are stored in localStorage, so keep them stable).
 - `states/<state>.json` – headline, election day, registration links, race dates, FAQ, resources.
 
-Links are placeholders (`"#"`) until the official URLs are dropped in. Fields to fill per state:
+Official voting links come from the campaign copy doc. Where they live:
 
-- `registration.links[].href` – check registration, paper form (English), paper form (Español), register online.
-- `resources.*` – Secretary of State site, polling place lookup, sample ballot, voter ID page, absentee page.
-- `site.json` → `footer.contactHref`, `footer.instagram`, `footer.facebook`, `url`.
+- `states/<state>.json` → `registration.links[]` – the registration tiles (Texas has no paper form link because the form is closed).
+- `states/<state>.json` → `faq[].a` – FAQ answers, written in a small markdown subset: `[links](https://…)`, `**bold**`, `- ` bullets and blank-line paragraphs.
+- `states/<state>.json` → `resources.*` – Secretary of State site, polling place lookup, sample ballot, voter ID page, absentee form.
+- `site.json` → `footer` – Contact Us email (hello@babes-vote.com, forwarded by Cloudflare Email Routing), Instagram and Facebook links and handles.
 
 Dates in the JSON are for the November 3, 2026 general election. The Missouri absentee card uses October 21 (the official mail request deadline); the Figma mock shows October 20.
 
