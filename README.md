@@ -9,7 +9,7 @@ Next.js 16 (App Router), Tailwind CSS 4, GSAP 3 + ScrollTrigger, TypeScript.
 npm install
 npm run dev        # http://localhost:3000
 npm run build      # production build (also type-checks and lints)
-npm run checklist:pdf   # regenerates public/checklist.pdf from the checklist content
+npm run checklist:pdf   # prints /checklist/print to public/checklist.pdf (needs the dev server running)
 ```
 
 ## Pages
@@ -63,7 +63,7 @@ Line geometry was derived from the Figma vectors (the arcs are concentric ellips
 
 ## Checklist
 
-Checks are saved in `localStorage` under `bhb-vote-checklist-v1`. "Download checklist" serves `public/checklist.pdf` (regenerate with `npm run checklist:pdf` after editing the checklist). "Share" uses the Web Share API with a copy-link fallback.
+Checks are saved in `localStorage` under `bhb-vote-checklist-v1`. "Download checklist" serves `public/checklist.pdf`, which is a print of the hidden page `/checklist/print` (same fonts and artwork as the site). After editing the checklist, run the dev server and `npm run checklist:pdf`, which prints that page with headless Chrome. "Share" uses the Web Share API with a copy-link fallback.
 
 ## CMS options
 

@@ -69,6 +69,14 @@ export type SiteContent = {
   };
   nav: NavItem[];
   countdown: { heading: string };
-  checklist: { heading: string; headingAccent: string; download: string; share: string; pdf: string };
-  footer: { contactLabel: string; contactHref: Href; instagram: Href; facebook: Href; copyright: string };
+  checklist: { heading: string; headingAccent: string; sub: string; download: string; share: string; pdf: string };
+  footer: {
+    contactLabel: string;
+    contactHref: Href;
+    instagram: Href;
+    facebook: Href;
+    instagramHandle: string;
+    facebookHandle: string;
+    copyright: string;
+  };
 };

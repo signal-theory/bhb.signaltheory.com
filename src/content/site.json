@@ -60,14 +60,17 @@
     "headingAccent": "mean it",
     "download": "Download checklist",
     "share": "Share",
-    "pdf": "/checklist.pdf"
+    "pdf": "/checklist.pdf",
+    "sub": "Your plan-to-vote checklist for November 3, 2026"
   },
   "footer": {
     "contactLabel": "Contact us",
     "contactHref": "mailto:hello@babeshelpingbabes.org",
-    "instagram": "https://www.instagram.com/babeshelpingbabes/",
-    "facebook": "https://www.facebook.com/babeshelpingbabes",
-    "copyright": "© 2026 Babes Helping Babes"
+    "instagram": "https://www.instagram.com/babeshelpinbabes_st/",
+    "facebook": "https://www.facebook.com/BabesHelpinBabesST",
+    "copyright": "© 2026 Babes Helping Babes",
+    "instagramHandle": "@babeshelpinbabes_st",
+    "facebookHandle": "BabesHelpinBabesST"
   },
   "adobeFontsKit": "iel3cpg"
 }

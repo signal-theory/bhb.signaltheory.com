@@ -1,40 +1,53 @@
-// Builds public/checklist.pdf from src/content/checklist.json. Run: npm run checklist:pdf
-import { PDFDocument, StandardFonts, rgb } from "pdf-lib";
-import { readFileSync, writeFileSync } from "node:fs";
+// Prints /checklist/print with headless Chrome into public/checklist.pdf.
+// Run the dev server first (npm run dev), then: npm run checklist:pdf
+import { spawn } from "node:child_process";
+import { existsSync, rmSync, statSync } from "node:fs";
+import { fileURLToPath } from "node:url";
 
-const groups = JSON.parse(readFileSync(new URL("../src/content/checklist.json", import.meta.url), "utf8"));
-const site = JSON.parse(readFileSync(new URL("../src/content/site.json", import.meta.url), "utf8"));
+const url = process.env.CHECKLIST_URL ?? "http://localhost:3000/checklist/print";
+const out = fileURLToPath(new URL("../public/checklist.pdf", import.meta.url));
+const chrome =
+  process.env.CHROME_PATH ??
+  ["/Applications/Google Chrome.app/Contents/MacOS/Google Chrome", "/usr/bin/google-chrome", "/usr/bin/chromium"].find(existsSync);
 
-const blueDark = rgb(0x1c / 255, 0x4b / 255, 0x4f / 255);
-const blueLight = rgb(0x4f / 255, 0xc4 / 255, 0xdd / 255);
-const cream = rgb(0xe7 / 255, 0xe3 / 255, 0xd8 / 255);
-const redLight = rgb(0xff / 255, 0x22 / 255, 0x3d / 255);
-
-const doc = await PDFDocument.create();
-doc.setTitle("Race like you mean it: plan-to-vote checklist");
-doc.setAuthor(site.name);
-const page = doc.addPage([612, 792]);
-const bold = await doc.embedFont(StandardFonts.HelveticaBold);
-const regular = await doc.embedFont(StandardFonts.Helvetica);
-
-page.drawRectangle({ x: 0, y: 792 - 130, width: 612, height: 130, color: blueDark });
-page.drawText("RACE LIKE YOU MEAN IT", { x: 48, y: 792 - 70, size: 30, font: bold, color: blueLight });
-page.drawText("Your plan-to-vote checklist", { x: 48, y: 792 - 98, size: 13, font: regular, color: cream });
-
-let y = 792 - 180;
-for (const group of groups) {
-  page.drawText(group.title.toUpperCase(), { x: 48, y, size: 11, font: bold, color: blueDark });
-  y -= 28;
-  for (const item of group.items) {
-    page.drawCircle({ x: 60, y: y + 4, size: 8, borderColor: blueDark, borderWidth: 1.5, color: rgb(1, 1, 1) });
-    page.drawText(item.label.replace(/’/g, "'"), { x: 80, y, size: 12, font: regular, color: blueDark });
-    y -= 30;
-  }
-  y -= 14;
+if (!chrome) {
+  console.error("Chrome not found. Set CHROME_PATH to the browser binary.");
+  process.exit(1);
+}
+try {
+  await fetch(url, { method: "HEAD" });
+} catch {
+  console.error(`Cannot reach ${url}. Start the site first (npm run dev) or set CHECKLIST_URL.`);
+  process.exit(1);
 }
 
-page.drawRectangle({ x: 48, y: 70, width: 516, height: 2, color: redLight });
-page.drawText(`${site.name}  -  ${site.url.replace(/^https?:\/\//, "")}`, { x: 48, y: 50, size: 10, font: regular, color: blueDark });
+const profile = fileURLToPath(new URL("../.next/chrome-pdf-profile", import.meta.url));
+rmSync(profile, { recursive: true, force: true });
+if (existsSync(out)) rmSync(out);
 
-writeFileSync(new URL("../public/checklist.pdf", import.meta.url), await doc.save());
-console.log("wrote public/checklist.pdf");
+// Headless Chrome does not always exit after printing, so wait for the file and stop it ourselves.
+const child = spawn(
+  chrome,
+  ["--headless=new", "--disable-gpu", "--no-first-run", `--user-data-dir=${profile}`, "--no-pdf-header-footer", "--virtual-time-budget=10000", `--print-to-pdf=${out}`, url],
+  { stdio: "ignore", detached: true },
+);
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+let size = 0;
+for (let i = 0; i < 90; i++) {
+  await sleep(500);
+  if (existsSync(out)) {
+    const now = statSync(out).size;
+    if (now > 0 && now === size) break;
+    size = now;
+  }
+}
+try {
+  process.kill(-child.pid, "SIGKILL");
+} catch {
+  /* already gone */
+}
+if (!existsSync(out) || statSync(out).size === 0) {
+  console.error("Chrome did not produce the PDF.");
+  process.exit(1);
+}
+console.log(`wrote public/checklist.pdf (${Math.round(statSync(out).size / 1024)} KB)`);
