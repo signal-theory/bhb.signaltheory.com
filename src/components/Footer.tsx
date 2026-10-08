@@ -1,5 +1,5 @@
 "use client";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import type { SiteContent } from "@/content/types";
 import { gsap, useGSAP } from "@/lib/gsap";
 import { prepDraw, tweenDraw } from "@/lib/draw";
@@ -27,6 +27,19 @@ const MOBILE_LINES = [7, 55, 103, 151, 199].map((y) => `M -10 ${y} H 400`);
 export function Footer({ footer }: { footer: SiteContent["footer"] }) {
   const root = useRef<HTMLElement>(null);
   const motion = useMotion();
+  const [copied, setCopied] = useState(false);
+  const email = footer.contactHref.replace(/^mailto:/, "").split("?")[0];
+
+  // Many visitors have no mail app wired to mailto links, so a click also copies the address.
+  const copyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText(email);
+      setCopied(true);
+      window.setTimeout(() => setCopied(false), 2200);
+    } catch {
+      /* clipboard blocked: the mailto link still runs */
+    }
+  };
 
   useGSAP(
     () => {
@@ -85,10 +98,32 @@ export function Footer({ footer }: { footer: SiteContent["footer"] }) {
           </g>
         </svg>
         <div className="wrap absolute inset-x-0 top-[127px] flex -translate-y-1/2 items-center justify-between gap-5 md:top-[74.3%] md:translate-y-0 md:justify-end md:gap-[50px]">
-          <a href={footer.contactHref} className="btn-solid t-button min-h-[32px] flex-1 justify-between px-3 py-1 text-[11px] tracking-[1px] md:min-h-[69px] md:w-[331px] md:flex-none md:px-4 md:py-3 md:text-[18px] md:tracking-[2px]">
-            {footer.contactLabel}
-            <img src="/graphics/icon-contact-arrow.svg" alt="" width={34} height={34} className="size-4 md:size-[34px]" />
+          <a
+            href={footer.contactHref}
+            onClick={copyEmail}
+            aria-label={`${footer.contactLabel}: ${email}`}
+            className="group btn-solid t-button min-h-[32px] flex-1 justify-between px-3 py-1 text-[11px] tracking-[1px] md:min-h-[69px] md:w-[331px] md:flex-none md:px-4 md:py-3 md:text-[18px] md:tracking-[2px]"
+          >
+            {/* Label swaps to the address on hover/focus, and to a confirmation after a click copies it */}
+            <span className="relative grid min-w-0 flex-1 overflow-hidden text-left">
+              <span className={`col-start-1 row-start-1 truncate transition-all duration-300 ${copied ? "-translate-y-full opacity-0" : "group-hover:-translate-y-full group-hover:opacity-0 group-focus-visible:-translate-y-full group-focus-visible:opacity-0"}`}>
+                {footer.contactLabel}
+              </span>
+              <span
+                aria-hidden
+                className={`col-start-1 row-start-1 truncate tracking-[0.5px] normal-case transition-all duration-300 ${copied ? "translate-y-full opacity-0" : "translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 group-focus-visible:translate-y-0 group-focus-visible:opacity-100"}`}
+              >
+                {email}
+              </span>
+              <span aria-hidden className={`col-start-1 row-start-1 truncate transition-all duration-300 ${copied ? "translate-y-0 opacity-100" : "translate-y-full opacity-0"}`}>
+                Email copied!
+              </span>
+            </span>
+            <img src="/graphics/icon-contact-arrow.svg" alt="" width={34} height={34} className="size-4 shrink-0 md:size-[34px]" />
           </a>
+          <span role="status" aria-live="polite" className="sr-only">
+            {copied ? `${email} copied to clipboard` : ""}
+          </span>
           <div className="flex items-center gap-5 md:gap-[50px]">
             <a href={footer.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="transition-transform hover:-translate-y-1">
               <img src="/graphics/icon-instagram.svg" alt="" width={60} height={60} className="size-7 md:size-[60px]" />
