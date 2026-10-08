@@ -38,6 +38,16 @@ export function Countdown({ target, heading, electionDayLabel }: Props) {
         stagger: 0.15,
         scrollTrigger: { trigger: root.current, start: "top 70%", once: true },
       });
+      // Sweep each gauge from empty to its value, then hand control back to React for the minute ticks.
+      gsap.from("[data-arc]", {
+        strokeDashoffset: 100,
+        duration: 1.4,
+        ease: "power2.out",
+        stagger: 0.15,
+        delay: 0.3,
+        clearProps: "strokeDashoffset",
+        scrollTrigger: { trigger: root.current, start: "top 70%", once: true },
+      });
       gsap.from("[data-bubble]", {
         scale: 0.3,
         rotation: 15,
@@ -51,7 +61,7 @@ export function Countdown({ target, heading, electionDayLabel }: Props) {
   );
 
   const units = [
-    { label: "Days", value: t?.days, frac: Math.min(1, (t?.days ?? 0) / 100) },
+    { label: "Days", value: t?.days, frac: Math.min(1, (t?.days ?? 0) / 365) },
     { label: "Hours", value: t?.hours, frac: (t?.hours ?? 0) / 24 },
     { label: "Minutes", value: t?.minutes, frac: (t?.minutes ?? 0) / 60 },
   ];
@@ -75,15 +85,19 @@ export function Countdown({ target, heading, electionDayLabel }: Props) {
                 <svg viewBox="0 0 222 222" className="h-full w-full" aria-hidden>
                   <circle cx="111" cy="111" r="111" className="fill-green-dark" />
                   <circle cx="111" cy="111" r="77" className="fill-cream stroke-green-light" strokeWidth="4" />
+                  {/* Gauge: the lit arc is the share of the unit left (days of 365, hours of 24, minutes of 60) */}
                   <circle
+                    data-arc
                     cx="111"
                     cy="111"
                     r="77"
                     pathLength="100"
-                    className="fill-none stroke-green-light transition-[stroke-dasharray] duration-700 ease-out"
+                    className="fill-none stroke-green-light transition-[stroke-dashoffset,opacity] duration-700 ease-out"
                     strokeWidth="12"
                     strokeLinecap="round"
-                    strokeDasharray={`${Math.max(0.01, u.frac * 100)} 100`}
+                    strokeDasharray="100 100"
+                    strokeDashoffset={100 - u.frac * 100}
+                    style={{ opacity: u.frac > 0 ? 1 : 0 }}
                   />
                 </svg>
                 <span className="t-display absolute inset-0 flex items-center justify-center text-green-dark tabular-nums" style={{ fontSize: "clamp(44px, 11.7vw, 80px)" }}>
