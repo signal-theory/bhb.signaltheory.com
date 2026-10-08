@@ -22,7 +22,7 @@ const ARCS = [
   return `M ${CX} ${top} A ${r} ${r} 0 0 1 ${x.toFixed(2)} 395`;
 });
 const LINES = [0, 130.795, 261.59, 392.385].map((y) => `M ${CX} ${y} H 1440`);
-const MOBILE_LINES = [7, 48.7, 90.4, 132.1, 173.8].map((y) => `M -10 ${y} H 400`);
+const MOBILE_LINES = [7, 55, 103, 151, 199].map((y) => `M -10 ${y} H 400`);
 
 export function Footer({ footer }: { footer: SiteContent["footer"] }) {
   const root = useRef<HTMLElement>(null);
@@ -63,7 +63,7 @@ export function Footer({ footer }: { footer: SiteContent["footer"] }) {
 
   return (
     <footer ref={root} className="relative isolate bg-blue-dark pb-8 md:pb-[60px]">
-      <div data-band className="relative h-[290px] overflow-hidden md:h-auto md:aspect-[1440/395]">
+      <div data-band className="relative h-[290px] overflow-hidden md:h-[max(395px,27.43vw)]">
         <svg aria-hidden className="absolute inset-0 hidden h-full w-full md:block" viewBox="0 0 1440 395" preserveAspectRatio="xMinYMin slice">
           <g data-track-arcs className="line stroke-blue-light" strokeLinecap="butt">
             {ARCS.map((d) => (
@@ -84,17 +84,17 @@ export function Footer({ footer }: { footer: SiteContent["footer"] }) {
             ))}
           </g>
         </svg>
-        <div className="wrap absolute inset-x-0 top-[111px] flex -translate-y-1/2 items-center justify-between gap-6 md:top-[74.3%] md:translate-y-0 md:justify-end md:gap-[50px]">
-          <a href={footer.contactHref} className="btn-solid t-button min-h-[40px] flex-1 justify-between px-3 py-2 text-[12px] tracking-[1px] md:min-h-[69px] md:w-[331px] md:flex-none md:px-4 md:py-3 md:text-[18px] md:tracking-[2px]">
+        <div className="wrap absolute inset-x-0 top-[127px] flex -translate-y-1/2 items-center justify-between gap-5 md:top-[74.3%] md:translate-y-0 md:justify-end md:gap-[50px]">
+          <a href={footer.contactHref} className="btn-solid t-button min-h-[32px] flex-1 justify-between px-3 py-1 text-[11px] tracking-[1px] md:min-h-[69px] md:w-[331px] md:flex-none md:px-4 md:py-3 md:text-[18px] md:tracking-[2px]">
             {footer.contactLabel}
-            <img src="/graphics/icon-contact-arrow.svg" alt="" width={34} height={34} className="size-5 md:size-[34px]" />
+            <img src="/graphics/icon-contact-arrow.svg" alt="" width={34} height={34} className="size-4 md:size-[34px]" />
           </a>
-          <div className="flex items-center gap-6 md:gap-[50px]">
+          <div className="flex items-center gap-5 md:gap-[50px]">
             <a href={footer.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="transition-transform hover:-translate-y-1">
-              <img src="/graphics/icon-instagram.svg" alt="" width={60} height={60} className="size-[29px] md:size-[60px]" />
+              <img src="/graphics/icon-instagram.svg" alt="" width={60} height={60} className="size-7 md:size-[60px]" />
             </a>
             <a href={footer.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="transition-transform hover:-translate-y-1">
-              <img src="/graphics/icon-facebook.svg" alt="" width={64} height={64} className="size-[29px] md:size-[60px]" />
+              <img src="/graphics/icon-facebook.svg" alt="" width={64} height={64} className="size-7 md:size-[60px]" />
             </a>
           </div>
         </div>
