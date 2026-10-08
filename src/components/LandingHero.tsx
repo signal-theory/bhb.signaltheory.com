@@ -100,9 +100,9 @@ export function LandingHero({ home }: { home: SiteContent["home"] }) {
   );
 
   return (
-    <section ref={root} className="relative isolate min-h-[100svh] overflow-hidden bg-blue-dark md:h-[85.49vw] md:max-h-[1231px] md:min-h-0">
+    <section ref={root} className="relative isolate min-h-[100svh] overflow-hidden bg-blue-dark md:h-[75.07vw] md:max-h-[1081px] md:min-h-0">
       {/* Dashed baton line and its waypoints */}
-      <svg aria-hidden className="pointer-events-none absolute top-[7.3%] left-[11.25%] w-[72.04%] overflow-visible" viewBox="0 0 1037.31 1023">
+      <svg aria-hidden className="pointer-events-none absolute top-[2.78%] left-[11.25%] w-[72.04%] overflow-visible" viewBox="0 0 1037.31 1023">
         <defs>
           <mask id={maskId} maskUnits="userSpaceOnUse" x="-100" y="-100" width="1300" height="1300">
             <path data-reveal d={LANDING_ROUTE_D} fill="none" stroke="#fff" strokeWidth={16} strokeLinecap="round" strokeLinejoin="round" />
@@ -117,12 +117,12 @@ export function LandingHero({ home }: { home: SiteContent["home"] }) {
         ))}
       </svg>
 
-      <img data-sticker="ballot" src="/graphics/icon-ballot-blue.svg" alt="" width={130.2} height={227.62} className="gs-hide absolute top-[9.75%] left-[7.22%] w-[clamp(56px,9.04vw,130px)]" />
-      <img data-sticker="voted" src="/graphics/sticker-we-voted-lg.svg" alt="We voted" width={321} height={321} className="gs-hide absolute top-[9.1%] left-[74.58%] w-[clamp(120px,22.3vw,321px)]" />
-      <img data-sticker="vote" src="/graphics/sticker-vote-tilted.svg" alt="Vote" width={179.25} height={209.98} className="gs-hide absolute top-[67.3%] left-[5.35%] w-[clamp(72px,12.45vw,179px)]" />
-      <img data-sticker="box" src="/graphics/icon-ballot-box-blue.svg" alt="" width={175.42} height={163.08} className="gs-hide absolute top-[74.7%] left-[75.35%] w-[clamp(80px,12.2vw,175px)]" />
+      <img data-sticker="ballot" src="/graphics/icon-ballot-blue.svg" alt="" width={130.2} height={227.62} className="gs-hide absolute top-[5.55%] left-[7.22%] w-[clamp(56px,9.04vw,130px)]" />
+      <img data-sticker="voted" src="/graphics/sticker-we-voted-lg.svg" alt="We voted" width={321} height={321} className="gs-hide absolute top-[4.81%] left-[74.58%] w-[clamp(120px,22.3vw,321px)]" />
+      <img data-sticker="vote" src="/graphics/sticker-vote-tilted.svg" alt="Vote" width={179.25} height={209.98} className="gs-hide absolute top-[71.05%] left-[5.35%] w-[clamp(72px,12.45vw,179px)]" />
+      <img data-sticker="box" src="/graphics/icon-ballot-box-blue.svg" alt="" width={175.42} height={163.08} className="gs-hide absolute top-[79.56%] left-[75.35%] w-[clamp(80px,12.2vw,175px)]" />
 
-      <div className="absolute inset-x-0 top-[35.7%] flex flex-col items-center px-4 text-center">
+      <div className="absolute inset-x-0 top-[35.15%] flex flex-col items-center px-4 text-center">
         <h1 className="t-display w-full leading-[1.2] text-cream">
           <span ref={h1} data-h1 className="gs-hide block whitespace-nowrap" style={{ fontSize: "clamp(64px, 20.56vw, 296px)" }}>
             {home.headline.pre} <span className="text-blue-light">{home.headline.accent}</span> {home.headline.post}

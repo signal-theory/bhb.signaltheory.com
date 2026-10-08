@@ -89,7 +89,7 @@ export function Hero({ headline }: { headline: { line1: string; line2: string } 
   );
 
   return (
-    <section ref={root} className="relative isolate min-h-[100svh] overflow-hidden bg-blue-dark md:h-[85.49vw] md:max-h-[1231px] md:min-h-0">
+    <section ref={root} className="relative isolate min-h-[100svh] overflow-hidden bg-blue-dark md:h-[75.07vw] md:max-h-[1081px] md:min-h-0">
       <svg aria-hidden className="absolute inset-0 h-full w-full" viewBox={`0 0 ${W} ${H}`} preserveAspectRatio="xMidYMin slice">
         <g data-arcs-r className="line stroke-blue-light">
           {RIGHT_ARCS.map((d) => (
@@ -103,7 +103,8 @@ export function Hero({ headline }: { headline: { line1: string; line2: string } 
         </g>
       </svg>
 
-      <Lanes className="top-[70.8%] bottom-0" />
+      {/* Lanes start just under the headline: the headline is centred, so offset from the middle by half its height */}
+      <Lanes className="bottom-0 top-[calc(50%+min(17.85vw,257px))]" />
 
       <div className="absolute inset-0 flex items-center justify-center px-4">
         <h1 className="t-display flex w-full flex-col items-center gap-[8px] text-center leading-[0.85]">
@@ -122,9 +123,9 @@ export function Hero({ headline }: { headline: { line1: string; line2: string } 
         alt=""
         width={293}
         height={293}
-        className="gs-hide absolute top-[5.2%] left-[3.4%] w-[clamp(120px,20.35vw,293px)]"
+        className="gs-hide absolute top-[4.44vw] left-[3.4%] w-[clamp(120px,20.35vw,293px)]"
       />
-      <div data-st-right className="gs-hide absolute top-[71.6%] left-[89.25%] w-[clamp(90px,14.7vw,212px)]" style={{ rotate: `${VOTE_ROTATION}deg` }}>
+      <div data-st-right className="gs-hide absolute top-[67.6%] left-[89.25%] w-[clamp(90px,14.7vw,212px)]" style={{ rotate: `${VOTE_ROTATION}deg` }}>
         <img src="/graphics/sticker-vote.svg" alt="" width={211.9} height={248.24} className="w-full" />
       </div>
     </section>
