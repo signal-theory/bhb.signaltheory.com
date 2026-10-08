@@ -14,6 +14,9 @@ function remaining(target: Date): Remaining {
 
 type Props = { target: string; heading: string; electionDayLabel: string };
 
+/** Shared timing so each ring's arc and number move together. */
+const SWEEP = { duration: 2.4, ease: "power2.out", delay: 0.3, stagger: 0.15 };
+
 export function Countdown({ target, heading, electionDayLabel }: Props) {
   const [t, setT] = useState<Remaining | null>(null);
   const root = useRef<HTMLElement>(null);
@@ -46,9 +49,9 @@ export function Countdown({ target, heading, electionDayLabel }: Props) {
         const counter = { v: full };
         gsap.to(counter, {
           v: target,
-          duration: 1.4,
-          ease: "power2.out",
-          delay: 0.3 + i * 0.15,
+          duration: SWEEP.duration,
+          ease: SWEEP.ease,
+          delay: SWEEP.delay + i * SWEEP.stagger,
           onUpdate: () => {
             el.textContent = String(Math.round(counter.v));
           },
@@ -58,12 +61,14 @@ export function Countdown({ target, heading, electionDayLabel }: Props) {
       // Each gauge starts full and shrinks down to the time left, then React keeps it ticking.
       gsap.from("[data-arc]", {
         strokeDashoffset: 0,
-        duration: 1.4,
-        ease: "power2.out",
-        stagger: 0.15,
-        delay: 0.3,
+        duration: SWEEP.duration,
+        ease: SWEEP.ease,
+        stagger: SWEEP.stagger,
+        delay: SWEEP.delay,
         clearProps: "strokeDashoffset",
         scrollTrigger: { trigger: root.current, start: "top 70%", once: true },
+        // Once the sweep is done, let the minute ticks ease instead of jumping.
+        onComplete: () => gsap.utils.toArray<SVGCircleElement>("[data-arc]", root.current).forEach((c) => (c.style.transition = "stroke-dashoffset 0.7s ease-out")),
       });
       gsap.from("[data-bubble]", {
         scale: 0.3,
@@ -109,7 +114,7 @@ export function Countdown({ target, heading, electionDayLabel }: Props) {
                     cy="111"
                     r="77"
                     pathLength="100"
-                    className="fill-none stroke-green-light transition-[stroke-dashoffset,opacity] duration-700 ease-out"
+                    className="fill-none stroke-green-light"
                     strokeWidth="12"
                     strokeLinecap="round"
                     strokeDasharray="100 100"
