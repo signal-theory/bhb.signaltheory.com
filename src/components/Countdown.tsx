@@ -38,9 +38,9 @@ export function Countdown({ target, heading, electionDayLabel }: Props) {
         stagger: 0.15,
         scrollTrigger: { trigger: root.current, start: "top 70%", once: true },
       });
-      // Sweep each gauge from empty to its value, then hand control back to React for the minute ticks.
+      // Each gauge starts full and shrinks down to the time left, then React keeps it ticking.
       gsap.from("[data-arc]", {
-        strokeDashoffset: 100,
+        strokeDashoffset: 0,
         duration: 1.4,
         ease: "power2.out",
         stagger: 0.15,
