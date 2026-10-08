@@ -2,17 +2,31 @@
   "slug": "missouri",
   "name": "Missouri",
   "abbr": "MO",
-  "headline": { "line1": "Missouri", "line2": "runs this" },
+  "headline": {
+    "line1": "Missouri",
+    "line2": "runs this"
+  },
   "electionDay": "2026-11-03T19:00:00-06:00",
   "electionDayLabel": "November 3, 2026",
   "registration": {
     "heading": "Are you registered to",
     "headingAccent": "relay your voice?",
     "links": [
-      { "label": "Check your registration", "href": "#", "icon": "check-registration" },
-      { "label": "Paper registration (English)", "href": "#", "icon": "paper-registration" },
-      { "label": "Paper registration (Español)", "href": "#", "icon": "paper-registration" },
-      { "label": "Register online", "href": "#", "icon": "register-online" }
+      {
+        "label": "Check your registration",
+        "href": "https://voteroutreach.sos.mo.gov/portal/",
+        "icon": "check-registration"
+      },
+      {
+        "label": "Download paper registration form",
+        "href": "https://s1.sos.mo.gov/elections/voterregistration/home/print",
+        "icon": "paper-registration"
+      },
+      {
+        "label": "Register online",
+        "href": "https://www.sos.mo.gov/elections/goVoteMissouri/register",
+        "icon": "register-online"
+      }
     ]
   },
   "dates": {
@@ -20,53 +34,68 @@
     "headingAccent": "dates",
     "sub": "Get ready to take the baton",
     "cards": [
-      { "tag": "Missouri deadline", "date": "October 7", "label": "Last day to register to vote", "iso": "2026-10-07" },
-      { "tag": "Missouri deadline", "date": "October 21", "label": "Last day to request an absentee ballot by mail", "iso": "2026-10-21" },
-      { "tag": "Election day", "date": "November 3", "label": "Election day", "iso": "2026-11-03" }
+      {
+        "tag": "Missouri deadline",
+        "date": "October 7",
+        "label": "Last day to register to vote",
+        "iso": "2026-10-07"
+      },
+      {
+        "tag": "Missouri deadline",
+        "date": "October 21",
+        "label": "Last day to request an absentee ballot",
+        "iso": "2026-10-21"
+      },
+      {
+        "tag": "Election day",
+        "date": "November 3",
+        "label": "Election day",
+        "iso": "2026-11-03"
+      }
     ]
   },
   "faq": [
     {
       "q": "When can I vote?",
-      "a": "Election Day is November 3, 2026. Polling locations are open from 6:00 a.m. to 7:00 p.m. Anyone in line when the polls close is allowed to stay and vote. Individuals arriving after the polling place has closed will not be allowed to vote. You can also vote early: no-excuse absentee voting in person runs from Tuesday, October 20 through Monday, November 2 at your local election authority's office."
+      "a": "Election Day is November 3, 2026. Polling locations are open from 6:00 a.m. to 7:00 p.m.. Anyone in line when the polls close is allowed to stay and vote. Individuals arriving after the polling place has closed will not be allowed to vote."
     },
     {
       "q": "How do I vote early (absentee ballot)?",
-      "a": "In person: starting Tuesday, October 20 any registered Missouri voter can cast a no-excuse absentee ballot at their local election authority's office through 5:00 p.m. on Monday, November 2. By mail: you need a qualifying reason (such as being away from your jurisdiction on Election Day, illness or disability, or a religious belief) and your request must reach your local election authority by 5:00 p.m. on Wednesday, October 21. Mailed ballots must arrive back by 7:00 p.m. on Election Day, so send them early."
+      "a": "[Request a Missouri absentee ballot here.](https://www.sos.mo.gov/CMSImages/ElectionGoVoteMissouri/AbsenteeBallotRequestForm.pdf) Voters in Missouri must provide a [reason](https://www.sos.mo.gov/elections/goVoteMissouri/howtovote) for needing an absentee ballot. All absentee ballot requests must be received by the election authority no later than 5:00 p.m. on **October 21, 2026**. Voters can vote by absentee in the office of the local election authority until 5:00 p.m. the night before the election."
     },
     {
       "q": "Where do I vote?",
-      "a": "On Election Day you vote at the polling place assigned to the address on your registration. Look it up ahead of time through the Secretary of State's voter portal or by calling your county clerk or election board, and double check the hours the week of the election."
+      "a": "If you are registered to vote, find your polling place [here](https://voteroutreach.sos.mo.gov/portal/). You can only vote at your assigned polling place."
     },
     {
       "q": "What should I bring to the polls?",
-      "a": "Missouri asks for a government-issued photo ID: a Missouri driver or nondriver license, a U.S. passport, a military ID or another federal or state-issued photo ID. If you don't have one, you can still cast a provisional ballot that counts once you return with a valid photo ID before the polls close or your signature matches your registration record. Bringing your filled-out sample ballot makes the booth go faster."
+      "a": "You’ll need one of the following forms of identification:\n\n- A nonexpired Missouri driver or non-driver license;\n- A nonexpired military ID, including a veteran’s ID card;\n- A nonexpired United States passport; or\n- Another photo ID issued by the United States or the state of Missouri which is either not expired or expired after the date of the most recent general election."
     },
     {
       "q": "What if I moved since the last time I voted?",
-      "a": "If you moved within the same county or election jurisdiction, you can update your address on Election Day at your new polling place or the central polling location. If you moved to a different Missouri jurisdiction, contact your new local election authority before Election Day, since address updates on the day itself are handled at the election headquarters. First-time registrants had to register by October 7."
+      "a": "If you move or change your name, you’ll need to [update your registration to vote.](https://www.sos.mo.gov/elections/goVoteMissouri/register)\n\nIf you moved to a different address within the same county, you can change your registration address on Election Day at your new polling place. Contact your local election official with address changes before Election Day to find your new polling place.\n\nIf you moved to Missouri after the deadline to register for a presidential election, you are entitled to register and vote only a presidential and vice presidential ballot in your new jurisdiction."
     },
     {
       "q": "Are there accessibility accommodations at my polling place?",
-      "a": "Yes. Every polling place offers accessible voting equipment with audio ballots and enlarged text, and curbside voting is available if you can't easily enter the building: have someone let the poll workers know you're outside and they will bring a ballot to you. If your assigned polling place isn't accessible, your local election authority can reassign you to one that is."
+      "a": "Every polling place must have an accessible voting system, including audiovisual accessibility. Accessible systems include an audio ballot to make selections or the ability to enlarge text. [View approved voting systems.](https://www.sos.mo.gov/elections/qualsystems)"
     },
     {
       "q": "What's on my ballot and where do the candidates stand on issues I care about?",
-      "a": "Your local election authority publishes a sample ballot before each election, and the Secretary of State's voter portal shows the exact races and questions for your address. Nonpartisan guides such as the League of Women Voters' Vote411 and Ballotpedia collect candidate statements and explain ballot measures so you can decide before you get to the booth."
+      "a": "See a [personalized ballot](https://www.vote411.org/ballot) for your voting location."
     },
     {
       "q": "If I have additional questions about voting, where should I go?",
-      "a": "Call the Missouri Secretary of State's Elections Division at 1-800-NOW-VOTE (1-800-669-8683) or reach out to your local election authority, the county clerk or election board where you live. They can confirm your registration, your polling place and your absentee options."
+      "a": "There are plenty of resources to help you relay your voice this Election Day. Check out [Missouri’s official voting home page](https://www.sos.mo.gov/elections/govotemissouri) or find more digestible information from [Vote411](https://www.vote411.org/) or [The League of Women Voters](https://www.lwv.org/)."
     }
   ],
   "resources": {
     "sosName": "Missouri Secretary of State, Elections Division",
-    "sosUrl": "#",
+    "sosUrl": "https://www.sos.mo.gov/elections/govotemissouri",
     "phone": "1-800-669-8683",
     "email": "",
-    "pollingPlace": "#",
-    "sampleBallot": "#",
-    "voterId": "#",
-    "absentee": "#"
+    "pollingPlace": "https://voteroutreach.sos.mo.gov/portal/",
+    "sampleBallot": "https://www.vote411.org/ballot",
+    "voterId": "https://www.sos.mo.gov/elections/goVoteMissouri/howtovote",
+    "absentee": "https://www.sos.mo.gov/CMSImages/ElectionGoVoteMissouri/AbsenteeBallotRequestForm.pdf"
   }
 }

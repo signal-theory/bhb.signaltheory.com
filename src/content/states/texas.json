@@ -2,17 +2,26 @@
   "slug": "texas",
   "name": "Texas",
   "abbr": "TX",
-  "headline": { "line1": "Texas", "line2": "runs this" },
+  "headline": {
+    "line1": "Texas",
+    "line2": "runs this"
+  },
   "electionDay": "2026-11-03T19:00:00-06:00",
   "electionDayLabel": "November 3, 2026",
   "registration": {
     "heading": "Are you registered to",
     "headingAccent": "relay your voice?",
     "links": [
-      { "label": "Check your registration", "href": "#", "icon": "check-registration" },
-      { "label": "Paper registration (English)", "href": "#", "icon": "paper-registration" },
-      { "label": "Paper registration (Español)", "href": "#", "icon": "paper-registration" },
-      { "label": "Register online", "href": "#", "icon": "register-online" }
+      {
+        "label": "Register to vote or check your registration",
+        "href": "https://www.votetexas.gov/register-to-vote/index.html",
+        "icon": "check-registration"
+      },
+      {
+        "label": "Download paper registration form (English)",
+        "href": "#",
+        "icon": "paper-registration"
+      }
     ]
   },
   "dates": {
@@ -20,53 +29,68 @@
     "headingAccent": "dates",
     "sub": "Get ready to take the baton",
     "cards": [
-      { "tag": "Texas deadline", "date": "October 5", "label": "Last day to register to vote", "iso": "2026-10-05" },
-      { "tag": "Texas deadline", "date": "October 23", "label": "Last day to apply for a ballot by mail", "iso": "2026-10-23" },
-      { "tag": "Election day", "date": "November 3", "label": "Election day", "iso": "2026-11-03" }
+      {
+        "tag": "Texas deadline",
+        "date": "October 5",
+        "label": "Last day to register to vote",
+        "iso": "2026-10-05"
+      },
+      {
+        "tag": "Texas deadline",
+        "date": "October 23",
+        "label": "Last day to request an absentee ballot",
+        "iso": "2026-10-23"
+      },
+      {
+        "tag": "Election day",
+        "date": "November 3",
+        "label": "Election day",
+        "iso": "2026-11-03"
+      }
     ]
   },
   "faq": [
     {
       "q": "When can I vote?",
-      "a": "Election Day is Tuesday, November 3, 2026, and polls are open from 7:00 a.m. to 7:00 p.m. If you're in line at 7:00 p.m. you still get to vote. Early voting runs from Monday, October 19 through Friday, October 30 at any early voting location in your county, with hours set by each county."
+      "a": "Election Day is November 3, 2026. Polling locations are open from 7:00 a.m. to 7:00 p.m.. Anyone in line when the polls close is allowed to stay and vote. Individuals arriving after the polling place has closed will not be allowed to vote."
     },
     {
       "q": "How do I vote early (ballot by mail)?",
-      "a": "Most Texans vote early in person: from October 19 through October 30 you can vote at any early voting site in the county where you're registered. Voting by mail is limited to voters who are 65 or older, have a disability, expect to be out of the county during early voting and on Election Day, are confined in jail but eligible, or expect to give birth within three weeks of Election Day. Your application must be received by your county's early voting clerk by Friday, October 23, and your ballot must be postmarked by 7:00 p.m. on Election Day and received by 5:00 p.m. on Wednesday, November 4."
+      "a": "[Request a Texas absentee ballot here.](https://webservices.sos.state.tx.us/forms/6-1f.pdf) Voters in Texas must provide a [reason](https://www.sos.state.tx.us/elections/voter/reqabbm.shtml) for needing an absentee ballot and follow these [instructions](https://www.votetexas.gov/voting-by-mail/application-for-ballot-by-mail.html) to submit their form. Applications for a mail-in ballot must be received by **October 23, 2026**."
     },
     {
       "q": "Where do I vote?",
-      "a": "On Election Day you vote at your precinct's polling place, or at any polling location in your county if your county uses countywide vote centers. Use the Secretary of State's polling place lookup or your county elections office to find your location and hours, and remember that early voting can happen at any early voting site in your county."
+      "a": "If you are registered to vote, find your polling place [here](https://goelect.txelections.civixapps.com/ivis-mvp-ui/#/login). You can only vote at your assigned polling place."
     },
     {
       "q": "What should I bring to the polls?",
-      "a": "One of the seven approved photo IDs: a Texas driver license, a Texas Election Identification Certificate, a Texas personal ID card, a Texas handgun license, a U.S. military ID card with your photo, a U.S. citizenship certificate with your photo or a U.S. passport (book or card). An ID can be expired up to four years (any length of time if you're 70 or older). If you can't reasonably get one, you can sign a Reasonable Impediment Declaration at the polls and show a supporting document such as your voter registration certificate, a utility bill, bank statement, government check, paycheck or birth certificate."
+      "a": "You’ll need one of the following forms of photo identification:\n\n- Texas Driver License issued by the Texas Department of Public Safety (DPS)\n- Texas Election Identification Certificate issued by DPS\n- Texas Personal Identification Card issued by DPS\n- Texas Handgun License issued by DPS\n- United States Military Identification Card containing the person’s photograph\n- United States Citizenship Certificate containing the person’s photograph\n- United States Passport (book or card)"
     },
     {
       "q": "What if I moved since the last time I voted?",
-      "a": "If you moved within the same county, you can vote at the polling place for your old address and fill out a statement of residence to update your registration. If you moved to a different county after the October 5 deadline, you can vote a limited ballot, which covers the statewide and shared district races, at your new county's main early voting location during early voting only (October 19 to 30), or go back to your old county to vote in person on Election Day."
+      "a": "If you are already registered to vote in Texas and have moved, you may update your voter registration [online](https://txapps.texas.gov/tolapp/sos/SOSACManager).\n\nIf you live in the same county and missed the voter registration deadline, you may return to your old precinct to vote, but you will be required to complete a statement of residence confirming your new address in your new precinct.\n\nIf you moved to a new county and missed the voter registration deadline, you may be eligible to vote a limited ballot at your county’s main voting location during the early voting period. The limited ballot application will also act as a voter registration application. You may NOT vote a limited ballot on Election Day."
     },
     {
       "q": "Are there accessibility accommodations at my polling place?",
-      "a": "Yes. Every polling place has an accessible voting machine and a marked curbside voting space. If you can't enter the building without help or without risking your health, an election worker will bring a ballot out to your car. Call the polling place ahead of time so they're ready for you, and you may bring someone to assist you or request help from election workers."
+      "a": "Texas was the first state to require that all new voting systems be accessible to voters with disabilities.\n\nEach polling place will offer at least one type of accessible voting equipment. This equipment allows voters with disabilities to vote directly on the system or assist them in marking the paper ballot. Depending on the type of system, voters with disabilities may use headphones or other assistive devices to help them vote independently and secretly.\n\nTo determine if accessible machines will be available or to request an accommodation, contact the early voting clerk of the county or political subdivision holding the election at least 21 days before the election."
     },
     {
       "q": "What's on my ballot and where do the candidates stand on issues I care about?",
-      "a": "Your county elections office posts sample ballots before early voting begins, and the Secretary of State lists the statewide candidates and constitutional amendments. Nonpartisan guides such as the League of Women Voters' Vote411 and Ballotpedia collect candidate statements and explain the propositions."
+      "a": "See a [personalized ballot](https://www.vote411.org/ballot) for your voting location."
     },
     {
       "q": "If I have additional questions about voting, where should I go?",
-      "a": "Call the Texas Secretary of State's Elections Division at 1-800-252-VOTE (1-800-252-8683), or contact your county elections office or voter registrar, who handle registration, polling places and mail ballots for your county."
+      "a": "There are plenty of resources to help you relay your voice this Election Day. Check out the [Texas official voting home page](https://www.votetexas.gov/index.html) or find more digestible information from [Vote411](https://www.vote411.org/) or [The League of Women Voters](https://www.lwv.org/)."
     }
   ],
   "resources": {
     "sosName": "Texas Secretary of State, Elections Division",
-    "sosUrl": "#",
+    "sosUrl": "https://www.votetexas.gov/index.html",
     "phone": "1-800-252-8683",
     "email": "",
-    "pollingPlace": "#",
-    "sampleBallot": "#",
-    "voterId": "#",
-    "absentee": "#"
+    "pollingPlace": "https://goelect.txelections.civixapps.com/ivis-mvp-ui/#/login",
+    "sampleBallot": "https://www.vote411.org/ballot",
+    "voterId": "https://www.votetexas.gov/voting/need-id.html",
+    "absentee": "https://webservices.sos.state.tx.us/forms/6-1f.pdf"
   }
 }

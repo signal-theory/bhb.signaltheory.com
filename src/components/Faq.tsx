@@ -3,6 +3,7 @@ import { useId, useRef, useState } from "react";
 import type { FaqItem } from "@/content/types";
 import { gsap, useGSAP } from "@/lib/gsap";
 import { useMotion } from "@/lib/motion";
+import { RichText } from "@/lib/rich-text";
 
 export function Faq({ items }: { items: FaqItem[] }) {
   const [open, setOpen] = useState<number | null>(0);
@@ -102,7 +103,9 @@ export function Faq({ items }: { items: FaqItem[] }) {
                   <div className="overflow-hidden">
                     <div className="flex">
                       <span aria-hidden className="w-[64px] shrink-0 border-b-4 border-l-4 border-blue-light bg-cream md:w-[113px]" />
-                      <div className="t-body flex-1 border-r-4 border-b-4 border-blue-light bg-cream px-6 py-8 text-blue-dark md:pr-[100px]">{item.a}</div>
+                      <div className="t-body flex-1 border-r-4 border-b-4 border-blue-light bg-cream px-6 py-8 text-blue-dark md:pr-[100px]">
+                        <RichText text={item.a} />
+                      </div>
                     </div>
                   </div>
                 </div>

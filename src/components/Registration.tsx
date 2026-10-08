@@ -48,11 +48,11 @@ export function Registration({ state }: { state: StateContent }) {
         <h2 className="t-display t-h1 text-balance text-center text-green-light">
           {heading} <span className="text-cream">{headingAccent}</span>
         </h2>
-        <ul className="grid w-full max-w-[1145px] grid-cols-2 gap-x-6 gap-y-10 md:grid-cols-4">
+        <ul className="flex w-full max-w-[1145px] flex-wrap justify-center gap-x-6 gap-y-10 md:gap-x-12">
           {links.map((link) => {
             const icon = ICONS[link.icon];
             return (
-              <li key={link.label} data-reg-item className="gs-hide">
+              <li key={link.label} data-reg-item className="gs-hide w-[calc(50%-12px)] md:w-[232px]">
                 <a
                   href={link.href}
                   target={link.href.startsWith("http") ? "_blank" : undefined}

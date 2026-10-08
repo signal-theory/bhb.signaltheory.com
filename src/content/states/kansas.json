@@ -2,17 +2,36 @@
   "slug": "kansas",
   "name": "Kansas",
   "abbr": "KS",
-  "headline": { "line1": "Kansas", "line2": "runs this" },
+  "headline": {
+    "line1": "Kansas",
+    "line2": "runs this"
+  },
   "electionDay": "2026-11-03T19:00:00-06:00",
   "electionDayLabel": "November 3, 2026",
   "registration": {
     "heading": "Are you registered to",
     "headingAccent": "relay your voice?",
     "links": [
-      { "label": "Check your registration", "href": "#", "icon": "check-registration" },
-      { "label": "Paper registration (English)", "href": "#", "icon": "paper-registration" },
-      { "label": "Paper registration (Español)", "href": "#", "icon": "paper-registration" },
-      { "label": "Register online", "href": "#", "icon": "register-online" }
+      {
+        "label": "Check your registration",
+        "href": "https://kansasvoterinfo.gov/VoterView",
+        "icon": "check-registration"
+      },
+      {
+        "label": "Download paper registration form (English)",
+        "href": "https://sos.ks.gov/forms/elections/voterregistration.pdf",
+        "icon": "paper-registration"
+      },
+      {
+        "label": "Download paper registration form (Spanish)",
+        "href": "https://sos.ks.gov/forms/elections/Spanish/SpanishVoterReg.pdf",
+        "icon": "paper-registration"
+      },
+      {
+        "label": "Register online",
+        "href": "https://www.kdor.ks.gov/Apps/VoterReg",
+        "icon": "register-online"
+      }
     ]
   },
   "dates": {
@@ -20,53 +39,68 @@
     "headingAccent": "dates",
     "sub": "Get ready to take the baton",
     "cards": [
-      { "tag": "Kansas deadline", "date": "October 13", "label": "Last day to register to vote", "iso": "2026-10-13" },
-      { "tag": "Kansas deadline", "date": "October 27", "label": "Last day to request an advance ballot by mail", "iso": "2026-10-27" },
-      { "tag": "Election day", "date": "November 3", "label": "Election day", "iso": "2026-11-03" }
+      {
+        "tag": "Kansas deadline",
+        "date": "October 13",
+        "label": "Last day to register to vote",
+        "iso": "2026-10-13"
+      },
+      {
+        "tag": "Kansas deadline",
+        "date": "October 27",
+        "label": "Last day to request an absentee ballot",
+        "iso": "2026-10-27"
+      },
+      {
+        "tag": "Election day",
+        "date": "November 3",
+        "label": "Election day",
+        "iso": "2026-11-03"
+      }
     ]
   },
   "faq": [
     {
       "q": "When can I vote?",
-      "a": "Election Day is Tuesday, November 3, 2026. State law keeps polling places open from 7:00 a.m. to 7:00 p.m., and counties may open as early as 6:00 a.m. or close as late as 8:00 p.m., so check your county's hours. If you're in line when the polls close, you still get to vote. In-person advance voting can begin as early as Wednesday, October 14 and runs until noon on Monday, November 2."
+      "a": "Election Day is November 3, 2026. Polling locations are open from 7:00 a.m. to 7:00 p.m.. Anyone in line when the polls close is allowed to stay and vote. Individuals arriving after the polling place has closed will not be allowed to vote."
     },
     {
       "q": "How do I vote early (advance ballot)?",
-      "a": "Kansas calls early voting advance voting. In person: visit your county election office or one of its satellite locations once advance voting opens in your county (as early as October 14, and in every county by October 27) through noon on Monday, November 2. By mail: send an advance ballot application to your county election office by Tuesday, October 27, including your driver's license number or a copy of your photo ID. Return the completed ballot to the county election office, an official drop box or any polling place in your county by 7:00 p.m. on Election Day. Starting in 2026 there is no grace period for ballots that arrive late."
+      "a": "[Request a Kansas absentee ballot here.](https://sos.ks.gov/forms/elections/AV1.pdf) All Kansan voters can apply for an advance ballot/absentee ballot. The last day to request an advance ballot is **October 27, 2026** (7 days before the election)."
     },
     {
       "q": "Where do I vote?",
-      "a": "On Election Day you vote at the polling place assigned to your registration address. Kansas VoterView shows your polling place, its hours and your sample ballot, and your county election office can confirm it by phone."
+      "a": "If you are registered to vote, find your polling place [here](https://myvoteinfo.voteks.org/VoterView). You can only vote at your assigned polling place."
     },
     {
       "q": "What should I bring to the polls?",
-      "a": "A photo ID: a Kansas driver's license or nondriver ID card, a U.S. passport, a U.S. military ID, a concealed carry license, a government employee badge or a student ID from an accredited Kansas college or university. Voters 65 and older may use an expired ID. If you have a religious objection to being photographed, you can sign a declaration instead. Without ID you can cast a provisional ballot that counts once you show your ID to the county election office before the county canvass."
+      "a": "You’ll need one of the following forms of photo identification:\n\n- Driver’s license or ID card issued by Kansas or another state\n- U.S. Passport\n- U.S. Military ID\n- ID card issued by a Native American tribe\n- Employee badge or ID issued by a government office\n- Student ID card from an accredited postsecondary education institution in Kansas\n- Concealed carry license issued by Kansas or another state\n- Public assistance ID card issued by a government office"
     },
     {
       "q": "What if I moved since the last time I voted?",
-      "a": "If you moved after the October 13 registration deadline, you can still vote at the polling place for your previous address and will be asked to complete a new registration for next time. If you moved within the same county, you may be able to update your record and vote a provisional ballot at your new polling place or a central location. Call your county election office to confirm which applies to you."
+      "a": "If you moved to a new address in the same county, update your information as soon as possible. If you move after the registration deadline, you may vote at the precinct assigned to your old address, but you will be required to complete a new voter registration application.\n\nIf you moved to a new county in Kansas before the registration deadline, you must complete a new voter registration application. If you move after the registration deadline, you can still vote at the precinct assigned to your old address, but you will be required to complete a new voter registration application.\n\nIf you move to Kansas from another state, register to vote in Kansas as soon as possible. If the deadline to register has passed, you may vote a president-only ballot at your local election office by noon on the day before the election."
     },
     {
       "q": "Are there accessibility accommodations at my polling place?",
-      "a": "Yes. Every polling place has an accessible voting machine, and Kansas law requires curbside voting for voters with disabilities or limited mobility: call ahead or have someone alert the poll workers and two election workers will bring a ballot or accessible machine out to your vehicle. Your county election office can also tell you about accessible advance voting sites."
+      "a": "Every polling place must have an accessible voting system, including audiovisual accessibility.\n\n**Ballot accessibility:** Each polling place must have a fully accessible, HAVA compliant voting machine that allows voters with disabilities to vote independently. Disabled voters may request assistance from a friend, family member or companion or seek assistance from a poll worker.\n\n**Polling place accessibility:** Polling places are public accommodations and must be accessible for all voters.\n\n**English as a second language:** Currently, five counties in Kansas provide required alternative language assistance: Finney, Ford, Grant, Haskell and Seward Counties."
     },
     {
       "q": "What's on my ballot and where do the candidates stand on issues I care about?",
-      "a": "Kansas VoterView posts your personal sample ballot about 45 days before the election, and your county election office can print one for you. Nonpartisan resources such as the League of Women Voters' Vote411 and Ballotpedia explain the races and constitutional questions and collect candidate statements."
+      "a": "See a [personalized ballot](https://www.vote411.org/ballot) for your voting location."
     },
     {
       "q": "If I have additional questions about voting, where should I go?",
-      "a": "Call the Kansas Secretary of State's Elections Division at 1-800-262-VOTE (1-800-262-8683) or email election@ks.gov. Your county election officer handles registration, polling places and advance ballots for your county."
+      "a": "There are plenty of resources to help you relay your voice this Election Day. Check out the [Kansas official voting home page](https://sos.ks.gov/elections/voter-information.html) or find more digestible information from [Vote411](https://www.vote411.org/) or [The League of Women Voters](https://www.lwv.org/)."
     }
   ],
   "resources": {
     "sosName": "Kansas Secretary of State, Elections Division",
-    "sosUrl": "#",
+    "sosUrl": "https://sos.ks.gov/elections/voter-information.html",
     "phone": "1-800-262-8683",
     "email": "election@ks.gov",
-    "pollingPlace": "#",
-    "sampleBallot": "#",
-    "voterId": "#",
-    "absentee": "#"
+    "pollingPlace": "https://myvoteinfo.voteks.org/VoterView",
+    "sampleBallot": "https://www.vote411.org/ballot",
+    "voterId": "https://www.sos.ks.gov/elections/photo-id.html",
+    "absentee": "https://sos.ks.gov/forms/elections/AV1.pdf"
   }
 }
