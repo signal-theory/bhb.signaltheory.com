@@ -76,7 +76,7 @@ Content is plain JSON on purpose so a git-based CMS can edit it without a databa
 
 ## Deploy
 
-Hosted on Vercel (project `bhb-signaltheory-com`, Signal Theory team) from the `main` branch of this repo; every push to `main` deploys production and other branches get preview URLs. Point the production domain at the project once it is ready, and add that domain to the Adobe Fonts web project so the licensed fonts load there.
+Hosted on Vercel (Signal Theory team) from the `main` branch of this repo; every push to `main` deploys production and other branches get preview URLs. The production domain is babes-vote.com (registered and DNS-managed at Cloudflare).
 
 ## One repo, one site per election year
 
