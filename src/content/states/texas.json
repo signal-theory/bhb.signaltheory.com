@@ -1,0 +1,72 @@
+{
+  "slug": "texas",
+  "name": "Texas",
+  "abbr": "TX",
+  "headline": { "line1": "Texas", "line2": "runs this" },
+  "electionDay": "2026-11-03T19:00:00-06:00",
+  "electionDayLabel": "November 3, 2026",
+  "registration": {
+    "heading": "Are you registered to",
+    "headingAccent": "relay your voice?",
+    "links": [
+      { "label": "Check your registration", "href": "#", "icon": "check-registration" },
+      { "label": "Paper registration (English)", "href": "#", "icon": "paper-registration" },
+      { "label": "Paper registration (Español)", "href": "#", "icon": "paper-registration" },
+      { "label": "Register online", "href": "#", "icon": "register-online" }
+    ]
+  },
+  "dates": {
+    "heading": "Race",
+    "headingAccent": "dates",
+    "sub": "Get ready to take the baton",
+    "cards": [
+      { "tag": "Texas deadline", "date": "October 5", "label": "Last day to register to vote", "iso": "2026-10-05" },
+      { "tag": "Texas deadline", "date": "October 23", "label": "Last day to apply for a ballot by mail", "iso": "2026-10-23" },
+      { "tag": "Election day", "date": "November 3", "label": "Election day", "iso": "2026-11-03" }
+    ]
+  },
+  "faq": [
+    {
+      "q": "When can I vote?",
+      "a": "Election Day is Tuesday, November 3, 2026, and polls are open from 7:00 a.m. to 7:00 p.m. If you're in line at 7:00 p.m. you still get to vote. Early voting runs from Monday, October 19 through Friday, October 30 at any early voting location in your county, with hours set by each county."
+    },
+    {
+      "q": "How do I vote early (ballot by mail)?",
+      "a": "Most Texans vote early in person: from October 19 through October 30 you can vote at any early voting site in the county where you're registered. Voting by mail is limited to voters who are 65 or older, have a disability, expect to be out of the county during early voting and on Election Day, are confined in jail but eligible, or expect to give birth within three weeks of Election Day. Your application must be received by your county's early voting clerk by Friday, October 23, and your ballot must be postmarked by 7:00 p.m. on Election Day and received by 5:00 p.m. on Wednesday, November 4."
+    },
+    {
+      "q": "Where do I vote?",
+      "a": "On Election Day you vote at your precinct's polling place, or at any polling location in your county if your county uses countywide vote centers. Use the Secretary of State's polling place lookup or your county elections office to find your location and hours, and remember that early voting can happen at any early voting site in your county."
+    },
+    {
+      "q": "What should I bring to the polls?",
+      "a": "One of the seven approved photo IDs: a Texas driver license, a Texas Election Identification Certificate, a Texas personal ID card, a Texas handgun license, a U.S. military ID card with your photo, a U.S. citizenship certificate with your photo or a U.S. passport (book or card). An ID can be expired up to four years (any length of time if you're 70 or older). If you can't reasonably get one, you can sign a Reasonable Impediment Declaration at the polls and show a supporting document such as your voter registration certificate, a utility bill, bank statement, government check, paycheck or birth certificate."
+    },
+    {
+      "q": "What if I moved since the last time I voted?",
+      "a": "If you moved within the same county, you can vote at the polling place for your old address and fill out a statement of residence to update your registration. If you moved to a different county after the October 5 deadline, you can vote a limited ballot, which covers the statewide and shared district races, at your new county's main early voting location during early voting only (October 19 to 30), or go back to your old county to vote in person on Election Day."
+    },
+    {
+      "q": "Are there accessibility accommodations at my polling place?",
+      "a": "Yes. Every polling place has an accessible voting machine and a marked curbside voting space. If you can't enter the building without help or without risking your health, an election worker will bring a ballot out to your car. Call the polling place ahead of time so they're ready for you, and you may bring someone to assist you or request help from election workers."
+    },
+    {
+      "q": "What's on my ballot and where do the candidates stand on issues I care about?",
+      "a": "Your county elections office posts sample ballots before early voting begins, and the Secretary of State lists the statewide candidates and constitutional amendments. Nonpartisan guides such as the League of Women Voters' Vote411 and Ballotpedia collect candidate statements and explain the propositions."
+    },
+    {
+      "q": "If I have additional questions about voting, where should I go?",
+      "a": "Call the Texas Secretary of State's Elections Division at 1-800-252-VOTE (1-800-252-8683), or contact your county elections office or voter registrar, who handle registration, polling places and mail ballots for your county."
+    }
+  ],
+  "resources": {
+    "sosName": "Texas Secretary of State, Elections Division",
+    "sosUrl": "#",
+    "phone": "1-800-252-8683",
+    "email": "",
+    "pollingPlace": "#",
+    "sampleBallot": "#",
+    "voterId": "#",
+    "absentee": "#"
+  }
+}

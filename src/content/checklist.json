@@ -1,0 +1,23 @@
+[
+  {
+    "id": "before",
+    "title": "Before Election Day",
+    "items": [
+      { "id": "registration", "label": "I checked my voter registration and I’m good to go" },
+      { "id": "rules", "label": "I studied up on the rules and regulations around voting in my jurisdiction" },
+      { "id": "polling", "label": "I know my polling location and its hours OR" },
+      { "id": "absentee", "label": "I know when and where to deliver my absentee ballot" },
+      { "id": "research", "label": "I’ve researched the candidates and issues on the ballot" },
+      { "id": "ride", "label": "I have a reliable way to get to my polling place" },
+      { "id": "friends", "label": "I’ve talked with my family and friends about their plan to vote" }
+    ]
+  },
+  {
+    "id": "day-of",
+    "title": "Day of Election",
+    "items": [
+      { "id": "id", "label": "I have what I need to meet voter ID requirements" },
+      { "id": "sample", "label": "I have my filled-out sample ballot" }
+    ]
+  }
+]

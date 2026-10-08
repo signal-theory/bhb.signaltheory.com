@@ -1,184 +1,210 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
-@import url("https://use.typekit.net/wnt7tob.css");
+@import "tailwindcss";
+
+/* ---------- Licensed fonts: local install first, then /public/fonts, then Google fallbacks ---------- */
+@font-face {
+  font-family: "Dharma Gothic M";
+  font-style: italic;
+  font-weight: 900;
+  font-display: swap;
+  src: local("Dharma Gothic M Heavy Italic"), local("DharmaGothicM-HeavyItalic"), local("DharmaGothicM-HeavyIt"),
+    url("/fonts/DharmaGothicM-HeavyItalic.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Dharma Gothic M";
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: local("Dharma Gothic M Heavy"), local("DharmaGothicM-Heavy"),
+    url("/fonts/DharmaGothicM-Heavy.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Avenir Web";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Avenir Roman"), local("Avenir-Roman"), url("/fonts/Avenir-Roman.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Avenir Web";
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: local("Avenir Heavy"), local("Avenir-Heavy"), url("/fonts/Avenir-Heavy.woff2") format("woff2");
+}
+
+/* ---------- Design tokens from the Figma file ---------- */
+@theme {
+  --color-blue-dark: #1c4b4f;
+  --color-blue-light: #4fc4dd;
+  --color-cream: #e7e3d8;
+  --color-red-dark: #680020;
+  --color-red-light: #ff223d;
+  --color-green-dark: #1e413a;
+  --color-green-light: #5dba31;
+
+  --font-display: "Dharma Gothic M", "dharma-gothic-m", var(--font-saira), Impact, "Arial Narrow", sans-serif;
+  --font-body: "Avenir Web", var(--font-nunito), "Helvetica Neue", Arial, sans-serif;
+  --font-nav: var(--font-montserrat), "Avenir Web", Arial, sans-serif;
+
+  --breakpoint-xs: 30rem;
+}
 
 :root {
-  --max-width: 1100px;
-  --border-radius: 12px;
-  --font-sans: "Montserrat", sans-serif;
-  --font-black: "roc-grotesk-wide", sans-serif;
-  --font-blackComp: "roc-grotesk-compressed", sans-serif;
-
-  --yellow-hex: #F3C300;
-  --blue-hex: #282560;
-  --red-hex: #EF4239;
-  
+  --page-max: 1440px;
+  --gutter: clamp(20px, 5.555vw, 80px);
+  --nav-h: 87px;
+  --lane-gap: 57px;
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-  font-family: var(--font-sans);
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-  overflow-y:scroll;
-  font-size: 18px;
+html {
   scroll-behavior: smooth;
 }
-
+html,
 body {
-  color: var(--blue-hex);
-  background: var(--yellow-hex);
+  overflow-x: clip;
+  background: var(--color-blue-dark);
 }
-
-a {
-  color: inherit;
-  text-decoration: none;
-  cursor: none !important;
+body {
+  color: var(--color-cream);
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
 }
-button {
-  background-color: transparent;
-  border: none;
-  appearance: none;
-  cursor: none !important;
-}
-@media screen and (max-width: 768px) {
-  a, button {
-    cursor: default !important;
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
 }
-p {
-  margin: 0 0 0.5rem;
-  line-height: 1.4;
-}
-h1, h2, h3, h4, h5 {
-  font-family: var(--font-black);
-  font-weight: 800;
-  font-style: normal;
-  margin: 0 auto;
-  max-width:900px;
-  text-align: center;
-  text-transform: uppercase;
-  line-height: 1;
-}
-h1 {
-  font-size: clamp(4.8rem, 7.2vw, 7.8rem);
-}
-h2, 
-h3,
-h4,
-h5 {
-  font-size: clamp(2rem, 3.5vw, 4.3rem);
-  margin: 0 auto 1rem;
-}
-.container {
-  position: relative;
-}
-.screen-reader-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border: 0;
-}
-.font-weight-bold {
-  font-weight: 700;
-}
 
-/* BUTTONS*/
-.button {
-  display: inline-flex;
-  align-items: center;
-  position: relative;
-  padding: 0 2vw;
-  margin: 2vw 0;
-  height:60px;
-  background-color: var(--yellow-hex);
-  border: 3px solid var(--blue-hex);
-  color: var(--blue-hex);
-  font-weight: 900;
-  font-size: 1rem;
-  cursor: pointer;
-}
-.btn {
-  position: relative;
-  display: inline-flex;
-  height: 70px;
-  margin: 2vw 0;
-}
-@media screen and (max-width: 425px) {
-  .button, 
-  .btn,
-  .bth span {
-    display: flex;
-    justify-content: center;
+@layer components {
+  /* Type styles (names match the Figma text styles) */
+  .t-display {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 0.9;
+    letter-spacing: 0;
+  }
+  .t-display-upright {
+    font-family: var(--font-display);
+    font-style: normal;
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 1;
+  }
+  .t-h1 {
+    font-size: clamp(56px, 6.94vw, 100px);
+  }
+  .t-numeral {
+    font-size: 80px;
+    line-height: 1;
+  }
+  .t-label {
+    font-family: var(--font-body);
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 1.2;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  .t-label-sm {
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.37;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .t-body {
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.55;
+  }
+  .t-body-bold {
+    font-family: var(--font-body);
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 1.55;
+  }
+  .t-body-sm {
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  .t-caption {
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+  .t-button {
+    font-family: var(--font-body);
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 1.55;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .wrap {
+    width: 100%;
+    max-width: var(--page-max);
+    margin-inline: auto;
+    padding-inline: var(--gutter);
+  }
+
+  .btn-solid {
+    display: inline-flex;
     align-items: center;
-    width: 100%;;
+    justify-content: center;
+    gap: 10px;
+    min-height: 69px;
+    padding: 12px 16px;
+    border-radius: 8px;
+    background: var(--color-blue-light);
+    color: var(--color-blue-dark);
+  }
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 64px;
+    padding: 18px 29px;
+    border: 3px solid var(--color-blue-light);
+    border-radius: 8px;
+    color: var(--color-blue-light);
+  }
+  .btn-solid,
+  .btn-outline {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .btn-solid:hover,
+  .btn-outline:hover {
+    transform: translateY(-2px);
+  }
+  .btn-solid:focus-visible,
+  .btn-outline:focus-visible {
+    outline: 3px solid var(--color-red-light);
+    outline-offset: 3px;
+  }
+
+  /* Elements animated by GSAP start hidden only when motion is allowed (see src/lib/motion.ts) */
+  .motion .gs-hide {
+    visibility: hidden;
+  }
+  .line {
+    fill: none;
+    stroke-width: 4;
+    stroke-linecap: round;
+    stroke-linejoin: round;
   }
 }
-.btn span {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  padding: 0 calc(2vw + 5px);
-  width: 100%;
-  height:60px;
-  margin-top:10px;
-  border-width: 3px;
-  border-style: solid;
-  font-weight: 900;
-  font-size: 1rem;;
-  transition: all 0.15s ease-out;
-  z-index: 2;
-}
-.btn:hover span {
-  transform: translateY(-10px);
-}
-.btn::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: calc(100% - 6px);
-  height: 40px;
-  border: 3px solid transparent;
-  transform: translateY(5px);
-  transition: all 0.15s ease-out;
-  z-index: 1;
-}
-.btn:hover::before {
-  transform: translateY(25px);
-}
-/* blue button colors */
-.btn-blue-fill span {
-  background-color: var(--blue-hex);
-  border-color: var(--yellow-hex);
-  color: var(--yellow-hex);
 
-}
-.btn-blue-fill:hover::before {
-  border-color: var(--yellow-hex);
-  background-color: var(--blue-hex);
-}
-
-/* blue button colors */
-.btn-yellow-fill span {
-  background-color: var(--yellow-hex);
-  border-color: var(--blue-hex);
-  color: var(--blue-hex);
-
-}
-.btn-yellow-fill:hover::before {
-  border-color: var(--blue-hex);
+::selection {
+  background: var(--color-red-light);
+  color: #fff;
 }

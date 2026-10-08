@@ -1,0 +1,72 @@
+{
+  "name": "Babes Helping Babes Vote",
+  "shortName": "BHB Vote",
+  "url": "https://vote.babeshelpingbabes.org",
+  "description": "Everything you need to run this election in Missouri, Kansas and Texas: registration, key dates, FAQs, a countdown and a plan-to-vote checklist.",
+  "home": {
+    "headline": {
+      "pre": "We",
+      "accent": "run",
+      "post": "this"
+    },
+    "buttons": [
+      {
+        "label": "Register in Kansas",
+        "href": "/kansas#register"
+      },
+      {
+        "label": "Register in Missouri",
+        "href": "/missouri#register"
+      },
+      {
+        "label": "Register in Texas",
+        "href": "/texas#register"
+      }
+    ],
+    "note": "Not sure if you’re registered? Start at",
+    "noteLink": "vote.gov",
+    "noteHref": "https://vote.gov",
+    "worksHeading": "How voting works",
+    "worksBody": "Polls in Missouri run 6am to 7pm. Kansas polls are open at minimum 7am to 7pm, and hours vary by county. Texas polls run 7am to 7pm. If you moved, changed your name or skipped the last couple of cycles, check your registration before the deadline.",
+    "cardLabel": "Election info"
+  },
+  "nav": [
+    {
+      "label": "Voting in Missouri",
+      "href": "/missouri"
+    },
+    {
+      "label": "Voting in Kansas",
+      "href": "/kansas"
+    },
+    {
+      "label": "Voting in Texas",
+      "href": "/texas"
+    },
+    {
+      "label": "FAQs",
+      "href": "#faq"
+    },
+    {
+      "label": "Make a plan",
+      "href": "#checklist"
+    }
+  ],
+  "countdown": {
+    "heading": "Countdown to race day"
+  },
+  "checklist": {
+    "heading": "Race like you",
+    "headingAccent": "mean it",
+    "download": "Download checklist",
+    "share": "Share",
+    "pdf": "/checklist.pdf"
+  },
+  "footer": {
+    "contactLabel": "Contact us",
+    "contactHref": "mailto:hello@babeshelpingbabes.org",
+    "instagram": "https://www.instagram.com/babeshelpingbabes/",
+    "facebook": "https://www.facebook.com/babeshelpingbabes",
+    "copyright": "© 2026 Babes Helping Babes"
+  }
+}

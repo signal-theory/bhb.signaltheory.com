@@ -1,0 +1,72 @@
+{
+  "slug": "kansas",
+  "name": "Kansas",
+  "abbr": "KS",
+  "headline": { "line1": "Kansas", "line2": "runs this" },
+  "electionDay": "2026-11-03T19:00:00-06:00",
+  "electionDayLabel": "November 3, 2026",
+  "registration": {
+    "heading": "Are you registered to",
+    "headingAccent": "relay your voice?",
+    "links": [
+      { "label": "Check your registration", "href": "#", "icon": "check-registration" },
+      { "label": "Paper registration (English)", "href": "#", "icon": "paper-registration" },
+      { "label": "Paper registration (Español)", "href": "#", "icon": "paper-registration" },
+      { "label": "Register online", "href": "#", "icon": "register-online" }
+    ]
+  },
+  "dates": {
+    "heading": "Race",
+    "headingAccent": "dates",
+    "sub": "Get ready to take the baton",
+    "cards": [
+      { "tag": "Kansas deadline", "date": "October 13", "label": "Last day to register to vote", "iso": "2026-10-13" },
+      { "tag": "Kansas deadline", "date": "October 27", "label": "Last day to request an advance ballot by mail", "iso": "2026-10-27" },
+      { "tag": "Election day", "date": "November 3", "label": "Election day", "iso": "2026-11-03" }
+    ]
+  },
+  "faq": [
+    {
+      "q": "When can I vote?",
+      "a": "Election Day is Tuesday, November 3, 2026. State law keeps polling places open from 7:00 a.m. to 7:00 p.m., and counties may open as early as 6:00 a.m. or close as late as 8:00 p.m., so check your county's hours. If you're in line when the polls close, you still get to vote. In-person advance voting can begin as early as Wednesday, October 14 and runs until noon on Monday, November 2."
+    },
+    {
+      "q": "How do I vote early (advance ballot)?",
+      "a": "Kansas calls early voting advance voting. In person: visit your county election office or one of its satellite locations once advance voting opens in your county (as early as October 14, and in every county by October 27) through noon on Monday, November 2. By mail: send an advance ballot application to your county election office by Tuesday, October 27, including your driver's license number or a copy of your photo ID. Return the completed ballot to the county election office, an official drop box or any polling place in your county by 7:00 p.m. on Election Day. Starting in 2026 there is no grace period for ballots that arrive late."
+    },
+    {
+      "q": "Where do I vote?",
+      "a": "On Election Day you vote at the polling place assigned to your registration address. Kansas VoterView shows your polling place, its hours and your sample ballot, and your county election office can confirm it by phone."
+    },
+    {
+      "q": "What should I bring to the polls?",
+      "a": "A photo ID: a Kansas driver's license or nondriver ID card, a U.S. passport, a U.S. military ID, a concealed carry license, a government employee badge or a student ID from an accredited Kansas college or university. Voters 65 and older may use an expired ID. If you have a religious objection to being photographed, you can sign a declaration instead. Without ID you can cast a provisional ballot that counts once you show your ID to the county election office before the county canvass."
+    },
+    {
+      "q": "What if I moved since the last time I voted?",
+      "a": "If you moved after the October 13 registration deadline, you can still vote at the polling place for your previous address and will be asked to complete a new registration for next time. If you moved within the same county, you may be able to update your record and vote a provisional ballot at your new polling place or a central location. Call your county election office to confirm which applies to you."
+    },
+    {
+      "q": "Are there accessibility accommodations at my polling place?",
+      "a": "Yes. Every polling place has an accessible voting machine, and Kansas law requires curbside voting for voters with disabilities or limited mobility: call ahead or have someone alert the poll workers and two election workers will bring a ballot or accessible machine out to your vehicle. Your county election office can also tell you about accessible advance voting sites."
+    },
+    {
+      "q": "What's on my ballot and where do the candidates stand on issues I care about?",
+      "a": "Kansas VoterView posts your personal sample ballot about 45 days before the election, and your county election office can print one for you. Nonpartisan resources such as the League of Women Voters' Vote411 and Ballotpedia explain the races and constitutional questions and collect candidate statements."
+    },
+    {
+      "q": "If I have additional questions about voting, where should I go?",
+      "a": "Call the Kansas Secretary of State's Elections Division at 1-800-262-VOTE (1-800-262-8683) or email election@ks.gov. Your county election officer handles registration, polling places and advance ballots for your county."
+    }
+  ],
+  "resources": {
+    "sosName": "Kansas Secretary of State, Elections Division",
+    "sosUrl": "#",
+    "phone": "1-800-262-8683",
+    "email": "election@ks.gov",
+    "pollingPlace": "#",
+    "sampleBallot": "#",
+    "voterId": "#",
+    "absentee": "#"
+  }
+}
