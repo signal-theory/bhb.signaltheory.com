@@ -68,9 +68,9 @@ export function Countdown({ target, heading, electionDayLabel }: Props) {
           height={207}
           className="gs-hide absolute top-[-64px] right-0 w-[clamp(96px,20.9vw,301px)] md:top-[-46px]"
         />
-        <ul className="mt-10 flex flex-wrap justify-center gap-3 md:mt-[53px] md:gap-[clamp(40px,12.4vw,178px)]" aria-live="polite">
+        <ul className="mt-10 flex flex-wrap justify-center gap-1.5 md:mt-[53px] md:gap-[clamp(40px,12.4vw,178px)]" aria-live="polite">
           {units.map((u) => (
-            <li key={u.label} data-ring className="gs-hide flex w-[clamp(96px,26.75vw,222px)] flex-col items-center gap-2 md:gap-4">
+            <li key={u.label} data-ring className="gs-hide flex w-[clamp(100px,28.5vw,222px)] flex-col items-center gap-2 md:gap-4">
               <div className="relative aspect-square w-full">
                 <svg viewBox="0 0 222 222" className="h-full w-full" aria-hidden>
                   <circle cx="111" cy="111" r="111" className="fill-green-dark" />
@@ -86,11 +86,11 @@ export function Countdown({ target, heading, electionDayLabel }: Props) {
                     strokeDasharray={`${Math.max(0.01, u.frac * 100)} 100`}
                   />
                 </svg>
-                <span className="t-display absolute inset-0 flex items-center justify-center text-green-dark tabular-nums" style={{ fontSize: "clamp(36px, 9.64vw, 80px)" }}>
+                <span className="t-display absolute inset-0 flex items-center justify-center text-green-dark tabular-nums" style={{ fontSize: "clamp(44px, 11.7vw, 80px)" }}>
                   {u.value ?? "–"}
                 </span>
               </div>
-              <span className="t-label text-[clamp(9px,2.3vw,18px)] tracking-[0.11em] text-green-dark">{u.label}</span>
+              <span className="t-label text-[clamp(12px,3.1vw,18px)] tracking-[0.1em] text-green-dark">{u.label}</span>
             </li>
           ))}
         </ul>
