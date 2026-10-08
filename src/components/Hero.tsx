@@ -69,7 +69,9 @@ export function Hero({ headline }: { headline: { line1: string; line2: string } 
         scaleY: 1,
         ease: "none",
         stagger: { each: 0.06, from: "center" },
-        scrollTrigger: { trigger: el, start: "top top", end: "bottom 45%", scrub: 0.6 },
+        // Short heroes (phones) would otherwise finish this range before it starts, so draw over a
+        // stretch of scrolling that always exists: 40% of the viewport, or the hero's lower half.
+        scrollTrigger: { trigger: el, start: "top top", end: () => `+=${Math.max(Math.round(window.innerHeight * 0.4), Math.round(el.offsetHeight * 0.55))}`, scrub: 0.6 },
       });
 
       // 3. After the intro, scrolling rakes the arcs back out the way they came and drifts the headline.
@@ -77,7 +79,7 @@ export function Hero({ headline }: { headline: { line1: string; line2: string } 
         "onComplete",
         contextSafe(() => {
           gsap
-            .timeline({ scrollTrigger: { trigger: el, start: "top top", end: "center top", scrub: 0.6 } })
+            .timeline({ scrollTrigger: { trigger: el, start: "top top", end: () => `+=${Math.max(Math.round(el.offsetHeight / 2), 260)}`, scrub: 0.6 } })
             .add(tweenTrim(right, { ease: "none", duration: 1, stagger: { each: 0.05, from: "end" } }), 0)
             .add(tweenTrim(left, { ease: "none", duration: 1, stagger: { each: 0.05, from: "end" } }), 0)
             .to("[data-h1]", { y: -30, ease: "none" }, 0)

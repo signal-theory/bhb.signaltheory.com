@@ -109,10 +109,10 @@ export function HowVotingWorks({ states, copy }: { states: StateContent[]; copy:
           <img data-sticker src="/graphics/badge-star-red.svg" alt="" width={88.27} height={89.14} className="gs-hide absolute top-[158px] left-[29.9%] w-[88px]" />
           <img data-sticker src="/graphics/badge-check.svg" alt="" width={115.64} height={105.82} className="gs-hide absolute top-[60px] left-[63.3%] w-[116px] rotate-[-26.3deg]" />
         </div>
-        <ul className="flex flex-wrap items-center justify-center gap-6 px-(--gutter) py-12 md:hidden">
+        <ul className="flex flex-wrap items-center justify-center gap-x-5 gap-y-6 px-(--gutter) py-10 md:hidden">
           {ordered.map((s, i) => (
             <li key={s.slug} data-deadline className="gs-hide">
-              <DeadlineSticker tag={s.dates.cards[0].tag} date={s.dates.cards[0].date} className="scale-90" style={{ rotate: `${[-8, 3, 7][i]}deg` }} />
+              <DeadlineSticker tag={s.dates.cards[0].tag} date={s.dates.cards[0].date} className="[zoom:0.68]" style={{ rotate: `${[-8, 3, 7][i]}deg` }} />
             </li>
           ))}
         </ul>

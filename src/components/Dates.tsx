@@ -30,7 +30,8 @@ export function Dates({ state }: { state: StateContent }) {
       const path = el.querySelector<SVGPathElement>("[data-reveal]");
       const dots = gsap.utils.toArray<SVGGElement>("[data-dot]", el);
 
-      if (path) {
+      // The path is hidden on phones; skip its choreography when it is not rendered.
+      if (path && path.ownerSVGElement?.getClientRects().length) {
         const [item] = prepDraw([path]);
         // Where each dot sits along the route, as a fraction of the path length
         const samples = 400;
@@ -127,7 +128,7 @@ export function Dates({ state }: { state: StateContent }) {
           <p className="t-body text-cream">{sub}</p>
         </div>
 
-        <ul data-dates-row className="relative mt-10 flex flex-col items-center gap-8 px-(--gutter) md:mt-[117px] md:flex-row md:items-end md:justify-between md:gap-12">
+        <ul data-dates-row className="relative mt-10 flex flex-col items-center gap-8 px-(--gutter) md:mt-[117px] md:flex-row md:items-start md:justify-between md:gap-12">
           {cards.map((card) => (
             <li key={card.tag + card.date} data-date-card className="gs-hide flex w-full flex-col items-center gap-4 md:flex-1 md:gap-8">
               <DateCard tag={card.tag} date={card.date} />
