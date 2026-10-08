@@ -119,7 +119,23 @@ export function Footer({ footer }: { footer: SiteContent["footer"] }) {
                 Email copied!
               </span>
             </span>
-            <img src="/graphics/icon-contact-arrow.svg" alt="" width={34} height={34} className="size-4 shrink-0 md:size-[34px]" />
+            {/* Arrow swaps to a copy icon on hover/focus, and stays as the copy icon while "copied" shows */}
+            <span className="relative size-4 shrink-0 md:size-[34px]">
+              <img
+                src="/graphics/icon-contact-arrow.svg"
+                alt=""
+                width={34}
+                height={34}
+                className={`absolute inset-0 size-full transition-all duration-300 ${copied ? "scale-50 opacity-0" : "group-hover:scale-50 group-hover:opacity-0 group-focus-visible:scale-50 group-focus-visible:opacity-0"}`}
+              />
+              <img
+                src="/graphics/icon-contact-copy.svg"
+                alt=""
+                width={34}
+                height={34}
+                className={`absolute inset-0 size-full transition-all duration-300 ${copied ? "scale-100 opacity-100" : "scale-50 opacity-0 group-hover:scale-100 group-hover:opacity-100 group-focus-visible:scale-100 group-focus-visible:opacity-100"}`}
+              />
+            </span>
           </a>
           <span role="status" aria-live="polite" className="sr-only">
             {copied ? `${email} copied to clipboard` : ""}
