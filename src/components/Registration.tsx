@@ -45,14 +45,14 @@ export function Registration({ state }: { state: StateContent }) {
         ref={card}
         className="relative flex flex-col items-center justify-between gap-10 rounded-[32px] bg-green-dark px-5 py-10 md:min-h-[518px] md:gap-16 md:px-[60px] md:py-[80px]"
       >
-        <h2 className="t-display t-h1 text-balance text-center text-green-light">
+        <h2 className="t-display t-h1 text-balance text-center text-green-light max-md:text-[clamp(40px,12.8vw,52px)]">
           {heading} <span className="text-cream">{headingAccent}</span>
         </h2>
         <ul className="flex w-full max-w-[1145px] flex-wrap justify-center gap-x-[10px] gap-y-[38px] md:gap-x-12 md:gap-y-10">
           {links.map((link) => {
             const icon = ICONS[link.icon];
             return (
-              <li key={link.label} data-reg-item className="gs-hide w-[150px] md:w-[232px]">
+              <li key={link.label} data-reg-item className="gs-hide w-[calc(50%-5px)] md:w-[232px]">
                 <a
                   href={link.href}
                   target={link.href.startsWith("http") ? "_blank" : undefined}
