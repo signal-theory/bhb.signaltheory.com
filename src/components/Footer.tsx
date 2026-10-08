@@ -22,6 +22,7 @@ const ARCS = [
   return `M ${CX} ${top} A ${r} ${r} 0 0 1 ${x.toFixed(2)} 395`;
 });
 const LINES = [0, 130.795, 261.59, 392.385].map((y) => `M ${CX} ${y} H 1440`);
+const MOBILE_LINES = [7, 48.7, 90.4, 132.1, 173.8].map((y) => `M -10 ${y} H 400`);
 
 export function Footer({ footer }: { footer: SiteContent["footer"] }) {
   const root = useRef<HTMLElement>(null);
@@ -31,8 +32,9 @@ export function Footer({ footer }: { footer: SiteContent["footer"] }) {
     () => {
       if (!motion || !root.current) return;
       const el = root.current;
-      const arcs = prepDraw(gsap.utils.toArray<SVGPathElement>("[data-track-arcs] path", el));
-      const lines = prepDraw(gsap.utils.toArray<SVGPathElement>("[data-track-lines] path", el));
+      const visible = (p: SVGPathElement) => p.getTotalLength() > 0 && !!p.ownerSVGElement?.getClientRects().length;
+      const arcs = prepDraw(gsap.utils.toArray<SVGPathElement>("[data-track-arcs] path", el).filter(visible));
+      const lines = prepDraw(gsap.utils.toArray<SVGPathElement>("[data-track-lines] path", el).filter(visible));
       const band = el.querySelector("[data-band]");
       gsap
         .timeline({ scrollTrigger: { trigger: band, start: "top 90%", end: "bottom 60%", scrub: 0.6 } })
@@ -60,8 +62,8 @@ export function Footer({ footer }: { footer: SiteContent["footer"] }) {
   );
 
   return (
-    <footer ref={root} className="relative isolate bg-blue-dark pb-[60px]">
-      <div data-band className="relative overflow-hidden md:aspect-[1440/395]">
+    <footer ref={root} className="relative isolate bg-blue-dark pb-8 md:pb-[60px]">
+      <div data-band className="relative h-[290px] overflow-hidden md:h-auto md:aspect-[1440/395]">
         <svg aria-hidden className="absolute inset-0 hidden h-full w-full md:block" viewBox="0 0 1440 395" preserveAspectRatio="xMinYMin slice">
           <g data-track-arcs className="line stroke-blue-light" strokeLinecap="butt">
             {ARCS.map((d) => (
@@ -74,23 +76,31 @@ export function Footer({ footer }: { footer: SiteContent["footer"] }) {
             ))}
           </g>
         </svg>
-        <div className="wrap relative flex flex-wrap items-center justify-between gap-6 py-10 md:absolute md:inset-x-0 md:top-[74.3%] md:justify-end md:gap-[50px] md:py-0">
-          <a href={footer.contactHref} className="btn-solid t-button w-full justify-between md:w-[331px]">
+        {/* Phones (mobile mock): the straight lanes only, 42px apart, the arcs are off-canvas */}
+        <svg aria-hidden className="absolute inset-0 h-full w-full md:hidden" viewBox="0 0 390 290" preserveAspectRatio="none">
+          <g data-track-lines className="fill-none stroke-blue-light" strokeWidth={1.8}>
+            {MOBILE_LINES.map((d) => (
+              <path key={d} d={d} />
+            ))}
+          </g>
+        </svg>
+        <div className="wrap absolute inset-x-0 top-[111px] flex -translate-y-1/2 items-center justify-between gap-6 md:top-[74.3%] md:translate-y-0 md:justify-end md:gap-[50px]">
+          <a href={footer.contactHref} className="btn-solid t-button min-h-[40px] flex-1 justify-between px-3 py-2 text-[12px] tracking-[1px] md:min-h-[69px] md:w-[331px] md:flex-none md:px-4 md:py-3 md:text-[18px] md:tracking-[2px]">
             {footer.contactLabel}
-            <img src="/graphics/icon-contact-arrow.svg" alt="" width={34} height={34} />
+            <img src="/graphics/icon-contact-arrow.svg" alt="" width={34} height={34} className="size-5 md:size-[34px]" />
           </a>
-          <div className="flex items-center gap-[50px]">
+          <div className="flex items-center gap-6 md:gap-[50px]">
             <a href={footer.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="transition-transform hover:-translate-y-1">
-              <img src="/graphics/icon-instagram.svg" alt="" width={60} height={60} />
+              <img src="/graphics/icon-instagram.svg" alt="" width={60} height={60} className="size-[29px] md:size-[60px]" />
             </a>
             <a href={footer.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="transition-transform hover:-translate-y-1">
-              <img src="/graphics/icon-facebook.svg" alt="" width={64} height={64} className="size-[60px]" />
+              <img src="/graphics/icon-facebook.svg" alt="" width={64} height={64} className="size-[29px] md:size-[60px]" />
             </a>
           </div>
         </div>
       </div>
 
-      <div data-graphic className="relative mx-auto mt-[27px] aspect-[1109/591] w-[min(1109px,100%)]">
+      <div data-graphic className="relative mx-auto mt-8 aspect-[1109/591] w-[min(1109px,88%)] md:mt-[27px] md:w-[min(1109px,100%)]">
         <img data-vote src="/graphics/vote-letters.svg" alt="Vote" width={707.19} height={444.6} className="gs-hide absolute top-[16.6%] left-[26%] w-[63.8%]" />
         <div data-sticker className="gs-hide absolute top-0 left-0 flex aspect-square w-[35.8%] items-center justify-center">
           <img src="/graphics/sticker-we-voted-footer.svg" alt="We voted" width={293} height={293} className="w-[73.7%] rotate-[61.38deg]" />
@@ -100,8 +110,8 @@ export function Footer({ footer }: { footer: SiteContent["footer"] }) {
         </div>
       </div>
 
-      <div className="wrap mt-[27px] flex flex-wrap items-center justify-between gap-4">
-        <img src="/graphics/logo-bhb-signal-theory.svg" alt="Babes Helping Babes at Signal Theory" width={305} height={66.58} className="w-[min(305px,60vw)]" />
+      <div className="wrap mt-8 flex flex-col items-center gap-2 md:mt-[27px] md:flex-row md:justify-between md:gap-4">
+        <img src="/graphics/logo-bhb-signal-theory.svg" alt="Babes Helping Babes at Signal Theory" width={305} height={66.58} className="w-[183px] md:w-[305px]" />
         <span className="t-caption text-blue-light">{footer.copyright}</span>
       </div>
     </footer>

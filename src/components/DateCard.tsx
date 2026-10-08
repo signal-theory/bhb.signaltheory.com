@@ -5,7 +5,7 @@ export function DateCard({ tag, date, tone = "red", className = "" }: Props) {
   const top = tone === "red" ? "bg-red-light text-red-dark" : "bg-green-light text-green-dark";
   const body = tone === "red" ? "text-red-dark" : "text-green-dark";
   return (
-    <div className={`w-[272px] max-w-full overflow-hidden rounded-[9.6px] border-[2.4px] border-white bg-white ${className}`}>
+    <div className={`w-full overflow-hidden rounded-[9.6px] border-[2.4px] border-white bg-white md:w-[272px] ${className}`}>
       <div className={`flex items-center justify-center px-5 py-[20px] ${top}`}>
         <span className="t-display-upright text-[40.8px] leading-none whitespace-nowrap">{tag}</span>
       </div>

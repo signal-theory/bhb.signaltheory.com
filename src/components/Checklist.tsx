@@ -65,7 +65,7 @@ export function Checklist({ groups, copy }: { groups: ChecklistGroup[]; copy: Si
   );
 
   return (
-    <section id="checklist" ref={root} className="relative isolate bg-blue-dark py-[100px]">
+    <section id="checklist" ref={root} className="relative isolate bg-blue-dark py-8 md:py-[100px]">
       <div className="wrap">
         <h2 className="t-display t-h1 text-balance text-center text-blue-light">
           {copy.heading} <span className="text-cream">{copy.headingAccent}</span>
@@ -82,8 +82,8 @@ export function Checklist({ groups, copy }: { groups: ChecklistGroup[]; copy: Si
           )}
         </p>
 
-        <div className="relative mt-12 md:mt-[68px]">
-          <div data-check-groups className="flex flex-col gap-12 md:flex-row md:items-stretch md:justify-between md:gap-10">
+        <div className="relative mt-10 md:mt-[68px]">
+          <div data-check-groups className="flex flex-col gap-[60px] md:flex-row md:items-stretch md:justify-between md:gap-10">
             {groups.map((group, gi) => (
               <div key={group.id} className="contents">
                 {gi > 0 && <div data-divider aria-hidden className="hidden w-[4px] shrink-0 rounded-full bg-blue-light md:block" />}
@@ -124,7 +124,7 @@ export function Checklist({ groups, copy }: { groups: ChecklistGroup[]; copy: Si
 
           <img data-trophy src="/graphics/icon-trophy.svg" alt="" width={174} height={235} className="gs-hide absolute right-[7%] bottom-0 hidden w-[174px] md:block" />
 
-          <div className="mt-16 flex flex-wrap items-center justify-center gap-[21px] md:mt-[101px]">
+          <div className="mt-12 flex flex-col items-center justify-center gap-5 md:mt-[101px] md:flex-row md:flex-wrap md:gap-[21px]">
             <a href={copy.pdf} download className="btn-solid t-button">
               {copy.download}
               <img src="/graphics/icon-download-arrow.svg" alt="" width={34} height={34} className="rotate-90" />

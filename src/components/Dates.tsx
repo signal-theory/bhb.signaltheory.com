@@ -78,9 +78,9 @@ export function Dates({ state }: { state: StateContent }) {
   );
 
   return (
-    <section id="dates" ref={root} className="relative isolate z-10 bg-red-dark py-[100px] md:py-[138px]">
+    <section id="dates" ref={root} className="relative isolate z-10 bg-red-dark py-[72px] md:py-[138px]">
       <div className="relative mx-auto max-w-(--page-max)">
-        <svg aria-hidden className="pointer-events-none absolute top-[-15px] left-[13.75%] w-[72.57%] overflow-visible" viewBox="0 0 1045 822.5">
+        <svg aria-hidden className="pointer-events-none absolute top-[-15px] left-[13.75%] hidden w-[72.57%] overflow-visible md:block" viewBox="0 0 1045 822.5">
           <defs>
             <mask id={maskId} maskUnits="userSpaceOnUse" x="-100" y="-100" width="1300" height="1100">
               <path data-reveal d={DATES_ROUTE_D} fill="none" stroke="#fff" strokeWidth={16} strokeLinecap="round" strokeLinejoin="round" />
@@ -101,7 +101,7 @@ export function Dates({ state }: { state: StateContent }) {
           alt=""
           width={96}
           height={167}
-          className="gs-hide absolute top-[-119px] left-[4.8%] hidden w-[clamp(56px,6.7vw,96px)] rotate-[20.44deg] md:block"
+          className="gs-hide absolute top-[-52px] left-[18%] w-[clamp(53px,6.7vw,96px)] rotate-[20.44deg] md:top-[-119px] md:left-[4.8%]"
         />
         <img
           data-sticker
@@ -117,7 +117,7 @@ export function Dates({ state }: { state: StateContent }) {
           alt=""
           width={109.11}
           height={110.2}
-          className="gs-hide absolute top-[50px] right-[3.5%] w-[clamp(64px,7.6vw,109px)]"
+          className="gs-hide absolute top-[-35px] right-[7%] w-[clamp(65px,7.6vw,109px)] md:top-[50px] md:right-[3.5%]"
         />
 
         <div className="relative flex flex-col items-center gap-[10px] px-(--gutter) text-center">
@@ -127,9 +127,9 @@ export function Dates({ state }: { state: StateContent }) {
           <p className="t-body text-cream">{sub}</p>
         </div>
 
-        <ul data-dates-row className="relative mt-16 flex flex-col items-center gap-12 px-(--gutter) md:mt-[117px] md:flex-row md:items-end md:justify-between">
+        <ul data-dates-row className="relative mt-10 flex flex-col items-center gap-8 px-(--gutter) md:mt-[117px] md:flex-row md:items-end md:justify-between md:gap-12">
           {cards.map((card) => (
-            <li key={card.tag + card.date} data-date-card className="gs-hide flex w-full flex-col items-center gap-8 md:flex-1">
+            <li key={card.tag + card.date} data-date-card className="gs-hide flex w-full flex-col items-center gap-4 md:flex-1 md:gap-8">
               <DateCard tag={card.tag} date={card.date} />
               <p className="t-label max-w-[268px] text-center text-cream">{card.label}</p>
             </li>

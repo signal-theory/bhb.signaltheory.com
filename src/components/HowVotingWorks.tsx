@@ -132,10 +132,10 @@ export function HowVotingWorks({ states, copy }: { states: StateContent[]; copy:
               <li key={s.slug} data-card className="gs-hide">
                 <Link
                   href={`/${s.slug}`}
-                  className="group relative block h-[326px] overflow-hidden rounded-[13.5px] bg-green-dark transition-transform duration-300 hover:-translate-y-2 focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-green-light"
+                  className="group relative block h-[240px] overflow-hidden rounded-[13.5px] bg-green-dark transition-transform duration-300 hover:-translate-y-2 focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-green-light md:h-[326px]"
                 >
                   <CardLines slug={s.slug} />
-                  <span className="t-display absolute bottom-[16px] left-[16px] flex flex-col text-[52px] leading-none text-green-light">
+                  <span className="t-display absolute bottom-[16px] left-[16px] flex flex-col text-[40px] leading-none text-green-light md:text-[52px]">
                     <span>{s.name}</span>
                     <span>{copy.cardLabel}</span>
                   </span>

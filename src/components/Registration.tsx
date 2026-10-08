@@ -43,26 +43,26 @@ export function Registration({ state }: { state: StateContent }) {
     <TrackShell id="register">
       <div
         ref={card}
-        className="relative flex flex-col items-center justify-between gap-12 rounded-[32px] bg-green-dark px-6 py-12 md:min-h-[518px] md:gap-16 md:px-[60px] md:py-[80px]"
+        className="relative flex flex-col items-center justify-between gap-10 rounded-[32px] bg-green-dark px-5 py-10 md:min-h-[518px] md:gap-16 md:px-[60px] md:py-[80px]"
       >
         <h2 className="t-display t-h1 text-balance text-center text-green-light">
           {heading} <span className="text-cream">{headingAccent}</span>
         </h2>
-        <ul className="flex w-full max-w-[1145px] flex-wrap justify-center gap-x-6 gap-y-10 md:gap-x-12">
+        <ul className="flex w-full max-w-[1145px] flex-wrap justify-center gap-x-[10px] gap-y-[38px] md:gap-x-12 md:gap-y-10">
           {links.map((link) => {
             const icon = ICONS[link.icon];
             return (
-              <li key={link.label} data-reg-item className="gs-hide w-[calc(50%-12px)] md:w-[232px]">
+              <li key={link.label} data-reg-item className="gs-hide w-[150px] md:w-[232px]">
                 <a
                   href={link.href}
                   target={link.href.startsWith("http") ? "_blank" : undefined}
                   rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
                   className="group flex flex-col items-center gap-5 text-center focus-visible:outline-3 focus-visible:outline-offset-8 focus-visible:outline-green-light"
                 >
-                  <span className="flex h-[105px] items-end transition-transform duration-300 group-hover:-translate-y-1">
-                    <img src={icon.src} alt="" width={icon.w} height={icon.h} />
+                  <span className="flex h-[63px] items-end transition-transform duration-300 group-hover:-translate-y-1 md:h-[105px]">
+                    <img src={icon.src} alt="" width={icon.w} height={icon.h} className="h-full w-auto md:h-auto" />
                   </span>
-                  <span className="t-label-sm text-green-light underline-offset-4 group-hover:underline">{link.label}</span>
+                  <span className="t-label-sm text-[14px] tracking-[0.6px] text-green-light underline-offset-4 group-hover:underline md:text-[16px] md:tracking-[1px]">{link.label}</span>
                 </a>
               </li>
             );
@@ -74,7 +74,7 @@ export function Registration({ state }: { state: StateContent }) {
           alt=""
           width={115.64}
           height={105.82}
-          className="gs-hide absolute -top-[73px] -right-[20px] w-[clamp(72px,8vw,116px)] rotate-[-26.3deg] md:-right-[57px]"
+          className="gs-hide absolute -top-[52px] -right-[27px] w-[clamp(64px,8vw,116px)] rotate-[-26.3deg] md:-top-[73px] md:-right-[57px]"
         />
       </div>
     </TrackShell>

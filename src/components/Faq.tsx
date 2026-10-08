@@ -36,7 +36,7 @@ export function Faq({ items }: { items: FaqItem[] }) {
   );
 
   return (
-    <section id="faq" ref={root} className="relative isolate bg-blue-dark py-[100px]">
+    <section id="faq" ref={root} className="relative isolate bg-blue-dark py-[60px] md:py-[100px]">
       <div className="wrap relative">
         <img
           data-sticker
@@ -44,7 +44,7 @@ export function Faq({ items }: { items: FaqItem[] }) {
           alt=""
           width={115.64}
           height={105.82}
-          className="gs-hide absolute top-[-77px] left-[6%] hidden w-[116px] rotate-[-26.3deg] md:block"
+          className="gs-hide absolute top-[-10px] left-[6%] w-[58px] rotate-[-26.3deg] md:top-[-77px] md:w-[116px]"
         />
         <img
           data-sticker
@@ -52,24 +52,24 @@ export function Faq({ items }: { items: FaqItem[] }) {
           alt=""
           width={154}
           height={143}
-          className="gs-hide absolute top-[-87px] right-[6%] hidden w-[154px] md:block"
+          className="gs-hide absolute top-[-35px] right-[10%] w-[77px] md:top-[-87px] md:right-[6%] md:w-[154px]"
         />
         <h2 className="t-display t-h1 text-balance text-center text-blue-light">FAQ</h2>
 
-        <ol data-faq-list className="mt-[30px]">
+        <ol data-faq-list className="mx-[18px] mt-6 md:mx-0 md:mt-[30px]">
           {items.map((item, i) => {
             const isOpen = open === i;
             const panelId = `${baseId}-panel-${i}`;
             const buttonId = `${baseId}-button-${i}`;
-            const numberCell = isOpen ? "border-4" : `border-r border-b border-l ${i === 0 ? "border-t" : ""}`;
-            const questionCell = isOpen ? "border-4 border-l-0" : `border-r border-b ${i === 0 ? "border-t" : ""}`;
+            const numberCell = isOpen ? "border md:border-4" : `border-r border-b border-l ${i === 0 ? "border-t" : ""}`;
+            const questionCell = isOpen ? "border border-l-0 md:border-4 md:border-l-0" : `border-r border-b ${i === 0 ? "border-t" : ""}`;
             return (
               <li key={item.q} data-faq-row className="gs-hide">
                 <div className="flex items-stretch">
                   <span
                     aria-hidden
                     className={`t-display flex w-[64px] shrink-0 items-center justify-center border-blue-light text-blue-light md:w-[113px] ${numberCell}`}
-                    style={{ fontSize: "clamp(44px, 5.55vw, 80px)" }}
+                    style={{ fontSize: "clamp(48px, 5.55vw, 80px)" }}
                   >
                     {String(i + 1).padStart(2, "0")}
                   </span>
@@ -80,7 +80,7 @@ export function Faq({ items }: { items: FaqItem[] }) {
                       aria-expanded={isOpen}
                       aria-controls={panelId}
                       onClick={() => setOpen(isOpen ? null : i)}
-                      className={`flex w-full items-center justify-between gap-4 border-blue-light px-3 py-6 text-left transition-colors hover:bg-white/5 focus-visible:bg-white/5 focus-visible:outline-none md:py-8 ${questionCell}`}
+                      className={`flex w-full items-center justify-between gap-4 border-blue-light px-3 py-5 text-left transition-colors hover:bg-white/5 focus-visible:bg-white/5 focus-visible:outline-none md:py-8 ${questionCell}`}
                     >
                       <span className="t-body-bold text-blue-light">{item.q}</span>
                       <img
@@ -102,8 +102,8 @@ export function Faq({ items }: { items: FaqItem[] }) {
                 >
                   <div className="overflow-hidden">
                     <div className="flex">
-                      <span aria-hidden className="w-[64px] shrink-0 border-b-4 border-l-4 border-blue-light bg-cream md:w-[113px]" />
-                      <div className="t-body flex-1 border-r-4 border-b-4 border-blue-light bg-cream px-6 py-8 text-blue-dark md:pr-[100px]">
+                      <span aria-hidden className="hidden w-[113px] shrink-0 border-b-4 border-l-4 border-blue-light bg-cream md:block" />
+                      <div className="t-body flex-1 border-r border-b border-l border-blue-light bg-cream px-5 py-6 text-blue-dark md:border-r-4 md:border-b-4 md:border-l-0 md:px-6 md:py-8 md:pr-[100px]">
                         <RichText text={item.a} />
                       </div>
                     </div>

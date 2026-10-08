@@ -7,12 +7,12 @@ export const LANE_COUNT = 9;
 
 export function Lanes({ className = "", lineClass = "bg-blue-light", laneClass = "" }: { className?: string; lineClass?: string; laneClass?: string }) {
   return (
-    <div aria-hidden className={`pointer-events-none absolute left-1/2 w-[calc(8*var(--lane-gap)+4px)] -translate-x-1/2 ${className}`}>
+    <div aria-hidden className={`pointer-events-none absolute left-1/2 w-[calc(8*var(--lane-gap)+var(--lane-w))] -translate-x-1/2 ${className}`}>
       {Array.from({ length: LANE_COUNT }, (_, i) => (
         <span
           key={i}
           data-lane
-          className={`absolute top-0 h-full w-[4px] rounded-full ${lineClass} ${laneClass}`}
+          className={`absolute top-0 h-full w-(--lane-w) rounded-full ${lineClass} ${laneClass}`}
           style={{ left: `calc(${i} * var(--lane-gap))` }}
         />
       ))}

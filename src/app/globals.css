@@ -53,7 +53,8 @@
   --page-max: 1440px;
   --gutter: clamp(20px, 5.555vw, 80px);
   --nav-h: 87px;
-  --lane-gap: 57px;
+  --lane-gap: min(3.96vw, 57px);
+  --lane-w: clamp(1.5px, 0.28vw, 4px);
 }
 
 html {
@@ -95,7 +96,7 @@ body {
     line-height: 1;
   }
   .t-h1 {
-    font-size: clamp(56px, 6.94vw, 100px);
+    font-size: clamp(52px, 6.94vw, 100px);
   }
   .t-numeral {
     font-size: 80px;

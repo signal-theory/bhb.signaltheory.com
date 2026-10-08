@@ -66,10 +66,10 @@ export function TrackShell({ id, children }: { id?: string; children: React.Reac
       id={id}
       ref={root}
       className="relative isolate bg-cream pt-(--lane-run) pb-(--fan-h)"
-      style={{ "--lane-run": "clamp(110px, 12.9vw, 185.5px)", "--fan-h": "min(186px, 21.26vw)" } as React.CSSProperties}
+      style={{ "--lane-run": "min(12.9vw, 185.5px)", "--fan-h": "min(186px, 12.97vw)" } as React.CSSProperties}
     >
       {/* Dark green block the lanes run on, merging into the card below */}
-      <div aria-hidden className="absolute top-0 left-1/2 h-(--lane-run) w-[calc(8*var(--lane-gap)+4px)] -translate-x-1/2 bg-green-dark" />
+      <div aria-hidden className="absolute top-0 left-1/2 h-(--lane-run) w-[calc(8*var(--lane-gap)+var(--lane-w))] -translate-x-1/2 bg-green-dark" />
       <Lanes className="top-0 h-(--lane-run)" lineClass="bg-green-light" />
 
       <div className="wrap relative z-10">{children}</div>
@@ -77,7 +77,7 @@ export function TrackShell({ id, children }: { id?: string; children: React.Reac
       <svg
         data-fan
         aria-hidden
-        className="absolute bottom-0 left-1/2 w-[min(875px,100%)] -translate-x-1/2 overflow-visible"
+        className="absolute bottom-0 left-1/2 w-[min(875px,61vw)] -translate-x-1/2 overflow-visible"
         viewBox="0 0 875 186"
       >
         <path d="M182.5 -1H695.5L867.5 186H10L182.5 -1Z" className="fill-green-dark" />
@@ -94,7 +94,7 @@ export function TrackShell({ id, children }: { id?: string; children: React.Reac
         alt=""
         width={88}
         height={89}
-        className="gs-hide absolute top-[53px] left-[4%] w-[clamp(56px,6.1vw,88px)] rotate-[-75.08deg]"
+        className="gs-hide absolute top-[24px] left-[6px] w-[clamp(53px,6.1vw,88px)] rotate-[-75.08deg] md:top-[53px] md:left-[4%]"
       />
     </section>
   );
