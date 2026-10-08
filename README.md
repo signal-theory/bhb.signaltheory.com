@@ -43,7 +43,7 @@ The design uses Dharma Gothic M (Heavy Italic and Heavy) and Avenir. Both are li
 
 1. a locally installed copy (`local()`),
 2. web font files in `public/fonts/` (see the README there for file names),
-3. the Adobe Fonts kit in `NEXT_PUBLIC_ADOBE_FONTS_KIT` (Dharma Gothic M is in the Adobe Fonts library, so a web project with it is the simplest licensed route),
+3. the Adobe Fonts web project `iel3cpg` (set in `site.json`, overridable with `NEXT_PUBLIC_ADOBE_FONTS_KIT`), which serves `dharma-gothic-m` and `avenir-lt-pro`,
 4. free fallbacks from Google Fonts: Saira Extra Condensed for display text and Nunito Sans for body text.
 
 Headlines squeeze themselves to the design width when a wider fallback font is active (`src/lib/fit-text.ts`), so the layout holds either way. Montserrat Bold (nav) loads from Google Fonts.
@@ -76,7 +76,7 @@ Content is plain JSON on purpose so a git-based CMS can edit it without a databa
 
 ## Deploy
 
-Hosted on Vercel from the `main` branch of this repo; a Next.js project needs no extra config there. Set `NEXT_PUBLIC_ADOBE_FONTS_KIT` in the Vercel project's environment variables if an Adobe Fonts kit is used, and point the production domain at the project once it is ready.
+Hosted on Vercel (project `bhb-signaltheory-com`, Signal Theory team) from the `main` branch of this repo; every push to `main` deploys production and other branches get preview URLs. Point the production domain at the project once it is ready, and add that domain to the Adobe Fonts web project so the licensed fonts load there.
 
 ## One repo, one site per election year
 

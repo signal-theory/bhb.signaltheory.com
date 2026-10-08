@@ -8,8 +8,8 @@ const montserrat = Montserrat({ subsets: ["latin"], weight: ["700"], variable: "
 const saira = Saira_Extra_Condensed({ subsets: ["latin"], weight: ["900"], variable: "--font-saira", display: "swap" });
 const nunito = Nunito_Sans({ subsets: ["latin"], weight: ["400", "800"], variable: "--font-nunito", display: "swap" });
 
-/** Optional Adobe Fonts web project that carries Dharma Gothic M (see .env.example). */
-const adobeKit = process.env.NEXT_PUBLIC_ADOBE_FONTS_KIT;
+/** Adobe Fonts web project with Dharma Gothic M and Avenir LT Pro; the env var can override the id from site.json. */
+const adobeKit = process.env.NEXT_PUBLIC_ADOBE_FONTS_KIT || site.adobeFontsKit;
 
 /**
  * Runs before first paint so animated elements can start hidden without a flash. If GSAP never

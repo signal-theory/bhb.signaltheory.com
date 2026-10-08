@@ -43,8 +43,8 @@
   --color-green-light: #5dba31;
 
   --font-display: "Dharma Gothic M", "dharma-gothic-m", var(--font-saira), Impact, "Arial Narrow", sans-serif;
-  --font-body: "Avenir Web", var(--font-nunito), "Helvetica Neue", Arial, sans-serif;
-  --font-nav: var(--font-montserrat), "Avenir Web", Arial, sans-serif;
+  --font-body: "Avenir Web", "avenir-lt-pro", var(--font-nunito), "Helvetica Neue", Arial, sans-serif;
+  --font-nav: var(--font-montserrat), "Avenir Web", "avenir-lt-pro", Arial, sans-serif;
 
   --breakpoint-xs: 30rem;
 }

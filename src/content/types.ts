@@ -55,6 +55,8 @@ export type SiteContent = {
   shortName: string;
   url: string;
   description: string;
+  /** Adobe Fonts web project id (use.typekit.net/<id>.css); env NEXT_PUBLIC_ADOBE_FONTS_KIT overrides it */
+  adobeFontsKit?: string;
   home: {
     headline: { pre: string; accent: string; post: string };
     buttons: NavItem[];
